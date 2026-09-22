@@ -1,0 +1,7 @@
+node_modules/
+tmp/
+Prompt_Screenshot/
+Syllabus/
+*.log
+.DS_Store
+Thumbs.db
