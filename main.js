@@ -1,11 +1,15 @@
 import { activities1, exercise11, exercise12, letsRemember1, miscellaneousExercise1, theoryPages1to9, theoryPages10to15 } from './questions.js';
+import { activities2, exercise21, letsRemember2, miscellaneousExercise2, theoryPages20to30 } from './unit2-questions.js';
 
 const app = document.querySelector('#app');
 const homeButton = document.querySelector('#homeButton');
 const STORE = 'commerce-xi-maths-v1';
 const QUESTION_SECONDS = 300;
-const PAPER_NAMES = ['Th(P:1-9)', 'Ex-1.1', 'Th(P:10-15)', 'Ex-1.2', "Let's Remember", 'Mis-Ex-1', 'Activities', 'Surprise Test'];
-const PAPERS = {
+const UNIT_PAPER_NAMES = {
+  1: ['Th(P:1-9)', 'Ex-1.1', 'Th(P:10-15)', 'Ex-1.2', "Let's Remember", 'Mis-Ex-1', 'Activities', 'Surprise Test'],
+  2: ['Th(P:20-30)', 'Ex-2.1', "Let's Remember", 'Mis-Ex-2', 'Activities', 'Surprise Test'],
+};
+const UNIT_PAPERS = { 1: {
   'Th(P:1-9)': { title: 'Theory (Pages 1–9)', questions: theoryPages1to9 },
   'Ex-1.1': { title: 'Exercise 1.1', questions: exercise11 },
   'Th(P:10-15)': { title: 'Theory (Pages 10–15)', questions: theoryPages10to15 },
@@ -13,18 +17,24 @@ const PAPERS = {
   "Let's Remember": { title: "Let's Remember", questions: letsRemember1 },
   'Mis-Ex-1': { title: 'Miscellaneous Exercise 1', questions: miscellaneousExercise1 },
   'Activities': { title: 'Activities 1.1–1.10', questions: activities1 },
-};
-const SURPRISE_SOURCES = Object.entries(PAPERS);
+}, 2: {
+  'Th(P:20-30)': { title: 'Theory (Pages 20–30)', questions: theoryPages20to30 },
+  'Ex-2.1': { title: 'Exercise 2.1', questions: exercise21 },
+  "Let's Remember": { title: "Let's Remember", questions: letsRemember2 },
+  'Mis-Ex-2': { title: 'Miscellaneous Exercise 2', questions: miscellaneousExercise2 },
+  'Activities': { title: 'Activities 2.1–2.3', questions: activities2 },
+} };
 const SOLUTION_PDFS = {
-  'Th(P:1-9)': './output/pdf/Commerce_XI_Maths_Th_P1-9_Detailed_Solutions.pdf',
-  'Ex-1.1': './output/pdf/Commerce_XI_Maths_Ex-1.1_Detailed_Solutions.pdf',
-  'Th(P:10-15)': './output/pdf/Commerce_XI_Maths_Th_P10-15_Detailed_Solutions.pdf',
-  'Ex-1.2': './output/pdf/Commerce_XI_Maths_Ex-1.2_Detailed_Solutions.pdf',
-  "Let's Remember": './output/pdf/Commerce_XI_Maths_Lets_Remember_Detailed_Solutions.pdf',
-  'Mis-Ex-1': './output/pdf/Commerce_XI_Maths_Mis-Ex-1_Detailed_Solutions.pdf',
-  'Activities': './output/pdf/Commerce_XI_Maths_Activities_Detailed_Solutions.pdf',
+  '1:Th(P:1-9)': 'solutions/Th-P1-9.pdf', '1:Ex-1.1': 'solutions/Ex-1.1.pdf',
+  '1:Th(P:10-15)': 'solutions/Th-P10-15.pdf', '1:Ex-1.2': 'solutions/Ex-1.2.pdf',
+  "1:Let's Remember": 'solutions/Lets-Remember.pdf', '1:Mis-Ex-1': 'solutions/Mis-Ex-1.pdf',
+  '1:Activities': 'solutions/Activities.pdf',
+  '2:Th(P:20-30)': 'solutions/Th-P20-30.pdf', '2:Ex-2.1': 'solutions/Ex-2.1.pdf',
+  "2:Let's Remember": 'solutions/Lets-Remember-2.pdf', '2:Mis-Ex-2': 'solutions/Mis-Ex-2.pdf',
+  '2:Activities': 'solutions/Activities-2.pdf',
 };
-const UNIT1_GUIDE_PDF = './output/pdf/Commerce_XI_Maths_Unit_1_Sets_and_Relations_Reference_Guide.pdf';
+const UNIT1_GUIDE_PDF = 'guides/unit-1-reference.pdf';
+const UNIT2_GUIDE_PDF = 'guides/unit-2-reference.pdf';
 const localDateKey = date => {
   const pad = value => String(value).padStart(2, '0');
   return `${date.getFullYear()}-${pad(date.getMonth() + 1)}-${pad(date.getDate())}`;
@@ -44,8 +54,8 @@ const seededRandom = seed => {
     return ((value ^ value >>> 14) >>> 0) / 4294967296;
   };
 };
-function surpriseQuestions(dateKey = localDateKey(new Date())) {
-  return SURPRISE_SOURCES.flatMap(([paperName, paper]) => {
+function surpriseQuestions(unit, dateKey = localDateKey(new Date())) {
+  return Object.entries(UNIT_PAPERS[unit] || {}).flatMap(([paperName, paper]) => {
     const random = seededRandom(hashSeed(`${dateKey}:${paperName}`));
     const pool = paper.questions.map((question, questionIndex) => ({ question, questionIndex }));
     for (let i = pool.length - 1; i > 0; i--) {
@@ -61,13 +71,15 @@ function surpriseQuestions(dateKey = localDateKey(new Date())) {
     }));
   });
 }
-const paperFor = name => {
+const paperNamesFor = unit => UNIT_PAPER_NAMES[unit] || [];
+const paperFor = (name, unit = 1) => {
   const normalized = name === 'Ex1.1' ? 'Ex-1.1' : name;
-  return normalized === 'Surprise Test' ? { title: 'Surprise Test', questions: surpriseQuestions() } : PAPERS[normalized];
+  return normalized === 'Surprise Test' ? { title: 'Surprise Test', questions: surpriseQuestions(unit) } : UNIT_PAPERS[unit]?.[normalized];
 };
-const questionsFor = (name, record = null) => record?.questions || paperFor(name)?.questions || exercise11;
-const marksFor = (name, record = null) => questionsFor(name, record).length * 2;
-const minutesFor = (name, record = null) => questionsFor(name, record).length * QUESTION_SECONDS / 60;
+const questionsFor = (name, record = null, unit = record?.unit || 1) => record?.questions || paperFor(name, unit)?.questions || exercise11;
+const marksFor = (name, record = null, unit = record?.unit || 1) => questionsFor(name, record, unit).length * 2;
+const minutesFor = (name, record = null, unit = record?.unit || 1) => questionsFor(name, record, unit).length * QUESTION_SECONDS / 60;
+const solutionPdfFor = (name, unit) => SOLUTION_PDFS[`${unit}:${name}`];
 // Preserve fair scoring for attempts started before the textbook-notation correction.
 const acceptedEarlierForms = {
   q2i: ['{x | x ∈ W, x < 1}'],
@@ -85,17 +97,28 @@ const resultSourceLabel = source => String(source).replace(/\(([ivxlcdm]+)\)/gi,
 const escape = value => String(value ?? '').replace(/[&<>"']/g, character => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[character]);
 const renderNotation = value => escape(value).replace(/\{x ∈ R \| /g, '{x / x ∈ R, ').replace(/ \| /g, ' / ');
 function renderMath(value) {
-  return renderNotation(value)
+  const rendered = renderNotation(value)
     .replace(/(n²|n)\/\((n² \+ 1|n \+ 1)\)/g, '<span class="math-frac"><span>$1</span><span>$2</span></span>')
     .replace(/([−-]?[A-Za-z\d]+)\/\(([A-Za-z\d]+)\)/g, '<span class="math-frac"><span>$1</span><span>$2</span></span>')
     .replace(/([−-]?[A-Za-z\d]+)\/([A-Za-z\d]+)/g, '<span class="math-frac"><span>$1</span><span>$2</span></span>');
+  const groupedFunctions = rendered.replace(/\b(fg|gf)\b/g, '<i class="math-symbol">$1</i>');
+  return groupedFunctions.replace(/\b([fg])\b/g, (match, symbol, offset, fullText) => {
+    const isFunctionCall = /^\s*[([]/.test(fullText.slice(offset + match.length));
+    return `<i class="${isFunctionCall ? 'math-function' : 'math-symbol'}">${symbol}</i>`;
+  });
 }
 function renderPrompt(question) {
+  if (question.piecewise) {
+    const rows = question.piecewise.branches.map(([expression, condition]) => `<span>${renderMath(expression)},</span><span>${renderMath(condition)}</span>`).join('');
+    const target = renderMath(question.piecewise.target);
+    const caseCount = question.piecewise.branches.length;
+    return `<span class="piecewise-line"><span>If ${renderMath('f(x)')} =</span><span class="piecewise-definition piecewise-${caseCount}"><span class="piecewise-brace">{</span><span class="piecewise-cases">${rows}</span></span><span>, then find&nbsp; ${target}</span></span>`;
+  }
   let html = renderMath(question.prompt);
   if (question.id === 'q2iii') {
     html = html.replace(/(\{[^}]+\})/, '<span class="math-set">$1</span>');
   }
-  return html;
+  return `${html}${question.visual ? `<span class="question-visual">${question.visual}</span>` : ''}`;
 }
 const formatTime = ms => { const seconds = Math.max(0, Math.ceil(ms / 1000)); return `${String(Math.floor(seconds / 3600)).padStart(2, '0')}:${String(Math.floor(seconds % 3600 / 60)).padStart(2, '0')}:${String(seconds % 60).padStart(2, '0')}`; };
 const dateLabel = iso => new Date(iso).toLocaleString('en-IN');
@@ -107,6 +130,7 @@ let selection = { part: 1, unit: 1, paper: 'Th(P:1-9)' };
 let attempt = saved.attempt || null;
 // Earlier saved attempts have no paper field and belong to Exercise 1.1.
 if (attempt && !attempt.paper) attempt.paper = 'Ex-1.1';
+if (attempt && !attempt.unit) attempt.unit = 1;
 let index = attempt?.currentIndex || 0;
 let view = attempt ? 'test' : 'home';
 
@@ -117,7 +141,7 @@ function shuffledOptions(question) {
   return options;
 }
 if (attempt) {
-  const attemptQuestions = questionsFor(attempt.paper, attempt);
+  const attemptQuestions = questionsFor(attempt.paper, attempt, attempt.unit);
   attempt.responses ||= [];
   attempt.optionOrders ||= [];
   const addedQuestions = Math.max(0, attemptQuestions.length - attempt.responses.length);
@@ -141,7 +165,7 @@ function normalizeNumber(value) {
 }
 function scoreAttempt(active) {
   let correct = 0, wrong = 0, unanswered = 0;
-  const items = questionsFor(active.paper, active).map((question, i) => {
+  const items = questionsFor(active.paper, active, active.unit).map((question, i) => {
     const answer = responseFor(question, active.responses[i]);
     const isAnswered = answer !== '';
     const isCorrect = isAnswered && (question.type === 'choice' ? answer === question.correct || (acceptedEarlierForms[question.id] || []).includes(answer) : normalizeNumber(answer) === question.correct);
@@ -150,7 +174,7 @@ function scoreAttempt(active) {
     else unanswered++;
     return { source: question.source, answer, correctAnswer: question.correct, isCorrect, marks: isCorrect ? 2 : isAnswered ? -1 : 0 };
   });
-  return { id: active.id, paper: active.paper, questions: active.questions || null, startedAt: active.startedAt, submittedAt: new Date().toISOString(), reason: active.reason || 'Submitted', score: correct * 2 - wrong, correct, wrong, unanswered, items };
+  return { id: active.id, part: active.part || 1, unit: active.unit || 1, paper: active.paper, questions: active.questions || null, startedAt: active.startedAt, submittedAt: new Date().toISOString(), reason: active.reason || 'Submitted', score: correct * 2 - wrong, correct, wrong, unanswered, items };
 }
 function submit(auto = false, confirmed = false) {
   if (!attempt) return;
@@ -160,7 +184,7 @@ function submit(auto = false, confirmed = false) {
     const overlay = document.createElement('div');
     overlay.id = 'submitDialog';
     overlay.className = 'dialog-backdrop';
-    overlay.innerHTML = `<div class="dialog-card" role="dialog" aria-modal="true" aria-labelledby="dialogTitle"><h2 id="dialogTitle">Submit ${escape(paperFor(attempt.paper).title)}?</h2><p>${reviewCount ? `You have ${reviewCount} question${reviewCount === 1 ? '' : 's'} marked for review.` : 'Your answers will be scored and the test will end.'}</p><div class="row"><button class="secondary" id="cancelSubmit">Cancel</button><button class="primary" id="confirmSubmit">Submit</button></div></div>`;
+    overlay.innerHTML = `<div class="dialog-card" role="dialog" aria-modal="true" aria-labelledby="dialogTitle"><h2 id="dialogTitle">Submit ${escape(paperFor(attempt.paper, attempt.unit).title)}?</h2><p>${reviewCount ? `You have ${reviewCount} question${reviewCount === 1 ? '' : 's'} marked for review.` : 'Your answers will be scored and the test will end.'}</p><div class="row"><button class="secondary" id="cancelSubmit">Cancel</button><button class="primary" id="confirmSubmit">Submit</button></div></div>`;
     document.body.append(overlay);
     overlay.querySelector('#cancelSubmit').onclick = () => overlay.remove();
     overlay.querySelector('#confirmSubmit').onclick = () => { overlay.remove(); submit(false, true); };
@@ -175,15 +199,15 @@ function submit(auto = false, confirmed = false) {
   renderResult(result);
 }
 function start() {
-  if (selection.part !== 1 || selection.unit !== 1 || !paperFor(selection.paper)) return;
+  if (selection.part !== 1 || ![1, 2].includes(selection.unit) || !paperFor(selection.paper, selection.unit)) return;
   if (attempt && !confirm('A test is in progress. Start a new test and discard that unfinished attempt?')) return;
-  const questions = questionsFor(selection.paper);
-  attempt = { id: crypto.randomUUID(), paper: selection.paper, questions: selection.paper === 'Surprise Test' ? questions : null, startedAt: new Date().toISOString(), deadline: Date.now() + questions.length * QUESTION_SECONDS * 1000, responses: questions.map(() => ({ selected: '', text: '', review: false, visits: 0 })), optionOrders: questions.map(q => q.type === 'choice' ? shuffledOptions(q) : null) };
+  const questions = questionsFor(selection.paper, null, selection.unit);
+  attempt = { id: crypto.randomUUID(), part: selection.part, unit: selection.unit, paper: selection.paper, questions: selection.paper === 'Surprise Test' ? questions : null, startedAt: new Date().toISOString(), deadline: Date.now() + questions.length * QUESTION_SECONDS * 1000, responses: questions.map(() => ({ selected: '', text: '', review: false, visits: 0 })), optionOrders: questions.map(q => q.type === 'choice' ? shuffledOptions(q) : null) };
   index = 0; attempt.currentIndex = 0; attempt.responses[0].visits = 1;
   view = 'test'; persist(); render();
 }
 function goTo(i) {
-  if (!attempt || i < 0 || i >= questionsFor(attempt.paper, attempt).length) return;
+  if (!attempt || i < 0 || i >= questionsFor(attempt.paper, attempt, attempt.unit).length) return;
   index = i; attempt.currentIndex = i; currentState().visits++; persist(); render();
 }
 function confirmResultDeletion(ids, all = false) {
@@ -207,23 +231,24 @@ function confirmResultDeletion(ids, all = false) {
 }
 function renderHome() {
   const active = Boolean(attempt);
-  const selectedPaper = selection.part === 1 && selection.unit === 1 ? paperFor(selection.paper) : null;
+  const availablePaperNames = selection.part === 1 ? paperNamesFor(selection.unit) : [];
+  const selectedPaper = paperFor(selection.paper, selection.unit);
   const selectedQuestions = selectedPaper?.questions || [];
   homeButton.hidden = true;
-  app.innerHTML = `<div class="intro intro-with-feedback"><div><h1>Choose a practice test</h1><div class="muted">Standard XI Mathematics &amp; Statistics (Commerce)</div></div><div class="developer-contact"><a class="primary download-link" href="mailto:arvindhatkar1974@gmail.com?subject=Commerce%20XI%20Maths%20App%20%E2%80%93%20Feedback&amp;body=Paper%20name%3A%20%0D%0AQuestion%20number%3A%20%0D%0AFeedback%20or%20problem%3A%20">Feedback / Ask Developer</a><p class="small-note"><span>Report a question, answer mismatch, technical problem or suggestion.</span><span>Contact developer: <a href="mailto:arvindhatkar1974@gmail.com">arvindhatkar1974@gmail.com</a></span></p></div></div>
-    ${active ? `<div class="summary"><strong>Unfinished ${escape(paperFor(attempt.paper).title)} test</strong><br>Time continues while the app is closed. <button class="primary" data-action="resume">Resume test</button></div>` : ''}
+  app.innerHTML = `<div class="intro intro-with-feedback"><div><h1>Choose a Practice Test</h1><div class="muted">Exam → Unit → Paper → Start Paper</div></div><div class="developer-contact"><a class="primary download-link" href="mailto:arvindhatkar1974@gmail.com?subject=Commerce%20XI%20Maths%20App%20%E2%80%93%20Feedback&amp;body=Paper%20name%3A%20%0D%0AQuestion%20number%3A%20%0D%0AFeedback%20or%20problem%3A%20">Feedback / Ask Developer</a><p class="small-note"><span>Report a question, answer mismatch, technical problem or suggestion.</span><span>Contact developer: <a href="mailto:arvindhatkar1974@gmail.com">arvindhatkar1974@gmail.com</a></span></p></div></div>
+    ${active ? `<div class="summary"><strong>Unfinished ${escape(paperFor(attempt.paper, attempt.unit).title)} test</strong><br>Time continues while the app is closed. <button class="primary" data-action="resume">Resume test</button></div>` : ''}
     <div class="grid selection-grid">
       <section class="card"><h2>Exam</h2><div class="tile-grid"><button class="tile ${selection.part === 1 ? 'selected' : ''}" data-part="1">Part-1</button><button class="tile ${selection.part === 2 ? 'selected' : ''}" data-part="2">Part-2</button></div></section>
       <section class="card"><h2>Unit</h2><div class="tile-grid units">${Array.from({ length: 9 }, (_, i) => `<button class="tile ${selection.unit === i + 1 ? 'selected' : ''}" data-unit="${i + 1}">${i + 1}</button>`).join('')}<button class="tile ${selection.unit === 10 ? 'selected' : ''}" data-unit="10">All Units</button></div></section>
-      <section class="card study-guide-card"><h2>Unit-1 Study Guide</h2>${selection.part === 1 && selection.unit === 1 ? `<a class="primary download-link guide-link" href="${UNIT1_GUIDE_PDF}" download>📘 Symbols, Laws &amp; Formulae</a><p class="small-note">Review the important notation, laws, theorems and formulae before starting a test.</p>` : '<p class="small-note">The study guide for this selection is being prepared.</p>'}</section>
+      <section class="card study-guide-card"><h2>${selection.unit <= 9 ? `Unit-${selection.unit} Study Guide` : 'Study Guide'}</h2>${selection.part === 1 && selection.unit === 1 ? `<a class="primary download-link guide-link" href="${UNIT1_GUIDE_PDF}" download>📘 Symbols, Laws &amp; Formulae</a><p class="small-note">Review the important notation, laws, theorems and formulae before starting a test.</p>` : selection.part === 1 && selection.unit === 2 ? `<a class="primary download-link guide-link" href="${UNIT2_GUIDE_PDF}" download>📘 Functions Reference Guide</a><p class="small-note">Review function notation, types, domains, ranges, operations, composition, inverses and standard graphs before starting a test.</p>` : '<p class="small-note">The study guide for this selection is being prepared.</p>'}</section>
     </div>
     <div class="paper-summary-layout">
-      <section class="card paper-card"><h2>Paper</h2><div class="tile-grid paper-grid">${selection.part === 1 && selection.unit === 1 ? PAPER_NAMES.map(name => `<button class="tile ${selection.paper === name ? 'selected' : ''}" data-paper="${escape(name)}">${escape(name)}</button>`).join('') : '<p class="small-note">Papers for this selection are being prepared.</p>'}</div></section>
-      ${selectedPaper ? `<div class="summary selected-test-summary"><strong>Part-1 · Unit-1 · ${escape(selectedPaper.title)}</strong><br>${selectedQuestions.length} questions: ${selectedQuestions.filter(q => q.type === 'choice').length} MCQs and ${selectedQuestions.filter(q => q.type === 'entry').length} enter-answer questions · 5 minutes per question · ${minutesFor(selection.paper)} minutes total${selection.paper === 'Surprise Test' ? '<br>5 date-seeded random questions from each of the seven papers' : ''}<br>Correct: +2 · Wrong: −1 · Unanswered: 0 · Maximum score: ${marksFor(selection.paper)}</div><button class="primary paper-start" data-action="start">Start ${escape(selectedPaper.title)}</button>` : `<div class="pending selected-test-summary">${selection.part === 1 && selection.unit === 1 ? escape(selection.paper) : `Part-${selection.part}, ${selection.unit === 10 ? 'All Units' : `Unit-${selection.unit}`}`} is planned.</div>`}
+      <section class="card paper-card"><h2>Paper</h2><div class="tile-grid paper-grid">${availablePaperNames.length ? availablePaperNames.map(name => `<button class="tile ${selection.paper === name ? 'selected' : ''}" data-paper="${escape(name)}">${escape(name)}</button>`).join('') : '<p class="small-note">Papers for this selection are being prepared.</p>'}</div></section>
+      ${selectedPaper ? `<div class="summary selected-test-summary"><strong>Part-1 · Unit-${selection.unit} · ${escape(selectedPaper.title)}</strong><br>${selectedQuestions.length} questions: ${selectedQuestions.filter(q => q.type === 'choice').length} MCQs and ${selectedQuestions.filter(q => q.type === 'entry').length} enter-answer questions · 5 minutes per question · ${minutesFor(selection.paper, null, selection.unit)} minutes total${selection.paper === 'Surprise Test' ? `<br>5 date-seeded random questions from each of the ${Object.keys(UNIT_PAPERS[selection.unit]).length} papers` : ''}<br>Correct: +2 · Wrong: −1 · Unanswered: 0 · Maximum score: ${marksFor(selection.paper, null, selection.unit)}</div><button class="primary paper-start" data-action="start">Start ${escape(selectedPaper.title)}</button>` : `<div class="pending selected-test-summary">${selection.part === 1 ? escape(selection.paper) : `Part-${selection.part}, ${selection.unit === 10 ? 'All Units' : `Unit-${selection.unit}`}`} is planned.</div>`}
     </div>
-    ${saved.history.length ? `<section class="card results-card" style="margin-top:24px"><div class="row space-between results-heading"><h2>Previous results</h2><div class="row"><button class="secondary" id="deleteSelectedResults" disabled>Delete selected</button><button class="danger" id="deleteAllResults">Delete all</button></div></div>${saved.history.slice(0, 10).map(item => `<div class="result-row"><input type="checkbox" class="result-select" data-select-result="${escape(item.id)}" aria-label="Select result from ${escape(dateLabel(item.submittedAt))}"><span class="result-summary">${escape(dateLabel(item.submittedAt))} · ${escape(paperFor(item.paper)?.title || 'Exercise 1.1')} · Total Q: ${item.items?.length ?? item.correct + item.wrong + item.unanswered} · Correct Q: ${item.correct} · Incorrect Q: ${item.wrong} · Unanswered Q: ${item.unanswered} · Score ${item.score}/${(item.items?.length ?? questionsFor(item.paper, item).length) * 2}</span><button class="secondary" data-result="${escape(item.id)}">View result</button></div>`).join('')}</section>` : ''}`;
-  app.querySelectorAll('[data-part]').forEach(button => button.onclick = () => { selection.part = Number(button.dataset.part); selection.unit = 1; selection.paper = PAPER_NAMES[0]; renderHome(); });
-  app.querySelectorAll('[data-unit]').forEach(button => button.onclick = () => { selection.unit = Number(button.dataset.unit); selection.paper = PAPER_NAMES[0]; renderHome(); });
+    ${saved.history.length ? `<section class="card results-card" style="margin-top:24px"><div class="row space-between results-heading"><h2>Previous results</h2><div class="row"><button class="secondary" id="deleteSelectedResults" disabled>Delete selected</button><button class="danger" id="deleteAllResults">Delete all</button></div></div>${saved.history.slice(0, 10).map(item => `<div class="result-row"><input type="checkbox" class="result-select" data-select-result="${escape(item.id)}" aria-label="Select result from ${escape(dateLabel(item.submittedAt))}"><span class="result-summary">${escape(dateLabel(item.submittedAt))} · Unit-${item.unit || 1} · ${escape(paperFor(item.paper, item.unit || 1)?.title || 'Exercise 1.1')} · Total Q: ${item.items?.length ?? item.correct + item.wrong + item.unanswered} · Correct Q: ${item.correct} · Incorrect Q: ${item.wrong} · Unanswered Q: ${item.unanswered} · Score ${item.score}/${(item.items?.length ?? questionsFor(item.paper, item, item.unit || 1).length) * 2}</span><button class="secondary" data-result="${escape(item.id)}">View result</button></div>`).join('')}</section>` : ''}`;
+  app.querySelectorAll('[data-part]').forEach(button => button.onclick = () => { selection.part = Number(button.dataset.part); selection.unit = 1; selection.paper = paperNamesFor(1)[0]; renderHome(); });
+  app.querySelectorAll('[data-unit]').forEach(button => button.onclick = () => { selection.unit = Number(button.dataset.unit); selection.paper = paperNamesFor(selection.unit)[0] || ''; renderHome(); });
   app.querySelectorAll('[data-paper]').forEach(button => button.onclick = () => { selection.paper = button.dataset.paper; renderHome(); });
   app.querySelector('[data-action="start"]')?.addEventListener('click', start);
   app.querySelector('[data-action="resume"]')?.addEventListener('click', () => { view = 'test'; render(); });
@@ -238,16 +263,16 @@ function renderTest() {
   if (!attempt) { view = 'home'; renderHome(); return; }
   if (Date.now() >= attempt.deadline) { submit(true); return; }
   homeButton.hidden = false;
-  const paper = paperFor(attempt.paper);
-  const questions = questionsFor(attempt.paper, attempt);
+  const paper = paperFor(attempt.paper, attempt.unit);
+  const questions = questionsFor(attempt.paper, attempt, attempt.unit);
   const question = questions[index], response = currentState();
   const answered = attempt.responses.filter((item, i) => responseFor(questions[i], item) !== '').length;
   const reviews = attempt.responses.filter(item => item.review).length;
-  app.innerHTML = `<div class="row space-between intro"><div><div class="source">Part-1 · Unit-1 · ${escape(paper.title)}</div><h1>Question ${index + 1} of ${questions.length}</h1></div><button class="danger" id="submitTop">Submit test</button></div>
-    <div class="test-layout"><section class="card question-card"><div class="question-header"><div class="source">${escape(question.source)} · ${question.type === 'choice' ? 'MCQ' : 'Enter answer'}</div><div class="test-actions"><button class="secondary" id="previous" ${index === 0 ? 'disabled' : ''}>Previous</button><button class="primary" id="next" ${index === questions.length - 1 ? 'disabled' : ''}>Next</button><button class="secondary" id="review">${response.review ? 'Remove review mark' : 'Mark for review'}</button><button class="secondary" id="clear">Clear answer</button></div><span class="pill">+2 correct · −1 wrong</span></div>
+  app.innerHTML = `<div class="intro test-page-heading"><div class="source">Part-${attempt.part || 1} · Unit-${attempt.unit || 1} · ${escape(paper.title)}</div><h1>Question ${index + 1} of ${questions.length}</h1><button class="danger" id="submitTop">Submit test</button></div>
+    <div class="test-layout"><section class="card question-card"><div class="question-header"><div class="source">${renderMath(question.source)} · ${question.type === 'choice' ? 'MCQ' : 'Enter answer'}</div><div class="test-actions"><button class="secondary" id="previous" ${index === 0 ? 'disabled' : ''}>Previous</button><button class="primary" id="next" ${index === questions.length - 1 ? 'disabled' : ''}>Next</button><button class="secondary" id="review">${response.review ? 'Remove review mark' : 'Mark for review'}</button><button class="secondary" id="clear">Clear answer</button></div><span class="pill">+2 correct · −1 wrong</span></div>
       <p class="prompt">${renderPrompt(question)}</p>${question.type === 'choice' ? `<div class="options">${attempt.optionOrders[index].map((option, i) => `<button class="option ${response.selected === option ? 'selected' : ''}" data-option="${i}"><span class="option-letter">${letters[i]}.</span>${renderMath(option)}</button>`).join('')}</div>` : `<label for="answer" class="small-note">Enter a number</label><br><input id="answer" class="answer-input" inputmode="numeric" autocomplete="off" value="${escape(response.text)}" placeholder="Your answer">`}
       </section>
-      <aside><div class="timer" id="timer"><span>Time remaining</span><strong id="timeValue">${formatTime(attempt.deadline - Date.now())}</strong><span>${minutesFor(attempt.paper, attempt)}-minute overall limit</span></div><section class="card"><h2>All Question Navigator</h2><div class="nav-grid">${questions.map((item, i) => { const state = attempt.responses[i]; const status = state.review ? 'review' : i === index ? 'current' : responseFor(item, state) ? 'answered' : state.visits ? 'visited' : ''; return `<button class="nav-item ${status}" data-index="${i}" title="${escape(item.source)}"><span>${i + 1}</span></button>`; }).join('')}</div><div class="stats"><span>Answered</span><strong>${answered}</strong><span>Marked for review</span><strong>${reviews}</strong><span>Not answered</span><strong>${questions.length - answered}</strong></div><p class="small-note">You can visit any question. Your work is saved automatically in this browser.</p></section></aside></div>`;
+      <aside><div class="timer" id="timer"><span>Time remaining</span><strong id="timeValue">${formatTime(attempt.deadline - Date.now())}</strong><span>${minutesFor(attempt.paper, attempt, attempt.unit)}-minute overall limit</span></div><section class="card"><h2>All Question Navigator</h2><div class="nav-grid">${questions.map((item, i) => { const state = attempt.responses[i]; const status = state.review ? 'review' : i === index ? 'current' : responseFor(item, state) ? 'answered' : state.visits ? 'visited' : ''; return `<button class="nav-item ${status}" data-index="${i}" title="${escape(item.source)}"><span>${i + 1}</span></button>`; }).join('')}</div><div class="stats"><span>Answered</span><strong>${answered}</strong><span>Marked for review</span><strong>${reviews}</strong><span>Not answered</span><strong>${questions.length - answered}</strong></div><p class="small-note">You can visit any question. Your work is saved automatically in this browser.</p></section></aside></div>`;
   app.querySelectorAll('[data-option]').forEach(button => button.onclick = () => { response.selected = attempt.optionOrders[index][Number(button.dataset.option)]; persist(); renderTest(); });
   app.querySelector('#answer')?.addEventListener('input', event => { response.text = event.target.value; persist(); });
   app.querySelector('#previous').onclick = () => goTo(index - 1);
@@ -260,11 +285,17 @@ function renderTest() {
 function renderResult(result) {
   homeButton.hidden = false;
   if (!result) { view = 'home'; renderHome(); return; }
-  const paper = paperFor(result.paper || 'Ex-1.1');
-  const questions = questionsFor(result.paper || 'Ex-1.1', result);
-  const solutionPdf = SOLUTION_PDFS[result.paper || 'Ex-1.1'];
-  app.innerHTML = `<div class="intro"><div class="source">Part-1 · Unit-1 · ${escape(paper.title)}</div><h1>Test result</h1><div class="muted">${escape(dateLabel(result.submittedAt))} · ${escape(result.reason)}</div></div><section class="card"><div class="row space-between"><div><div class="muted">Final score</div><div class="result-score">${result.score} / ${questions.length * 2}</div></div><div class="row">${solutionPdf ? `<a class="primary download-link" href="${escape(solutionPdf)}" download>Download Detailed Answers PDF</a>` : ''}<a class="secondary download-link" href="${UNIT1_GUIDE_PDF}" download>Download Unit-1 Study Guide</a><button class="primary" id="backHome">Back to home</button></div></div><div class="result-grid"><div class="metric"><strong>${result.correct}</strong>Correct</div><div class="metric"><strong>${result.wrong}</strong>Wrong</div><div class="metric"><strong>${result.unanswered}</strong>Unanswered</div><div class="metric"><strong>${questions.length}</strong>Total</div></div><h2>Question review</h2><div class="review-list">${result.items.map((item, i) => `<div class="review-item"><div class="review-heading"><strong>${i + 1} [${escape(resultSourceLabel(item.source))}]</strong><span class="review-status ${item.isCorrect ? 'correct' : item.answer ? 'incorrect' : 'unanswered'}">${item.isCorrect ? '+2 Correct' : item.answer ? '−1 Wrong' : 'Unanswered'}</span></div><div style="margin:7px 0;white-space:pre-wrap">${renderPrompt(questions[i])}</div><span class="small-note">Your answer: ${renderMath(item.answer || '—')} · Correct answer: ${renderMath(item.correctAnswer)}</span></div>`).join('')}</div></section>`;
-  app.querySelector('#backHome').onclick = () => { view = 'home'; renderHome(); };
+  const resultIndex = saved.history.findIndex(item => item.id === result.id);
+  const previousResult = resultIndex >= 0 ? saved.history[resultIndex + 1] : null;
+  const nextResult = resultIndex > 0 ? saved.history[resultIndex - 1] : null;
+  const resultUnit = result.unit || 1;
+  const paper = paperFor(result.paper || 'Ex-1.1', resultUnit);
+  const questions = questionsFor(result.paper || 'Ex-1.1', result, resultUnit);
+  const solutionPdf = solutionPdfFor(result.paper || 'Ex-1.1', resultUnit);
+  const studyGuideLink = resultUnit === 1 ? `<a class="secondary download-link" href="${UNIT1_GUIDE_PDF}" download>Download Unit-1 Study Guide</a>` : resultUnit === 2 ? `<a class="secondary download-link" href="${UNIT2_GUIDE_PDF}" download>Download Unit-2 Study Guide</a>` : '';
+  app.innerHTML = `<div class="intro result-intro"><div><div class="source">Part-${result.part || 1} · Unit-${resultUnit} · ${escape(paper.title)}</div><h1>Test Result</h1><div class="muted">${escape(dateLabel(result.submittedAt))} · ${escape(result.reason)}</div></div><div class="row result-navigation"><button class="secondary" id="previousTestResult" ${previousResult ? '' : 'disabled'}>Previous Test Result</button><button class="primary" id="nextTestResult" ${nextResult ? '' : 'disabled'}>Next Test Result</button></div></div><section class="card"><div class="row space-between"><div><div class="muted">Final score</div><div class="result-score">${result.score} / ${questions.length * 2}</div></div><div class="row">${solutionPdf ? `<a class="primary download-link" href="${escape(solutionPdf)}" download>Download Detailed Answers PDF</a>` : ''}${studyGuideLink}</div></div><div class="result-grid"><div class="metric"><strong>${result.correct}</strong>Correct</div><div class="metric"><strong>${result.wrong}</strong>Wrong</div><div class="metric"><strong>${result.unanswered}</strong>Unanswered</div><div class="metric"><strong>${questions.length}</strong>Total</div></div><h2>Question review</h2><div class="review-list">${result.items.map((item, i) => `<div class="review-item"><div class="review-heading"><strong>${i + 1} [${renderMath(resultSourceLabel(item.source))}]</strong><span class="review-status ${item.isCorrect ? 'correct' : item.answer ? 'incorrect' : 'unanswered'}">${item.isCorrect ? '+2 Correct' : item.answer ? '−1 Wrong' : 'Unanswered'}</span></div><div style="margin:7px 0;white-space:pre-wrap">${renderPrompt(questions[i])}</div><span class="small-note">Your answer: ${renderMath(item.answer || '—')} · Correct answer: ${renderMath(item.correctAnswer)}</span></div>`).join('')}</div></section>`;
+  app.querySelector('#previousTestResult').onclick = () => { if (previousResult) { renderResult(previousResult); window.scrollTo(0, 0); } };
+  app.querySelector('#nextTestResult').onclick = () => { if (nextResult) { renderResult(nextResult); window.scrollTo(0, 0); } };
 }
 function render() { if (view === 'test') renderTest(); else if (view === 'result') renderResult(saved.history[0]); else renderHome(); }
 homeButton.onclick = () => { view = 'home'; renderHome(); };
