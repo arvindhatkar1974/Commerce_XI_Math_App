@@ -22,6 +22,8 @@ const files = new Map([
   ['/output/pdf/Commerce_XI_Maths_Th_P10-15_Detailed_Solutions.pdf', ['output/pdf/Commerce_XI_Maths_Th_P10-15_Detailed_Solutions.pdf', 'application/pdf']],
   ['/output/pdf/Commerce_XI_Maths_Ex-1.2_Detailed_Solutions.pdf', ['output/pdf/Commerce_XI_Maths_Ex-1.2_Detailed_Solutions.pdf', 'application/pdf']],
   ['/output/pdf/Commerce_XI_Maths_Mis-Ex-1_Detailed_Solutions.pdf', ['output/pdf/Commerce_XI_Maths_Mis-Ex-1_Detailed_Solutions.pdf', 'application/pdf']],
+  ['/output/pdf/Commerce_XI_Maths_Lets_Remember_Detailed_Solutions.pdf', ['output/pdf/Commerce_XI_Maths_Lets_Remember_Detailed_Solutions.pdf', 'application/pdf']],
+  ['/output/pdf/Commerce_XI_Maths_Activities_Detailed_Solutions.pdf', ['output/pdf/Commerce_XI_Maths_Activities_Detailed_Solutions.pdf', 'application/pdf']],
   ['/output/pdf/Commerce_XI_Maths_Unit_1_Sets_and_Relations_Reference_Guide.pdf', ['output/pdf/Commerce_XI_Maths_Unit_1_Sets_and_Relations_Reference_Guide.pdf', 'application/pdf']],
 ]);
 

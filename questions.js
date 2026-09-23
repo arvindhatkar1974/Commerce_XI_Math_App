@@ -179,7 +179,7 @@ export const exercise12 = [
   ex12Choice('q11iii', 'Q11(iii)', 'Find the following relation as a set of ordered pairs.\n{(x, y) / x + y = 3, x, y ∈ {0, 1, 2, 3}}', '{(0, 3), (1, 2), (2, 1), (3, 0)}', ['{(1, 2), (2, 1)}', '{(0, 3), (1, 2), (2, 1)}', '{(0, 3), (1, 2), (2, 1), (3, 0), (3, 3)}']),
 ];
 
-// Part 1, Unit 1, Miscellaneous Exercise 1, followed by MCQs from Activities 1.1–1.6.
+// Part 1, Unit 1, Miscellaneous Exercise 1 and Activities are separate papers.
 const misc1Choice = (id, source, prompt, correct, wrong) => ({ id: `misc1${id}`, source, type: 'choice', prompt, options: [correct, ...wrong], correct });
 const misc1Entry = (id, source, prompt, correct) => ({ id: `misc1${id}`, source, type: 'entry', prompt, correct: String(correct) });
 const misc1Q2Sets = 'If U = {x / x ∈ N, 1 ≤ x ≤ 12}, A = {1, 4, 7, 10}, B = {2, 4, 6, 7, 11}, and C = {3, 5, 8, 9, 12}.';
@@ -209,6 +209,9 @@ export const miscellaneousExercise1 = [
   misc1Choice('q6iv', 'Q6(iv)', 'If A = {1, 2, 3} and B = {4, 5, 6}, consider R₄ = {(4, 2), (2, 6), (5, 1), (2, 4)}.\nWhich statement is correct?', 'R₄ is not a relation from A to B', ['R₄ is a relation from A to B', 'R₄ is empty relation from A to B', 'R₄ is the universal relation from A to B']),
   misc1Choice('q7d', 'Q7 Domain', 'Determine the domain of the following relation.\nR = {(a, b) / a ∈ N, a < 5, b = 4}', '{1, 2, 3, 4}', ['{0, 1, 2, 3, 4}', '{4}', '{1, 2, 3, 4, 5}']),
   misc1Choice('q7r', 'Q7 Range', 'Determine the range of the following relation.\nR = {(a, b) / a ∈ N, a < 5, b = 4}', '{4}', ['{1, 2, 3, 4}', '{0, 1, 2, 3, 4}', '{1, 2, 3, 4, 5}']),
+];
+
+export const activities1 = [
   misc1Choice('a11', 'A1.1', 'Let X = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10}, A = {1, 2, 3}, and B = {3, 4}.\nFind (A ∪ B)′.', '{5, 6, 7, 8, 9, 10}', ['{1, 2, 3, 4}', '{3}', '{1, 2, 4, 5, 6, 7, 8, 9, 10}']),
   misc1Choice('a12', 'A1.2', 'Let A and B be nonempty subsets of a universal set.\nWhich condition makes A ∪ B = A ∩ B?', 'A = B', ['A ∩ B = { }', 'A ⊂ B only', 'B ⊂ A only']),
   misc1Choice('a13', 'A1.3', 'Let A = {1, 2} and B = {a, b, c}. Which statement is correct?', 'A × B ≠ B × A, but n(A × B) = n(B × A)', ['A × B = B × A, but n(A × B) ≠ n(B × A)', 'A × B = A ∪ B', 'n(A × B) = n(A) + n(B)']),
@@ -232,5 +235,17 @@ export const miscellaneousExercise1 = [
   misc1Choice('a110n', 'A1.10(i)', 'If n(A − B) = 3, n(A ∩ B) = 2, and n(B − A) = 3, find n(A − B) + n(A ∩ B) + n(B − A).', '8', ['5', '6', '9']),
   misc1Choice('a110ii', 'A1.10(ii)', 'U = {1, 2, 3, 4, 5, 6, 7, 8}\nA = {1, 2, 3, 4, 5} and B = {4, 5, 6, 7, 8}.\nComplete A ∩ B′ = A − B.', 'A ∩ B′ = {1, 2, 3}', ['A ∩ B′ = {4, 5}', 'A ∩ B′ = {6, 7, 8}', 'A ∩ B′ = {1, 2, 3, 4, 5}']),
   misc1Choice('a110iii', 'A1.10(iii)', 'U = {1, 2, 3, 4, 5, 6, 7, 8}\nA = {1, 2, 3, 4, 5} and B = {4, 5, 6, 7, 8}.\nComplete A′ ∩ B = B − A.', 'A′ ∩ B = {6, 7, 8}', ['A′ ∩ B = {1, 2, 3}', 'A′ ∩ B = {4, 5}', 'A′ ∩ B = {4, 5, 6, 7, 8}']),
+];
+
+const remember1Choice = (id, source, prompt, correct, wrong) => ({ id: `remember1${id}`, source, type: 'choice', prompt, options: [correct, ...wrong], correct });
+
+export const letsRemember1 = [
+  remember1Choice('empty', "Let's Remember (i)", 'A set which does not contain any element is called an empty set.\nWhich symbol denotes the empty set?', '∅', ['{0}', '{∅}', '0']),
+  remember1Choice('dist1', "Let's Remember (ii)", 'Complete the distributive property.\nA ∪ (B ∩ C) =', '(A ∪ B) ∩ (A ∪ C)', ['(A ∪ B) ∪ (A ∪ C)', '(A ∩ B) ∪ (A ∩ C)', '(A ∩ B) ∩ (A ∩ C)']),
+  remember1Choice('dist2', "Let's Remember (iii)", 'Complete the distributive property.\nA ∩ (B ∪ C) =', '(A ∩ B) ∪ (A ∩ C)', ['(A ∩ B) ∩ (A ∩ C)', '(A ∪ B) ∩ (A ∪ C)', '(A ∪ B) ∪ (A ∪ C)']),
+  remember1Choice('demorgan', "Let's Remember (iv)", "Complete De Morgan's law.\n(A ∪ B)′ =", 'A′ ∩ B′', ['A′ ∪ B′', 'A ∩ B', 'A ∪ B']),
+  remember1Choice('disjoint', "Let's Remember (v)", 'If A and B are finite disjoint sets, then n(A ∪ B) =', 'n(A) + n(B)', ['n(A) + n(B) − n(A ∩ B)', 'n(A) − n(B)', 'n(A) × n(B)']),
+  remember1Choice('overlap', "Let's Remember (vi)", 'If A and B are finite sets and A ∩ B ≠ ∅, then n(A ∪ B) =', 'n(A) + n(B) − n(A ∩ B)', ['n(A) + n(B)', 'n(A ∩ B) − n(A) − n(B)', 'n(A) × n(B)']),
+  remember1Choice('rxr', "Let's Remember (vii)", 'Complete the Cartesian-product result.\nR × R =', '{(x, y) / x, y ∈ R}', ['{x / x ∈ R}', '{(x, y) / x ∈ R, y ∈ N}', '{(x, x) / x ∈ R}']),
 ];
 

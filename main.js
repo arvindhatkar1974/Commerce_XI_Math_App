@@ -1,16 +1,18 @@
-import { exercise11, exercise12, miscellaneousExercise1, theoryPages1to9, theoryPages10to15 } from './questions.js';
+import { activities1, exercise11, exercise12, letsRemember1, miscellaneousExercise1, theoryPages1to9, theoryPages10to15 } from './questions.js';
 
 const app = document.querySelector('#app');
 const homeButton = document.querySelector('#homeButton');
 const STORE = 'commerce-xi-maths-v1';
 const QUESTION_SECONDS = 300;
-const PAPER_NAMES = ['Th(P:1-9)', 'Ex-1.1', 'Th(P:10-15)', 'Ex-1.2', 'Mis-Ex-1', 'Surprise Test'];
+const PAPER_NAMES = ['Th(P:1-9)', 'Ex-1.1', 'Th(P:10-15)', 'Ex-1.2', "Let's Remember", 'Mis-Ex-1', 'Activities', 'Surprise Test'];
 const PAPERS = {
   'Th(P:1-9)': { title: 'Theory (Pages 1–9)', questions: theoryPages1to9 },
   'Ex-1.1': { title: 'Exercise 1.1', questions: exercise11 },
   'Th(P:10-15)': { title: 'Theory (Pages 10–15)', questions: theoryPages10to15 },
   'Ex-1.2': { title: 'Exercise 1.2', questions: exercise12 },
+  "Let's Remember": { title: "Let's Remember", questions: letsRemember1 },
   'Mis-Ex-1': { title: 'Miscellaneous Exercise 1', questions: miscellaneousExercise1 },
+  'Activities': { title: 'Activities 1.1–1.10', questions: activities1 },
 };
 const SURPRISE_SOURCES = Object.entries(PAPERS);
 const SOLUTION_PDFS = {
@@ -18,7 +20,9 @@ const SOLUTION_PDFS = {
   'Ex-1.1': './output/pdf/Commerce_XI_Maths_Ex-1.1_Detailed_Solutions.pdf',
   'Th(P:10-15)': './output/pdf/Commerce_XI_Maths_Th_P10-15_Detailed_Solutions.pdf',
   'Ex-1.2': './output/pdf/Commerce_XI_Maths_Ex-1.2_Detailed_Solutions.pdf',
+  "Let's Remember": './output/pdf/Commerce_XI_Maths_Lets_Remember_Detailed_Solutions.pdf',
   'Mis-Ex-1': './output/pdf/Commerce_XI_Maths_Mis-Ex-1_Detailed_Solutions.pdf',
+  'Activities': './output/pdf/Commerce_XI_Maths_Activities_Detailed_Solutions.pdf',
 };
 const UNIT1_GUIDE_PDF = './output/pdf/Commerce_XI_Maths_Unit_1_Sets_and_Relations_Reference_Guide.pdf';
 const localDateKey = date => {
@@ -215,7 +219,7 @@ function renderHome() {
     </div>
     <div class="paper-summary-layout">
       <section class="card paper-card"><h2>Paper</h2><div class="tile-grid paper-grid">${selection.part === 1 && selection.unit === 1 ? PAPER_NAMES.map(name => `<button class="tile ${selection.paper === name ? 'selected' : ''}" data-paper="${escape(name)}">${escape(name)}</button>`).join('') : '<p class="small-note">Papers for this selection are being prepared.</p>'}</div></section>
-      ${selectedPaper ? `<div class="summary selected-test-summary"><strong>Part-1 · Unit-1 · ${escape(selectedPaper.title)}</strong><br>${selectedQuestions.length} questions: ${selectedQuestions.filter(q => q.type === 'choice').length} MCQs and ${selectedQuestions.filter(q => q.type === 'entry').length} enter-answer questions · 5 minutes per question · ${minutesFor(selection.paper)} minutes total${selection.paper === 'Surprise Test' ? '<br>5 date-seeded random questions from each of the five papers' : ''}<br>Correct: +2 · Wrong: −1 · Unanswered: 0 · Maximum score: ${marksFor(selection.paper)}</div><button class="primary paper-start" data-action="start">Start ${escape(selectedPaper.title)}</button>` : `<div class="pending selected-test-summary">${selection.part === 1 && selection.unit === 1 ? escape(selection.paper) : `Part-${selection.part}, ${selection.unit === 10 ? 'All Units' : `Unit-${selection.unit}`}`} is planned.</div>`}
+      ${selectedPaper ? `<div class="summary selected-test-summary"><strong>Part-1 · Unit-1 · ${escape(selectedPaper.title)}</strong><br>${selectedQuestions.length} questions: ${selectedQuestions.filter(q => q.type === 'choice').length} MCQs and ${selectedQuestions.filter(q => q.type === 'entry').length} enter-answer questions · 5 minutes per question · ${minutesFor(selection.paper)} minutes total${selection.paper === 'Surprise Test' ? '<br>5 date-seeded random questions from each of the seven papers' : ''}<br>Correct: +2 · Wrong: −1 · Unanswered: 0 · Maximum score: ${marksFor(selection.paper)}</div><button class="primary paper-start" data-action="start">Start ${escape(selectedPaper.title)}</button>` : `<div class="pending selected-test-summary">${selection.part === 1 && selection.unit === 1 ? escape(selection.paper) : `Part-${selection.part}, ${selection.unit === 10 ? 'All Units' : `Unit-${selection.unit}`}`} is planned.</div>`}
     </div>
     ${saved.history.length ? `<section class="card results-card" style="margin-top:24px"><div class="row space-between results-heading"><h2>Previous results</h2><div class="row"><button class="secondary" id="deleteSelectedResults" disabled>Delete selected</button><button class="danger" id="deleteAllResults">Delete all</button></div></div>${saved.history.slice(0, 10).map(item => `<div class="result-row"><input type="checkbox" class="result-select" data-select-result="${escape(item.id)}" aria-label="Select result from ${escape(dateLabel(item.submittedAt))}"><span class="result-summary">${escape(dateLabel(item.submittedAt))} · ${escape(paperFor(item.paper)?.title || 'Exercise 1.1')} · Total Q: ${item.items?.length ?? item.correct + item.wrong + item.unanswered} · Correct Q: ${item.correct} · Incorrect Q: ${item.wrong} · Unanswered Q: ${item.unanswered} · Score ${item.score}/${(item.items?.length ?? questionsFor(item.paper, item).length) * 2}</span><button class="secondary" data-result="${escape(item.id)}">View result</button></div>`).join('')}</section>` : ''}`;
   app.querySelectorAll('[data-part]').forEach(button => button.onclick = () => { selection.part = Number(button.dataset.part); selection.unit = 1; selection.paper = PAPER_NAMES[0]; renderHome(); });
