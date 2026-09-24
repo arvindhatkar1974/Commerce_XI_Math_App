@@ -12,6 +12,7 @@ const files = new Map([
   ['/main.js', ['main.js', 'text/javascript; charset=utf-8']],
   ['/questions.js', ['questions.js', 'text/javascript; charset=utf-8']],
   ['/unit2-questions.js', ['unit2-questions.js', 'text/javascript; charset=utf-8']],
+  ['/unit3-questions.js', ['unit3-questions.js', 'text/javascript; charset=utf-8']],
   ['/solutions/Th-P1-9.pdf', ['output/pdf/Commerce_XI_Maths_Th_P1-9_Detailed_Solutions.pdf', 'application/pdf']],
   ['/solutions/Ex-1.1.pdf', ['output/pdf/Commerce_XI_Maths_Ex-1.1_Detailed_Solutions.pdf', 'application/pdf']],
   ['/solutions/Th-P10-15.pdf', ['output/pdf/Commerce_XI_Maths_Th_P10-15_Detailed_Solutions.pdf', 'application/pdf']],
@@ -24,8 +25,18 @@ const files = new Map([
   ['/solutions/Lets-Remember-2.pdf', ['output/pdf/Commerce_XI_Maths_Lets_Remember_2_Detailed_Solutions.pdf', 'application/pdf']],
   ['/solutions/Mis-Ex-2.pdf', ['output/pdf/Commerce_XI_Maths_Mis-Ex-2_Detailed_Solutions.pdf', 'application/pdf']],
   ['/solutions/Activities-2.pdf', ['output/pdf/Commerce_XI_Maths_Activities_2_Detailed_Solutions.pdf', 'application/pdf']],
+  ['/solutions/Th-P33-37.pdf', ['output/pdf/Commerce_XI_Maths_Th_P33-37_Detailed_Solutions.pdf', 'application/pdf']],
+  ['/solutions/Ex-3.1.pdf', ['output/pdf/Commerce_XI_Maths_Ex-3.1_Detailed_Solutions.pdf', 'application/pdf']],
+  ['/solutions/Th-P38-40.pdf', ['output/pdf/Commerce_XI_Maths_Th_P38-40_Detailed_Solutions.pdf', 'application/pdf']],
+  ['/solutions/Ex-3.2.pdf', ['output/pdf/Commerce_XI_Maths_Ex-3.2_Detailed_Solutions.pdf', 'application/pdf']],
+  ['/solutions/Th-P40-42.pdf', ['output/pdf/Commerce_XI_Maths_Th_P40-42_Detailed_Solutions.pdf', 'application/pdf']],
+  ['/solutions/Ex-3.3.pdf', ['output/pdf/Commerce_XI_Maths_Ex-3.3_Detailed_Solutions.pdf', 'application/pdf']],
+  ['/solutions/Lets-Remember-3.pdf', ['output/pdf/Commerce_XI_Maths_Lets_Remember_3_Detailed_Solutions.pdf', 'application/pdf']],
+  ['/solutions/Mis-Ex-3.pdf', ['output/pdf/Commerce_XI_Maths_Mis-Ex-3_Detailed_Solutions.pdf', 'application/pdf']],
+  ['/solutions/Activities-3.pdf', ['output/pdf/Commerce_XI_Maths_Activities_3_Detailed_Solutions.pdf', 'application/pdf']],
   ['/guides/unit-1-reference.pdf', ['output/pdf/Commerce_XI_Maths_Unit_1_Sets_and_Relations_Reference_Guide.pdf', 'application/pdf']],
   ['/guides/unit-2-reference.pdf', ['output/pdf/Commerce_XI_Maths_Unit_2_Functions_Reference_Guide.pdf', 'application/pdf']],
+  ['/guides/unit-3-reference.pdf', ['output/pdf/Commerce_XI_Maths_Unit_3_Complex_Numbers_Reference_Guide.pdf', 'application/pdf']],
 ]);
 
 const server = http.createServer(async (request, response) => {

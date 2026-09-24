@@ -3,6 +3,7 @@
 .question-card{display:flex;flex-direction:column}.test-actions{margin-top:auto;justify-content:center;padding-top:28px}.nav-item{height:50px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;line-height:1}.nav-item small{font-size:9px;font-weight:650;opacity:.8}
 .question-header{display:grid;grid-template-columns:minmax(100px,1fr) auto minmax(135px,1fr);align-items:center;gap:8px}.question-header>.pill{justify-self:end;white-space:nowrap}.question-header .test-actions{margin:0;padding:0;display:flex;flex-wrap:nowrap;gap:6px;justify-content:center}.question-header .test-actions button{padding:9px 10px;font-size:13px;white-space:nowrap}@media(max-width:760px){.question-header{grid-template-columns:1fr auto}.question-header .test-actions{grid-column:1/-1;grid-row:2;justify-content:center;flex-wrap:wrap}.question-header>.pill{grid-column:2;grid-row:1}}
 .math-set{display:inline-block;white-space:nowrap;vertical-align:middle}.math-frac{display:inline-flex;flex-direction:column;vertical-align:middle;text-align:center;line-height:1.05;font-size:.82em;margin:0 1px}.math-frac>span:first-child{border-bottom:1px solid currentColor;padding:0 2px 2px}.math-frac>span:last-child{padding:2px 2px 0}
+.math-frac-expression{font-size:.95em;margin:0 .16em;white-space:nowrap}.math-frac-expression>span:first-child{padding-left:.18em;padding-right:.18em}.math-frac-expression>span:last-child{padding-left:.18em;padding-right:.18em}
 .results-heading h2{margin:0}.result-row{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:12px;align-items:center;padding:10px 0;border-top:1px solid #e7eeeb}.result-select{width:18px;height:18px;accent-color:#087d71}.result-summary{line-height:1.55}.results-card .danger{padding:10px 15px}@media(max-width:700px){.result-row{grid-template-columns:auto 1fr}.result-row [data-result]{grid-column:2;justify-self:start}.results-heading{align-items:flex-start}}
 .download-link{display:inline-block;text-decoration:none}
 .review-heading{display:flex;align-items:center;justify-content:space-between;gap:16px}.review-status{margin-left:auto;white-space:nowrap}
@@ -15,6 +16,8 @@
 .option{font-size:17px}
 .arrow-diagram text{font-family:"Cambria Math",Cambria,serif}
 .math-function,.math-symbol{font-family:"Cambria Math",Cambria,serif;font-style:italic;font-weight:400}.math-function{margin-right:.18em}
+.math-power-base{display:inline-block;margin-right:.16em}
+.math-radical{font-family:"Cambria Math",Cambria,serif;font-size:1em;vertical-align:-.14em;white-space:nowrap}
 
 
 /* Textbook layout for piecewise-defined functions. */

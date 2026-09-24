@@ -1,5 +1,6 @@
 import { activities1, exercise11, exercise12, letsRemember1, miscellaneousExercise1, theoryPages1to9, theoryPages10to15 } from './questions.js';
 import { activities2, exercise21, letsRemember2, miscellaneousExercise2, theoryPages20to30 } from './unit2-questions.js';
+import { activities3, exercise31, exercise32, exercise33, letsRemember3, miscellaneousExercise3, theoryPages33to37, theoryPages38to40, theoryPages40to42 } from './unit3-questions.js';
 
 const app = document.querySelector('#app');
 const homeButton = document.querySelector('#homeButton');
@@ -8,6 +9,7 @@ const QUESTION_SECONDS = 300;
 const UNIT_PAPER_NAMES = {
   1: ['Th(P:1-9)', 'Ex-1.1', 'Th(P:10-15)', 'Ex-1.2', "Let's Remember", 'Mis-Ex-1', 'Activities', 'Surprise Test'],
   2: ['Th(P:20-30)', 'Ex-2.1', "Let's Remember", 'Mis-Ex-2', 'Activities', 'Surprise Test'],
+  3: ['Th(P:33-37)', 'Ex-3.1', 'Th(P:38-40)', 'Ex-3.2', 'Th(P:40-42)', 'Ex-3.3', "Let's Remember", 'Mis-Ex-3', 'Activities', 'Surprise Test'],
 };
 const UNIT_PAPERS = { 1: {
   'Th(P:1-9)': { title: 'Theory (Pages 1–9)', questions: theoryPages1to9 },
@@ -23,6 +25,16 @@ const UNIT_PAPERS = { 1: {
   "Let's Remember": { title: "Let's Remember", questions: letsRemember2 },
   'Mis-Ex-2': { title: 'Miscellaneous Exercise 2', questions: miscellaneousExercise2 },
   'Activities': { title: 'Activities 2.1–2.3', questions: activities2 },
+}, 3: {
+  'Th(P:33-37)': { title: 'Theory (Pages 33–37)', questions: theoryPages33to37 },
+  'Ex-3.1': { title: 'Exercise 3.1', questions: exercise31 },
+  'Th(P:38-40)': { title: 'Theory (Pages 38–40)', questions: theoryPages38to40 },
+  'Ex-3.2': { title: 'Exercise 3.2', questions: exercise32 },
+  'Th(P:40-42)': { title: 'Theory (Pages 40–42)', questions: theoryPages40to42 },
+  'Ex-3.3': { title: 'Exercise 3.3', questions: exercise33 },
+  "Let's Remember": { title: "Let's Remember", questions: letsRemember3 },
+  'Mis-Ex-3': { title: 'Miscellaneous Exercise 3', questions: miscellaneousExercise3 },
+  'Activities': { title: 'Activities 3.1–3.2', questions: activities3 },
 } };
 const SOLUTION_PDFS = {
   '1:Th(P:1-9)': 'solutions/Th-P1-9.pdf', '1:Ex-1.1': 'solutions/Ex-1.1.pdf',
@@ -32,9 +44,15 @@ const SOLUTION_PDFS = {
   '2:Th(P:20-30)': 'solutions/Th-P20-30.pdf', '2:Ex-2.1': 'solutions/Ex-2.1.pdf',
   "2:Let's Remember": 'solutions/Lets-Remember-2.pdf', '2:Mis-Ex-2': 'solutions/Mis-Ex-2.pdf',
   '2:Activities': 'solutions/Activities-2.pdf',
+  '3:Th(P:33-37)': 'solutions/Th-P33-37.pdf', '3:Ex-3.1': 'solutions/Ex-3.1.pdf',
+  '3:Th(P:38-40)': 'solutions/Th-P38-40.pdf', '3:Ex-3.2': 'solutions/Ex-3.2.pdf',
+  '3:Th(P:40-42)': 'solutions/Th-P40-42.pdf', '3:Ex-3.3': 'solutions/Ex-3.3.pdf',
+  "3:Let's Remember": 'solutions/Lets-Remember-3.pdf', '3:Mis-Ex-3': 'solutions/Mis-Ex-3.pdf',
+  '3:Activities': 'solutions/Activities-3.pdf',
 };
 const UNIT1_GUIDE_PDF = 'guides/unit-1-reference.pdf';
 const UNIT2_GUIDE_PDF = 'guides/unit-2-reference.pdf';
+const UNIT3_GUIDE_PDF = 'guides/unit-3-reference.pdf';
 const localDateKey = date => {
   const pad = value => String(value).padStart(2, '0');
   return `${date.getFullYear()}-${pad(date.getMonth() + 1)}-${pad(date.getDate())}`;
@@ -92,20 +110,75 @@ const acceptedEarlierForms = {
   q12iv: ['{x ∈ R | −23 ≤ x < 5}'],
 };
 const letters = ['A', 'B', 'C', 'D'];
+let mathUnitContext = 1;
 const sourceNavLabel = source => source.replace(' Roster form', '').replace(' Complements', 'C').replace(' Intersection', '∩').replace(' Union', '∪').replace(' A − B', 'A−B').replace(' B − A', 'B−A').replace(' A × A', 'AA').replace(' A × B', 'AB').replace(' B × A', 'BA').replace(' B × B', 'BB').replace(' Domain', 'D').replace(' Range', 'R').replace(/[()]/g, '');
 const resultSourceLabel = source => String(source).replace(/\(([ivxlcdm]+)\)/gi, (_, roman) => `(${roman.toUpperCase()})`);
 const escape = value => String(value ?? '').replace(/[&<>"']/g, character => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[character]);
 const renderNotation = value => escape(value).replace(/\{x ∈ R \| /g, '{x / x ∈ R, ').replace(/ \| /g, ' / ');
+function renderMathMlRadicand(expression) {
+  let markup = '';
+  for (let index = 0; index < expression.length;) {
+    const character = expression[index];
+    if (/\s/.test(character)) {
+      index += 1;
+      continue;
+    }
+    if (/[A-Za-z]/.test(character)) {
+      const identifier = `<mi>${character}</mi>`;
+      markup += expression[index + 1] === '²' ? `<msup>${identifier}<mn>2</mn></msup>` : identifier;
+      index += expression[index + 1] === '²' ? 2 : 1;
+      continue;
+    }
+    if (/\d/.test(character)) {
+      const number = expression.slice(index).match(/^\d+/)[0];
+      markup += `<mn>${number}</mn>`;
+      index += number.length;
+      continue;
+    }
+    markup += `<mo>${character}</mo>`;
+    index += 1;
+  }
+  return `<math class="math-radical" xmlns="http://www.w3.org/1998/Math/MathML"><msqrt><mrow>${markup}</mrow></msqrt></math>`;
+}
 function renderMath(value) {
+  const fractions = [];
+  const radicals = [];
   const rendered = renderNotation(value)
+    .replace(/⟦frac:([^¦]+)¦([^⟧]+)⟧/g, (_, numerator, denominator) => {
+      fractions.push([numerator, denominator]);
+      return `\uE002${fractions.length - 1}\uE003`;
+    })
+    .replace(/√\{([^{}]+)\}/g, (_, radicand) => {
+      radicals.push(renderMathMlRadicand(radicand));
+      return `\uE000${radicals.length - 1}\uE001`;
+    })
     .replace(/(n²|n)\/\((n² \+ 1|n \+ 1)\)/g, '<span class="math-frac"><span>$1</span><span>$2</span></span>')
     .replace(/([−-]?[A-Za-z\d]+)\/\(([A-Za-z\d]+)\)/g, '<span class="math-frac"><span>$1</span><span>$2</span></span>')
     .replace(/([−-]?[A-Za-z\d]+)\/([A-Za-z\d]+)/g, '<span class="math-frac"><span>$1</span><span>$2</span></span>');
   const groupedFunctions = rendered.replace(/\b(fg|gf)\b/g, '<i class="math-symbol">$1</i>');
-  return groupedFunctions.replace(/\b([fg])\b/g, (match, symbol, offset, fullText) => {
+  const functions = groupedFunctions.replace(/\b([fg])\b/g, (match, symbol, offset, fullText) => {
     const isFunctionCall = /^\s*[([]/.test(fullText.slice(offset + match.length));
     return `<i class="${isFunctionCall ? 'math-function' : 'math-symbol'}">${symbol}</i>`;
   });
+  const unit3Variables = /(?<![A-Za-z])(?:ib|id|iq|ip|ia|ik|ki|ai|bi|iy|ix|xi|ac|bd|ad|bc|kb|ka|kz|ab|kab|aw|bw|cw|xyz)(?![A-Za-z])|(?<![A-Za-z])([bcdikmnpqwxyzαβ])(?![A-Za-z])|(?<![A-Za-z])a(?=\s*(?:$|[,+−=≠<>∈/²³⁴β])|\s+and\s+[bcdikmnpqwxyz]\b|\s+must\b)|(?<=[−+(=/\d])a(?![A-Za-z])/g;
+  const italicizeVariables = part => part.replace(unit3Variables, (token, _single, offset, fullText) => {
+    const hasSuperscript = /^[⁰¹²³⁴⁵⁶⁷⁸⁹ᵏⁿ]/.test(fullText.slice(offset + token.length));
+    return token.replace(/[abcdikmnpqwxyzαβ]/g, (symbol, symbolOffset) => {
+      const isPowerBase = hasSuperscript && symbolOffset === token.length - 1;
+      return `<i class="math-symbol${isPowerBase ? ' math-power-base' : ''}">${symbol}</i>`;
+    });
+  });
+  return functions
+    .split(/(<[^>]+>)/g)
+    .map(part => part.startsWith('<') ? part : mathUnitContext === 3
+      ? italicizeVariables(part)
+      : part.replace(/(?<![A-Za-z])([iwxyz])(?![A-Za-z])|i(?=$|[\s,.;:)}\]⁰¹²³⁴⁵⁶⁷⁸⁹+−×÷=])/g, match => `<i class="math-symbol">${match}</i>`))
+    .join('')
+    .replace(/\uE000(\d+)\uE001/g, (_, index) => radicals[Number(index)])
+    .replace(/\uE002(\d+)\uE003/g, (_, index) => {
+      const [numerator, denominator] = fractions[Number(index)];
+      return `<span class="math-frac math-frac-expression"><span>${renderMath(numerator)}</span><span>${renderMath(denominator)}</span></span>`;
+    });
 }
 function renderPrompt(question) {
   if (question.piecewise) {
@@ -199,7 +272,7 @@ function submit(auto = false, confirmed = false) {
   renderResult(result);
 }
 function start() {
-  if (selection.part !== 1 || ![1, 2].includes(selection.unit) || !paperFor(selection.paper, selection.unit)) return;
+  if (selection.part !== 1 || ![1, 2, 3].includes(selection.unit) || !paperFor(selection.paper, selection.unit)) return;
   if (attempt && !confirm('A test is in progress. Start a new test and discard that unfinished attempt?')) return;
   const questions = questionsFor(selection.paper, null, selection.unit);
   attempt = { id: crypto.randomUUID(), part: selection.part, unit: selection.unit, paper: selection.paper, questions: selection.paper === 'Surprise Test' ? questions : null, startedAt: new Date().toISOString(), deadline: Date.now() + questions.length * QUESTION_SECONDS * 1000, responses: questions.map(() => ({ selected: '', text: '', review: false, visits: 0 })), optionOrders: questions.map(q => q.type === 'choice' ? shuffledOptions(q) : null) };
@@ -230,6 +303,7 @@ function confirmResultDeletion(ids, all = false) {
   };
 }
 function renderHome() {
+  mathUnitContext = selection.unit;
   const active = Boolean(attempt);
   const availablePaperNames = selection.part === 1 ? paperNamesFor(selection.unit) : [];
   const selectedPaper = paperFor(selection.paper, selection.unit);
@@ -240,7 +314,7 @@ function renderHome() {
     <div class="grid selection-grid">
       <section class="card"><h2>Exam</h2><div class="tile-grid"><button class="tile ${selection.part === 1 ? 'selected' : ''}" data-part="1">Part-1</button><button class="tile ${selection.part === 2 ? 'selected' : ''}" data-part="2">Part-2</button></div></section>
       <section class="card"><h2>Unit</h2><div class="tile-grid units">${Array.from({ length: 9 }, (_, i) => `<button class="tile ${selection.unit === i + 1 ? 'selected' : ''}" data-unit="${i + 1}">${i + 1}</button>`).join('')}<button class="tile ${selection.unit === 10 ? 'selected' : ''}" data-unit="10">All Units</button></div></section>
-      <section class="card study-guide-card"><h2>${selection.unit <= 9 ? `Unit-${selection.unit} Study Guide` : 'Study Guide'}</h2>${selection.part === 1 && selection.unit === 1 ? `<a class="primary download-link guide-link" href="${UNIT1_GUIDE_PDF}" download>📘 Symbols, Laws &amp; Formulae</a><p class="small-note">Review the important notation, laws, theorems and formulae before starting a test.</p>` : selection.part === 1 && selection.unit === 2 ? `<a class="primary download-link guide-link" href="${UNIT2_GUIDE_PDF}" download>📘 Functions Reference Guide</a><p class="small-note">Review function notation, types, domains, ranges, operations, composition, inverses and standard graphs before starting a test.</p>` : '<p class="small-note">The study guide for this selection is being prepared.</p>'}</section>
+      <section class="card study-guide-card"><h2>${selection.unit <= 9 ? `Unit-${selection.unit} Study Guide` : 'Study Guide'}</h2>${selection.part === 1 && selection.unit === 1 ? `<a class="primary download-link guide-link" href="${UNIT1_GUIDE_PDF}" download>📘 Symbols, Laws &amp; Formulae</a><p class="small-note">Review the important notation, laws, theorems and formulae before starting a test.</p>` : selection.part === 1 && selection.unit === 2 ? `<a class="primary download-link guide-link" href="${UNIT2_GUIDE_PDF}" download>📘 Functions Reference Guide</a><p class="small-note">Review function notation, types, domains, ranges, operations, composition, inverses and standard graphs before starting a test.</p>` : selection.part === 1 && selection.unit === 3 ? `<a class="primary download-link guide-link" href="${UNIT3_GUIDE_PDF}" download>📘 Complex Numbers Reference Guide</a><p class="small-note">Review imaginary-unit powers, complex-number operations, conjugates, quadratic roots and cube roots of unity before starting a test.</p>` : '<p class="small-note">The study guide for this selection is being prepared.</p>'}</section>
     </div>
     <div class="paper-summary-layout">
       <section class="card paper-card"><h2>Paper</h2><div class="tile-grid paper-grid">${availablePaperNames.length ? availablePaperNames.map(name => `<button class="tile ${selection.paper === name ? 'selected' : ''}" data-paper="${escape(name)}">${escape(name)}</button>`).join('') : '<p class="small-note">Papers for this selection are being prepared.</p>'}</div></section>
@@ -261,10 +335,22 @@ function renderHome() {
 }
 function renderTest() {
   if (!attempt) { view = 'home'; renderHome(); return; }
+  mathUnitContext = attempt.unit || 1;
   if (Date.now() >= attempt.deadline) { submit(true); return; }
   homeButton.hidden = false;
   const paper = paperFor(attempt.paper, attempt.unit);
   const questions = questionsFor(attempt.paper, attempt, attempt.unit);
+  let repairedOptionOrder = false;
+  questions.forEach((question, questionIndex) => {
+    if (question.type !== 'choice') return;
+    const currentOrder = attempt.optionOrders[questionIndex] || [];
+    const validOrder = currentOrder.length === question.options.length && currentOrder.every(option => question.options.includes(option));
+    if (validOrder) return;
+    attempt.optionOrders[questionIndex] = shuffledOptions(question);
+    if (!question.options.includes(attempt.responses[questionIndex]?.selected)) attempt.responses[questionIndex].selected = '';
+    repairedOptionOrder = true;
+  });
+  if (repairedOptionOrder) persist();
   const question = questions[index], response = currentState();
   const answered = attempt.responses.filter((item, i) => responseFor(questions[i], item) !== '').length;
   const reviews = attempt.responses.filter(item => item.review).length;
@@ -289,10 +375,11 @@ function renderResult(result) {
   const previousResult = resultIndex >= 0 ? saved.history[resultIndex + 1] : null;
   const nextResult = resultIndex > 0 ? saved.history[resultIndex - 1] : null;
   const resultUnit = result.unit || 1;
+  mathUnitContext = resultUnit;
   const paper = paperFor(result.paper || 'Ex-1.1', resultUnit);
   const questions = questionsFor(result.paper || 'Ex-1.1', result, resultUnit);
   const solutionPdf = solutionPdfFor(result.paper || 'Ex-1.1', resultUnit);
-  const studyGuideLink = resultUnit === 1 ? `<a class="secondary download-link" href="${UNIT1_GUIDE_PDF}" download>Download Unit-1 Study Guide</a>` : resultUnit === 2 ? `<a class="secondary download-link" href="${UNIT2_GUIDE_PDF}" download>Download Unit-2 Study Guide</a>` : '';
+  const studyGuideLink = resultUnit === 1 ? `<a class="secondary download-link" href="${UNIT1_GUIDE_PDF}" download>Download Unit-1 Study Guide</a>` : resultUnit === 2 ? `<a class="secondary download-link" href="${UNIT2_GUIDE_PDF}" download>Download Unit-2 Study Guide</a>` : resultUnit === 3 ? `<a class="secondary download-link" href="${UNIT3_GUIDE_PDF}" download>Download Unit-3 Study Guide</a>` : '';
   app.innerHTML = `<div class="intro result-intro"><div><div class="source">Part-${result.part || 1} · Unit-${resultUnit} · ${escape(paper.title)}</div><h1>Test Result</h1><div class="muted">${escape(dateLabel(result.submittedAt))} · ${escape(result.reason)}</div></div><div class="row result-navigation"><button class="secondary" id="previousTestResult" ${previousResult ? '' : 'disabled'}>Previous Test Result</button><button class="primary" id="nextTestResult" ${nextResult ? '' : 'disabled'}>Next Test Result</button></div></div><section class="card"><div class="row space-between"><div><div class="muted">Final score</div><div class="result-score">${result.score} / ${questions.length * 2}</div></div><div class="row">${solutionPdf ? `<a class="primary download-link" href="${escape(solutionPdf)}" download>Download Detailed Answers PDF</a>` : ''}${studyGuideLink}</div></div><div class="result-grid"><div class="metric"><strong>${result.correct}</strong>Correct</div><div class="metric"><strong>${result.wrong}</strong>Wrong</div><div class="metric"><strong>${result.unanswered}</strong>Unanswered</div><div class="metric"><strong>${questions.length}</strong>Total</div></div><h2>Question review</h2><div class="review-list">${result.items.map((item, i) => `<div class="review-item"><div class="review-heading"><strong>${i + 1} [${renderMath(resultSourceLabel(item.source))}]</strong><span class="review-status ${item.isCorrect ? 'correct' : item.answer ? 'incorrect' : 'unanswered'}">${item.isCorrect ? '+2 Correct' : item.answer ? '−1 Wrong' : 'Unanswered'}</span></div><div style="margin:7px 0;white-space:pre-wrap">${renderPrompt(questions[i])}</div><span class="small-note">Your answer: ${renderMath(item.answer || '—')} · Correct answer: ${renderMath(item.correctAnswer)}</span></div>`).join('')}</div></section>`;
   app.querySelector('#previousTestResult').onclick = () => { if (previousResult) { renderResult(previousResult); window.scrollTo(0, 0); } };
   app.querySelector('#nextTestResult').onclick = () => { if (nextResult) { renderResult(nextResult); window.scrollTo(0, 0); } };
