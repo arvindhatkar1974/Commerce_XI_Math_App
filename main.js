@@ -308,7 +308,7 @@ function renderHome() {
   mathUnitContext = selection.unit;
   const active = Boolean(attempt);
   const availablePaperNames = selection.part === 1 ? paperNamesFor(selection.unit) : [];
-  const selectedPaper = paperFor(selection.paper, selection.unit);
+  const selectedPaper = selection.part === 1 ? paperFor(selection.paper, selection.unit) : null;
   const selectedQuestions = selectedPaper?.questions || [];
   homeButton.hidden = true;
   app.innerHTML = `<div class="intro intro-with-feedback"><div><h1>Commerce XI Maths App – Free Maharashtra Board Practice Tests</h1><p class="home-description">Free Standard XI Commerce Mathematics and Statistics practice tests, detailed answers and study guides based on the Maharashtra State Board English-medium textbooks.</p><strong class="practice-heading">Choose a Practice Test</strong><div class="muted">Exam → Unit → Paper → Start Paper</div></div><div class="developer-contact"><a class="primary download-link" href="mailto:arvindhatkar1974@gmail.com?subject=Commerce%20XI%20Maths%20App%20%E2%80%93%20Feedback&amp;body=Paper%20name%3A%20%0D%0AQuestion%20number%3A%20%0D%0AFeedback%20or%20problem%3A%20">Feedback / Ask Developer</a><p class="small-note"><span>Report a question, answer mismatch, technical problem or suggestion.</span><span>Contact developer: <a href="mailto:arvindhatkar1974@gmail.com">arvindhatkar1974@gmail.com</a></span></p></div></div>
