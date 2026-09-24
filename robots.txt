@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://arvindhatkar1974.github.io/Commerce_XI_Math_App/sitemap.xml
