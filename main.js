@@ -2,6 +2,7 @@ import { activities1, exercise11, exercise12, letsRemember1, miscellaneousExerci
 import { activities2, exercise21, letsRemember2, miscellaneousExercise2, theoryPages20to30 } from './unit2-questions.js';
 import { activities3, exercise31, exercise32, exercise33, letsRemember3, miscellaneousExercise3, theoryPages33to37, theoryPages38to40, theoryPages40to42 } from './unit3-questions.js';
 import { activities1 as part2Activities1, exercise11 as part2Exercise11, exercise12 as part2Exercise12, exercise13 as part2Exercise13, letsRemember1 as part2LetsRemember1, miscellaneousExercise1 as part2MiscellaneousExercise1, theoryPages1to7 as part2TheoryPages1to7, theoryPages8to15 as part2TheoryPages8to15, theoryPages16to18 as part2TheoryPages16to18 } from './part2-unit1-questions.js?v=20260925-85';
+import { activities2 as part2Activities2, exercise21 as part2Exercise21, exercise22 as part2Exercise22, exercise23 as part2Exercise23, letsRemember2 as part2LetsRemember2, miscellaneousExercise2 as part2MiscellaneousExercise2, theoryPages24to26 as part2TheoryPages24to26, theoryPages27to30 as part2TheoryPages27to30, theoryPages31to33 as part2TheoryPages31to33 } from './part2-unit2-questions.js?v=20260926-60';
 
 const app = document.querySelector('#app');
 const homeButton = document.querySelector('#homeButton');
@@ -49,6 +50,18 @@ const PART2_UNIT1_PAPERS = {
   'Mis-Ex-1': { title: 'Miscellaneous Exercise 1', questions: part2MiscellaneousExercise1 },
   'Activities': { title: 'Activities 1.1–1.4', questions: part2Activities1 },
 };
+const PART2_UNIT2_PAPER_NAMES = ['Th(P:24-26)', 'Ex-2.1', 'Th(P:27-30)', 'Ex-2.2', 'Th(P:31-33)', 'Ex-2.3', "Let's Remember", 'Mis-Ex-2', 'Activities', 'Surprise Test'];
+const PART2_UNIT2_PAPERS = {
+  'Th(P:24-26)': { title: 'Theory (Pages 24–26)', questions: part2TheoryPages24to26 },
+  'Ex-2.1': { title: 'Exercise 2.1', questions: part2Exercise21 },
+  'Th(P:27-30)': { title: 'Theory (Pages 27–30)', questions: part2TheoryPages27to30 },
+  'Ex-2.2': { title: 'Exercise 2.2', questions: part2Exercise22 },
+  'Th(P:31-33)': { title: 'Theory (Pages 31–33)', questions: part2TheoryPages31to33 },
+  'Ex-2.3': { title: 'Exercise 2.3', questions: part2Exercise23 },
+  "Let's Remember": { title: "Let's Remember", questions: part2LetsRemember2 },
+  'Mis-Ex-2': { title: 'Miscellaneous Exercise 2', questions: part2MiscellaneousExercise2 },
+  'Activities': { title: 'Activities 2.1–2.4', questions: part2Activities2 },
+};
 const SOLUTION_PDFS = {
   '1:Th(P:1-9)': 'solutions/Th-P1-9.pdf', '1:Ex-1.1': 'solutions/Ex-1.1.pdf',
   '1:Th(P:10-15)': 'solutions/Th-P10-15.pdf', '1:Ex-1.2': 'solutions/Ex-1.2.pdf',
@@ -70,10 +83,18 @@ const PART2_UNIT1_SOLUTION_PDFS = {
   "Let's Remember": 'solutions/part2-unit1-Lets-Remember.pdf', 'Mis-Ex-1': 'solutions/part2-unit1-Mis-Ex-1.pdf',
   'Activities': 'solutions/part2-unit1-Activities.pdf',
 };
+const PART2_UNIT2_SOLUTION_PDFS = {
+  'Th(P:24-26)': 'solutions/part2-unit2-Th-P24-26.pdf', 'Ex-2.1': 'solutions/part2-unit2-Ex-2.1.pdf',
+  'Th(P:27-30)': 'solutions/part2-unit2-Th-P27-30.pdf', 'Ex-2.2': 'solutions/part2-unit2-Ex-2.2.pdf',
+  'Th(P:31-33)': 'solutions/part2-unit2-Th-P31-33.pdf', 'Ex-2.3': 'solutions/part2-unit2-Ex-2.3.pdf',
+  "Let's Remember": 'solutions/part2-unit2-Lets-Remember.pdf', 'Mis-Ex-2': 'solutions/part2-unit2-Mis-Ex-2.pdf',
+  'Activities': 'solutions/part2-unit2-Activities.pdf',
+};
 const UNIT1_GUIDE_PDF = 'guides/unit-1-reference.pdf';
 const UNIT2_GUIDE_PDF = 'guides/unit-2-reference.pdf';
 const UNIT3_GUIDE_PDF = 'guides/unit-3-reference.pdf';
 const PART2_UNIT1_GUIDE_PDF = 'guides/part2-unit1-reference.pdf';
+const PART2_UNIT2_GUIDE_PDF = 'guides/part2-unit2-reference.pdf';
 const localDateKey = date => {
   const pad = value => String(value).padStart(2, '0');
   return `${date.getFullYear()}-${pad(date.getMonth() + 1)}-${pad(date.getDate())}`;
@@ -93,7 +114,7 @@ const seededRandom = seed => {
     return ((value ^ value >>> 14) >>> 0) / 4294967296;
   };
 };
-const papersFor = (part, unit) => part === 2 && unit === 1 ? PART2_UNIT1_PAPERS : part === 1 ? UNIT_PAPERS[unit] || {} : {};
+const papersFor = (part, unit) => part === 2 && unit === 1 ? PART2_UNIT1_PAPERS : part === 2 && unit === 2 ? PART2_UNIT2_PAPERS : part === 1 ? UNIT_PAPERS[unit] || {} : {};
 function surpriseQuestions(part, unit, dateKey = localDateKey(new Date())) {
   return Object.entries(papersFor(part, unit)).flatMap(([paperName, paper]) => {
     const random = seededRandom(hashSeed(`${dateKey}:${paperName}`));
@@ -111,7 +132,7 @@ function surpriseQuestions(part, unit, dateKey = localDateKey(new Date())) {
     }));
   });
 }
-const paperNamesFor = (unit, part = 1) => part === 2 && unit === 1 ? PART2_UNIT1_PAPER_NAMES : part === 1 ? UNIT_PAPER_NAMES[unit] || [] : [];
+const paperNamesFor = (unit, part = 1) => part === 2 && unit === 1 ? PART2_UNIT1_PAPER_NAMES : part === 2 && unit === 2 ? PART2_UNIT2_PAPER_NAMES : part === 1 ? UNIT_PAPER_NAMES[unit] || [] : [];
 const paperFor = (name, unit = 1, part = 1) => {
   const normalized = name === 'Ex1.1' ? 'Ex-1.1' : name;
   return normalized === 'Surprise Test' ? { title: 'Surprise Test', questions: surpriseQuestions(part, unit) } : papersFor(part, unit)[normalized];
@@ -119,7 +140,7 @@ const paperFor = (name, unit = 1, part = 1) => {
 const questionsFor = (name, record = null, unit = record?.unit || 1, part = record?.part || 1) => record?.questions || paperFor(name, unit, part)?.questions || exercise11;
 const marksFor = (name, record = null, unit = record?.unit || 1, part = record?.part || 1) => questionsFor(name, record, unit, part).length * 2;
 const minutesFor = (name, record = null, unit = record?.unit || 1, part = record?.part || 1) => questionsFor(name, record, unit, part).length * QUESTION_SECONDS / 60;
-const solutionPdfFor = (name, unit, part = 1) => part === 1 ? SOLUTION_PDFS[`${unit}:${name}`] : part === 2 && unit === 1 ? PART2_UNIT1_SOLUTION_PDFS[name] : null;
+const solutionPdfFor = (name, unit, part = 1) => part === 1 ? SOLUTION_PDFS[`${unit}:${name}`] : part === 2 && unit === 1 ? PART2_UNIT1_SOLUTION_PDFS[name] : part === 2 && unit === 2 ? PART2_UNIT2_SOLUTION_PDFS[name] : null;
 // Accept equivalent answer forms and preserve fair scoring for older attempts.
 const acceptedForms = {
   q2i: ['{x | x ∈ W, x < 1}'],
@@ -167,7 +188,15 @@ function renderMathMlRadicand(expression) {
 function renderMath(value) {
   const fractions = [];
   const radicals = [];
+  const summations = [];
   const rendered = renderNotation(value)
+    .replace(/⟦sub:([^⟧]+)⟧/g, '<sub class="math-subscript">$1</sub>')
+    .replace(/⟦sum:([xy])¦([12])⟧/g, (_, variable, power) => {
+      const indexedVariable = `<msub><mi>${variable}</mi><mi>i</mi></msub>`;
+      const term = power === '2' ? `<msup>${indexedVariable}<mn>2</mn></msup>` : indexedVariable;
+      summations.push(`<math class="math-summation" display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><mstyle displaystyle="true"><mrow><munderover><mo largeop="true" movablelimits="false">∑</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></munderover>${term}</mrow></mstyle></math>`);
+      return `\uE008${summations.length - 1}\uE009`;
+    })
     .replace(/⟦frac:([^¦]+)¦([^⟧]+)⟧/g, (_, numerator, denominator) => {
       fractions.push([numerator, denominator]);
       return `\uE002${fractions.length - 1}\uE003`;
@@ -176,6 +205,8 @@ function renderMath(value) {
       radicals.push(renderMathMlRadicand(radicand));
       return `\uE000${radicals.length - 1}\uE001`;
     })
+    .replace(/x̄²/g, '<span class="math-xbar-text" aria-label="x bar">𝑥</span><sup class="math-square">2</sup>')
+    .replace(/x̄/g, '<span class="math-xbar-text" aria-label="x bar">𝑥</span>')
     .replace(/(n²|n)\/\((n² \+ 1|n \+ 1)\)/g, '<span class="math-frac"><span>$1</span><span>$2</span></span>')
     .replace(/([−-]?[A-Za-z\d]+)\/\(([A-Za-z\d]+)\)/g, '<span class="math-frac"><span>$1</span><span>$2</span></span>')
     .replace(/([−-]?[A-Za-z\d]+)\/([A-Za-z\d]+)/g, '<span class="math-frac"><span>$1</span><span>$2</span></span>')
@@ -198,11 +229,12 @@ function renderMath(value) {
   return functions
     .split(/(<[^>]+>)/g)
     .map(part => part.startsWith('<') ? part : mathPartContext === 2
-      ? part.replace(/(?<![A-Za-z])([fhinxyLN])(?![A-Za-z])/g, match => `<i class="math-symbol">${match}</i>`)
+      ? part.replace(/(?<![A-Za-z])([dfhinxyLN])(?![A-Za-z])/g, match => `<i class="math-symbol">${match}</i>`)
       : mathUnitContext === 3
       ? italicizeVariables(part)
       : part.replace(/(?<![A-Za-z])([iwxyz])(?![A-Za-z])|i(?=$|[\s,.;:)}\]⁰¹²³⁴⁵⁶⁷⁸⁹+−×÷=])/g, match => `<i class="math-symbol">${match}</i>`))
     .join('')
+    .replace(/\uE008(\d+)\uE009/g, (_, index) => summations[Number(index)])
     .replace(/\uE000(\d+)\uE001/g, (_, index) => radicals[Number(index)])
     .replace(/\uE002(\d+)\uE003/g, (_, index) => {
       const [numerator, denominator] = fractions[Number(index)];
@@ -217,14 +249,25 @@ function renderPrompt(question) {
     return `<span class="piecewise-line"><span>If ${renderMath('f(x)')} =</span><span class="piecewise-definition piecewise-${caseCount}"><span class="piecewise-brace">{</span><span class="piecewise-cases">${rows}</span></span><span>, then find&nbsp; ${target}</span></span>`;
   }
   const tables = [];
-  const promptWithTableTokens = String(question.prompt).replace(/⟦table:([^⟧]+)⟧/g, (_, body) => {
+  const singleLines = [];
+  const promptText = question.compactTable
+    ? String(question.prompt)
+      .replace(/\n(?=⟦table:)/g, '')
+      .replace(/(⟦table:[^⟧]+⟧)\n/g, '$1')
+    : String(question.prompt);
+  const promptWithLineTokens = promptText.replace(/⟦line:([^⟧]+)⟧/g, (_, body) => {
+    singleLines.push(body);
+    return `\uE006${singleLines.length - 1}\uE007`;
+  });
+  const promptWithTableTokens = promptWithLineTokens.replace(/⟦table:([^⟧]+)⟧/g, (_, body) => {
     tables.push(body.split(';').map(row => row.split('¦')));
     return `\uE004${tables.length - 1}\uE005`;
   });
   let html = renderMath(promptWithTableTokens).replace(/\uE004(\d+)\uE005/g, (_, index) => {
     const rows = tables[Number(index)];
-    return `<div class="question-table-wrap"><table class="question-data-table"><tbody>${rows.map(row => `<tr>${row.map((cell, cellIndex) => `<${cellIndex === 0 ? 'th' : 'td'}>${renderMath(cell)}</${cellIndex === 0 ? 'th' : 'td'}>`).join('')}</tr>`).join('')}</tbody></table></div>`;
+    return `<div class="question-table-wrap${question.compactTable ? ' compact' : ''}"><table class="question-data-table"><tbody>${rows.map(row => `<tr>${row.map((cell, cellIndex) => `<${cellIndex === 0 ? 'th' : 'td'}>${renderMath(cell)}</${cellIndex === 0 ? 'th' : 'td'}>`).join('')}</tr>`).join('')}</tbody></table></div>`;
   });
+  html = html.replace(/\uE006(\d+)\uE007/g, (_, index) => `<span class="question-single-line">${renderMath(singleLines[Number(index)])}</span>`);
   if (question.id === 'q2iii') {
     html = html.replace(/(\{[^}]+\})/, '<span class="math-set">$1</span>');
   }
@@ -293,7 +336,7 @@ function responseFor(question, response) {
 }
 function normalizeNumber(value) {
   const cleaned = String(value).trim().replace(/,/g, '').replace(/\s+/g, '');
-  return /^\d+$/.test(cleaned) ? String(Number(cleaned)) : cleaned;
+  return /^[−-]?(?:\d+(?:\.\d+)?|\.\d+)$/.test(cleaned) ? String(Number(cleaned.replace('−', '-'))) : cleaned;
 }
 function scoreAttempt(active) {
   let correct = 0, wrong = 0, unanswered = 0;
@@ -302,7 +345,7 @@ function scoreAttempt(active) {
     const isAnswered = answer !== '';
     const isCorrect = isAnswered && (question.type === 'choice'
       ? answer === question.correct || (acceptedForms[question.id] || []).includes(answer)
-      : normalizeNumber(answer) === question.correct || (acceptedForms[question.id] || []).includes(answer));
+      : normalizeNumber(answer) === normalizeNumber(question.correct) || (acceptedForms[question.id] || []).includes(answer));
     if (isCorrect) correct++;
     else if (isAnswered) wrong++;
     else unanswered++;
@@ -375,7 +418,7 @@ function renderHome() {
     <div class="grid selection-grid">
       <section class="card"><h2>Exam</h2><div class="tile-grid"><button class="tile ${selection.part === 1 ? 'selected' : ''}" data-part="1">Part-1</button><button class="tile ${selection.part === 2 ? 'selected' : ''}" data-part="2">Part-2</button></div></section>
       <section class="card"><h2>Unit</h2><div class="tile-grid units">${Array.from({ length: 9 }, (_, i) => `<button class="tile ${selection.unit === i + 1 ? 'selected' : ''}" data-unit="${i + 1}">${i + 1}</button>`).join('')}<button class="tile ${selection.unit === 10 ? 'selected' : ''}" data-unit="10">All Units</button></div></section>
-      <section class="card study-guide-card"><h2>${selection.unit <= 9 ? `Unit-${selection.unit} Study Guide` : 'Study Guide'}</h2>${selection.part === 1 && selection.unit === 1 ? `<a class="primary download-link guide-link" href="${UNIT1_GUIDE_PDF}" download>📘 Symbols, Laws &amp; Formulae</a><p class="small-note">Review the important notation, laws, theorems and formulae before starting a test.</p>` : selection.part === 1 && selection.unit === 2 ? `<a class="primary download-link guide-link" href="${UNIT2_GUIDE_PDF}" download>📘 Functions Reference Guide</a><p class="small-note">Review function notation, types, domains, ranges, operations, composition, inverses and standard graphs before starting a test.</p>` : selection.part === 1 && selection.unit === 3 ? `<a class="primary download-link guide-link" href="${UNIT3_GUIDE_PDF}" download>📘 Complex Numbers Reference Guide</a><p class="small-note">Review imaginary-unit powers, complex-number operations, conjugates, quadratic roots and cube roots of unity before starting a test.</p>` : selection.part === 2 && selection.unit === 1 ? `<a class="primary download-link guide-link" href="${PART2_UNIT1_GUIDE_PDF}" download>📘 Partition Values Reference Guide</a><p class="small-note">Review quartiles, deciles, percentiles, grouped-data formulae and ogives before starting a test.</p>` : '<p class="small-note">The study guide for this selection is being prepared.</p>'}</section>
+      <section class="card study-guide-card"><h2>${selection.unit <= 9 ? `Unit-${selection.unit} Study Guide` : 'Study Guide'}</h2>${selection.part === 1 && selection.unit === 1 ? `<a class="primary download-link guide-link" href="${UNIT1_GUIDE_PDF}" download>📘 Symbols, Laws &amp; Formulae</a><p class="small-note">Review the important notation, laws, theorems and formulae before starting a test.</p>` : selection.part === 1 && selection.unit === 2 ? `<a class="primary download-link guide-link" href="${UNIT2_GUIDE_PDF}" download>📘 Functions Reference Guide</a><p class="small-note">Review function notation, types, domains, ranges, operations, composition, inverses and standard graphs before starting a test.</p>` : selection.part === 1 && selection.unit === 3 ? `<a class="primary download-link guide-link" href="${UNIT3_GUIDE_PDF}" download>📘 Complex Numbers Reference Guide</a><p class="small-note">Review imaginary-unit powers, complex-number operations, conjugates, quadratic roots and cube roots of unity before starting a test.</p>` : selection.part === 2 && selection.unit === 1 ? `<a class="primary download-link guide-link" href="${PART2_UNIT1_GUIDE_PDF}" download>📘 Partition Values Reference Guide</a><p class="small-note">Review quartiles, deciles, percentiles, grouped-data formulae and ogives before starting a test.</p>` : selection.part === 2 && selection.unit === 2 ? `<a class="primary download-link guide-link" href="${PART2_UNIT2_GUIDE_PDF}" download>📘 Measures of Dispersion Reference Guide</a><p class="small-note">Review range, quartile deviation, variance, standard deviation, combined groups and coefficient of variation before starting a test.</p>` : '<p class="small-note">The study guide for this selection is being prepared.</p>'}</section>
     </div>
     <div class="paper-summary-layout">
       <section class="card paper-card"><h2>Paper</h2><div class="tile-grid paper-grid">${availablePaperNames.length ? availablePaperNames.map(name => `<button class="tile ${selection.paper === name ? 'selected' : ''}" data-paper="${escape(name)}">${escape(name)}</button>`).join('') : '<p class="small-note">Papers for this selection are being prepared.</p>'}</div></section>
@@ -419,7 +462,7 @@ function renderTest() {
   const reviews = attempt.responses.filter(item => item.review).length;
   app.innerHTML = `<div class="intro test-page-heading"><div class="source">Part-${attempt.part || 1} · Unit-${attempt.unit || 1} · ${escape(paper.title)}</div><h1>Question ${index + 1} of ${questions.length}</h1><button class="danger" id="submitTop">Submit test</button></div>
     <div class="test-layout"><section class="card question-card"><div class="question-header"><div class="source">${renderMath(question.source)} · ${question.type === 'choice' ? 'MCQ' : 'Enter answer'}</div><div class="test-actions"><button class="secondary" id="previous" ${index === 0 ? 'disabled' : ''}>Previous</button><button class="primary" id="next" ${index === questions.length - 1 ? 'disabled' : ''}>Next</button><button class="secondary" id="review">${response.review ? 'Remove review mark' : 'Mark for review'}</button><button class="secondary" id="clear">Clear answer</button></div><span class="pill">+2 correct · −1 wrong</span></div>
-      <p class="prompt">${renderPrompt(question)}</p>${question.type === 'choice' ? `<div class="options">${attempt.optionOrders[index].map((option, i) => `<button class="option ${response.selected === option ? 'selected' : ''}" data-option="${i}"><span class="option-letter">${letters[i]}.</span>${renderMath(option)}</button>`).join('')}</div>` : `<label for="answer" class="small-note">Enter a number</label><br><input id="answer" class="answer-input" inputmode="numeric" autocomplete="off" value="${escape(response.text)}" placeholder="Your answer">`}
+      <div class="prompt">${renderPrompt(question)}</div>${question.type === 'choice' ? `<div class="options">${attempt.optionOrders[index].map((option, i) => `<button class="option ${response.selected === option ? 'selected' : ''}" data-option="${i}"><span class="option-letter">${letters[i]}.</span>${renderMath(option)}</button>`).join('')}</div>` : `<label for="answer" class="small-note">${question.requiresPercent ? 'Enter the answer with the % sign if required' : 'Enter a number'}</label><br><input id="answer" class="answer-input" inputmode="${question.requiresPercent ? 'text' : 'numeric'}" autocomplete="off" value="${escape(response.text)}" placeholder="Your answer">`}
       </section>
       <aside><div class="timer" id="timer"><span>Time remaining</span><strong id="timeValue">${formatTime(attempt.deadline - Date.now())}</strong><span>${minutesFor(attempt.paper, attempt, attempt.unit, attempt.part)}-minute overall limit</span></div><section class="card"><h2>All Question Navigator</h2><div class="nav-grid">${questions.map((item, i) => { const state = attempt.responses[i]; const status = state.review ? 'review' : i === index ? 'current' : responseFor(item, state) ? 'answered' : state.visits ? 'visited' : ''; return `<button class="nav-item ${status}" data-index="${i}" title="${escape(item.source)}"><span>${i + 1}</span></button>`; }).join('')}</div><div class="stats"><span>Answered</span><strong>${answered}</strong><span>Marked for review</span><strong>${reviews}</strong><span>Not answered</span><strong>${questions.length - answered}</strong></div><p class="small-note">You can visit any question. Your work is saved automatically in this browser.</p></section></aside></div>`;
   app.querySelectorAll('[data-option]').forEach(button => button.onclick = () => { response.selected = attempt.optionOrders[index][Number(button.dataset.option)]; persist(); renderTest(); });
@@ -444,7 +487,7 @@ function renderResult(result) {
   const paper = paperFor(result.paper || 'Ex-1.1', resultUnit, resultPart);
   const questions = questionsFor(result.paper || 'Ex-1.1', result, resultUnit, resultPart);
   const solutionPdf = solutionPdfFor(result.paper || 'Ex-1.1', resultUnit, resultPart);
-  const studyGuideLink = resultPart === 1 && resultUnit === 1 ? `<a class="secondary download-link" href="${UNIT1_GUIDE_PDF}" download>Download Unit-1 Study Guide</a>` : resultPart === 1 && resultUnit === 2 ? `<a class="secondary download-link" href="${UNIT2_GUIDE_PDF}" download>Download Unit-2 Study Guide</a>` : resultPart === 1 && resultUnit === 3 ? `<a class="secondary download-link" href="${UNIT3_GUIDE_PDF}" download>Download Unit-3 Study Guide</a>` : resultPart === 2 && resultUnit === 1 ? `<a class="secondary download-link" href="${PART2_UNIT1_GUIDE_PDF}" download>Download Unit-1 Study Guide</a>` : '';
+  const studyGuideLink = resultPart === 1 && resultUnit === 1 ? `<a class="secondary download-link" href="${UNIT1_GUIDE_PDF}" download>Download Unit-1 Study Guide</a>` : resultPart === 1 && resultUnit === 2 ? `<a class="secondary download-link" href="${UNIT2_GUIDE_PDF}" download>Download Unit-2 Study Guide</a>` : resultPart === 1 && resultUnit === 3 ? `<a class="secondary download-link" href="${UNIT3_GUIDE_PDF}" download>Download Unit-3 Study Guide</a>` : resultPart === 2 && resultUnit === 1 ? `<a class="secondary download-link" href="${PART2_UNIT1_GUIDE_PDF}" download>Download Unit-1 Study Guide</a>` : resultPart === 2 && resultUnit === 2 ? `<a class="secondary download-link" href="${PART2_UNIT2_GUIDE_PDF}" download>Download Unit-2 Study Guide</a>` : '';
   app.innerHTML = `<div class="intro result-intro"><div><div class="source">Part-${result.part || 1} · Unit-${resultUnit} · ${escape(paper.title)}</div><h1>Test Result</h1><div class="muted">${escape(dateLabel(result.submittedAt))} · ${escape(result.reason)}</div></div><div class="row result-navigation"><button class="secondary" id="previousTestResult" ${previousResult ? '' : 'disabled'}>Previous Test Result</button><button class="primary" id="nextTestResult" ${nextResult ? '' : 'disabled'}>Next Test Result</button></div></div><section class="card"><div class="row space-between"><div><div class="muted">Final score</div><div class="result-score">${result.score} / ${questions.length * 2}</div></div><div class="row">${solutionPdf ? `<a class="primary download-link" href="${escape(solutionPdf)}" download>Download Detailed Answers PDF</a>` : ''}${studyGuideLink}</div></div><div class="result-grid"><div class="metric"><strong>${result.correct}</strong>Correct</div><div class="metric"><strong>${result.wrong}</strong>Wrong</div><div class="metric"><strong>${result.unanswered}</strong>Unanswered</div><div class="metric"><strong>${questions.length}</strong>Total</div></div><h2>Question review</h2><div class="review-list">${result.items.map((item, i) => `<div class="review-item"><div class="review-heading"><strong>${i + 1} [${renderMath(resultSourceLabel(item.source))}]</strong><span class="review-status ${item.isCorrect ? 'correct' : item.answer ? 'incorrect' : 'unanswered'}">${item.isCorrect ? '+2 Correct' : item.answer ? '−1 Wrong' : 'Unanswered'}</span></div><div style="margin:7px 0;white-space:pre-wrap">${renderPrompt(questions[i])}</div><span class="small-note">Your answer: ${renderMath(item.answer || '—')} · Correct answer: ${renderMath(item.correctAnswer)}</span></div>`).join('')}</div></section>`;
   app.querySelector('#previousTestResult').onclick = () => { if (previousResult) { renderResult(previousResult); window.scrollTo(0, 0); } };
   app.querySelector('#nextTestResult').onclick = () => { if (nextResult) { renderResult(nextResult); window.scrollTo(0, 0); } };
@@ -453,4 +496,3 @@ function render() { if (view === 'test') renderTest(); else if (view === 'result
 homeButton.onclick = () => { view = 'home'; renderHome(); };
 setInterval(() => { if (!attempt) return; if (Date.now() >= attempt.deadline) { submit(true); return; } const label = document.querySelector('#timeValue'); if (label) { label.textContent = formatTime(attempt.deadline - Date.now()); document.querySelector('#timer')?.classList.toggle('low', attempt.deadline - Date.now() < 10 * 60 * 1000); } }, 1000);
 render();
-

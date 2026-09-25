@@ -17,9 +17,12 @@
 .option{font-size:17px}
 .arrow-diagram text{font-family:"Cambria Math",Cambria,serif}
 .math-function,.math-symbol{font-family:"Cambria Math",Cambria,serif;font-style:italic;font-weight:400}.math-function{margin-right:.18em}.ordinal-suffix{font-size:.7em;line-height:0;vertical-align:super}
+.math-xbar-text{display:inline-block;border-top:1px solid currentColor;font-family:"Cambria Math",Cambria,serif;font-style:normal;line-height:.82;padding-top:.02em;vertical-align:-.02em}.math-square{position:relative;top:-.18em;display:inline-block;margin-left:.1em;vertical-align:super;font-family:"Cambria Math",Cambria,serif;font-size:.72em;line-height:1}
 .math-power-base{display:inline-block;margin-right:.16em}
 .math-radical{font-family:"Cambria Math",Cambria,serif;font-size:1em;vertical-align:-.14em;white-space:nowrap}
 .question-table-wrap{display:inline-block;width:auto;max-width:100%;overflow-x:auto;margin:14px 0;vertical-align:top}.question-data-table{width:max-content;max-width:none;table-layout:auto;border-collapse:collapse;background:transparent;color:inherit;font:inherit}.question-data-table th,.question-data-table td{border:1px solid currentColor;background:transparent;padding:6px 10px;text-align:center;white-space:nowrap}.question-data-table th{text-align:left;font-weight:400}.question-data-table td{min-width:52px}
+.question-table-wrap.compact{display:block;width:max-content;margin-top:0}
+.question-single-line{display:inline-block;white-space:nowrap}
 
 
 /* Textbook layout for piecewise-defined functions. */

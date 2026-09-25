@@ -14,6 +14,7 @@ const files = new Map([
   ['/unit2-questions.js', ['unit2-questions.js', 'text/javascript; charset=utf-8']],
   ['/unit3-questions.js', ['unit3-questions.js', 'text/javascript; charset=utf-8']],
   ['/part2-unit1-questions.js', ['part2-unit1-questions.js', 'text/javascript; charset=utf-8']],
+  ['/part2-unit2-questions.js', ['part2-unit2-questions.js', 'text/javascript; charset=utf-8']],
   ['/solutions/Th-P1-9.pdf', ['output/pdf/Commerce_XI_Maths_Th_P1-9_Detailed_Solutions.pdf', 'application/pdf']],
   ['/solutions/Ex-1.1.pdf', ['output/pdf/Commerce_XI_Maths_Ex-1.1_Detailed_Solutions.pdf', 'application/pdf']],
   ['/solutions/Th-P10-15.pdf', ['output/pdf/Commerce_XI_Maths_Th_P10-15_Detailed_Solutions.pdf', 'application/pdf']],
@@ -44,10 +45,20 @@ const files = new Map([
   ['/solutions/part2-unit1-Lets-Remember.pdf', ['output/pdf/Commerce_XI_Maths_Part2_Unit1_Lets_Remember_Detailed_Solutions.pdf', 'application/pdf']],
   ['/solutions/part2-unit1-Mis-Ex-1.pdf', ['output/pdf/Commerce_XI_Maths_Part2_Unit1_Mis-Ex-1_Detailed_Solutions.pdf', 'application/pdf']],
   ['/solutions/part2-unit1-Activities.pdf', ['output/pdf/Commerce_XI_Maths_Part2_Unit1_Activities_Detailed_Solutions.pdf', 'application/pdf']],
+  ['/solutions/part2-unit2-Th-P24-26.pdf', ['output/pdf/Commerce_XI_Maths_Part2_Unit2_Th_P24-26_Detailed_Solutions.pdf', 'application/pdf']],
+  ['/solutions/part2-unit2-Ex-2.1.pdf', ['output/pdf/Commerce_XI_Maths_Part2_Unit2_Ex-2.1_Detailed_Solutions.pdf', 'application/pdf']],
+  ['/solutions/part2-unit2-Th-P27-30.pdf', ['output/pdf/Commerce_XI_Maths_Part2_Unit2_Th_P27-30_Detailed_Solutions.pdf', 'application/pdf']],
+  ['/solutions/part2-unit2-Ex-2.2.pdf', ['output/pdf/Commerce_XI_Maths_Part2_Unit2_Ex-2.2_Detailed_Solutions.pdf', 'application/pdf']],
+  ['/solutions/part2-unit2-Th-P31-33.pdf', ['output/pdf/Commerce_XI_Maths_Part2_Unit2_Th_P31-33_Detailed_Solutions.pdf', 'application/pdf']],
+  ['/solutions/part2-unit2-Ex-2.3.pdf', ['output/pdf/Commerce_XI_Maths_Part2_Unit2_Ex-2.3_Detailed_Solutions.pdf', 'application/pdf']],
+  ['/solutions/part2-unit2-Lets-Remember.pdf', ['output/pdf/Commerce_XI_Maths_Part2_Unit2_Lets_Remember_Detailed_Solutions.pdf', 'application/pdf']],
+  ['/solutions/part2-unit2-Mis-Ex-2.pdf', ['output/pdf/Commerce_XI_Maths_Part2_Unit2_Mis-Ex-2_Detailed_Solutions.pdf', 'application/pdf']],
+  ['/solutions/part2-unit2-Activities.pdf', ['output/pdf/Commerce_XI_Maths_Part2_Unit2_Activities_Detailed_Solutions.pdf', 'application/pdf']],
   ['/guides/unit-1-reference.pdf', ['output/pdf/Commerce_XI_Maths_Unit_1_Sets_and_Relations_Reference_Guide.pdf', 'application/pdf']],
   ['/guides/unit-2-reference.pdf', ['output/pdf/Commerce_XI_Maths_Unit_2_Functions_Reference_Guide.pdf', 'application/pdf']],
   ['/guides/unit-3-reference.pdf', ['output/pdf/Commerce_XI_Maths_Unit_3_Complex_Numbers_Reference_Guide.pdf', 'application/pdf']],
   ['/guides/part2-unit1-reference.pdf', ['output/pdf/Commerce_XI_Maths_Part2_Unit1_Partition_Values_Reference_Guide.pdf', 'application/pdf']],
+  ['/guides/part2-unit2-reference.pdf', ['output/pdf/Commerce_XI_Maths_Part2_Unit2_Measures_of_Dispersion_Reference_Guide.pdf', 'application/pdf']],
 ]);
 
 const server = http.createServer(async (request, response) => {
