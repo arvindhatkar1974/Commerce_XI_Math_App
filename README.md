@@ -1,6 +1,8 @@
 # Commerce XI Maths App
 
-Part-1 → Unit-1 has seven source papers: `Th(P:1-9)` (35 questions), `Ex-1.1` (34 questions), `Th(P:10-15)` (35 questions), `Ex-1.2` (30 questions), `Let's Remember` (7 MCQs), `Mis-Ex-1` (23 questions), and `Activities` (23 questions). `Surprise Test` selects five date-seeded random questions from each source paper, for 35 questions. Part-2 and the other unit selectors are planned.
+Part-1 → Unit-1 has seven source papers: `Th(P:1-9)` (35 questions), `Ex-1.1` (34 questions), `Th(P:10-15)` (35 questions), `Ex-1.2` (30 questions), `Let's Remember` (7 MCQs), `Mis-Ex-1` (23 questions), and `Activities` (23 questions). `Surprise Test` selects five date-seeded random questions from each source paper, for 35 questions.
+
+Part-2 → Unit-1 (Partition Values) has nine source papers: `Th(P:1-7)` (41 questions), `Ex-1.1` (18 questions), `Th(P:8-15)` (40 questions), `Ex-1.2` (18 questions), `Th(P:16-18)` (25 questions), `Ex-1.3` (18 questions), `Let's Remember` (12 questions), `Mis-Ex-1` (33 questions), and `Activities` (20 questions). Its `Surprise Test` selects five date-seeded questions from each source paper, for 45 questions.
 
 Part-1 → Unit-2 has five source papers: `Th(P:20-30)` (41 questions), `Ex-2.1` (31 questions), `Let's Remember` (7 questions), `Mis-Ex-2` (17 questions), and `Activities` (8 questions). Its `Surprise Test` selects five date-seeded random questions from each source paper, for 25 questions. Exercise 2.1 reproduces the three textbook arrow diagrams in the test.
 
@@ -10,7 +12,7 @@ Double-click `START_COMMERCE_XI_MATHS_APP.bat` to run the app on Windows. Keep t
 
 Each paper allows 5 minutes per question. Correct answers earn +2, wrong answers −1, and unanswered questions 0. The attempt auto-submits when time expires. Answers, the unfinished attempt, and results are saved in this browser's local storage. Use the same browser and address to resume them; clearing browser site data removes them. Existing unfinished attempts and results remain readable.
 
-Units 1, 2, and 3 each provide a downloadable study guide on the home page and result page. The Unit 3 guide summarizes complex-number notation, powers of the imaginary unit, operations, conjugates, square roots, quadratic equations, and cube roots of unity.
+Part-1 Units 1, 2, and 3 and Part-2 Unit-1 each provide a downloadable study guide on the home page and result page. Part-2 Unit-1 also provides detailed-answer PDFs for all nine source papers.
 
 Theory sources: `Syllabus/11thMaths_Part1.pdf`, printed pages 1–9 and 10–15, including ideas used in the solved examples. Ex-1.1 comes from printed pages 9–10, Ex-1.2 from pages 15–16, `Let's Remember` from page 16, `Mis-Ex-1` from pages 16–17, and `Activities` from Activities 1.1–1.10 on pages 17–19. Exercise answers appear on printed pages 126–127. MCQ distractors written for the app are not printed in the textbook.
 
