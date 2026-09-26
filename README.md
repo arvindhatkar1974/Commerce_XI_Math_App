@@ -14,7 +14,7 @@ Double-click `START_COMMERCE_XI_MATHS_APP.bat` to run the app on Windows. Keep t
 
 Each paper allows 5 minutes per question. Correct answers earn +2, wrong answers −1, and unanswered questions 0. The attempt auto-submits when time expires. Answers, the unfinished attempt, and results are saved in this browser's local storage. Use the same browser and address to resume them; clearing browser site data removes them. Existing unfinished attempts and results remain readable.
 
-Part-1 Units 1, 2, and 3 and Part-2 Units 1 and 2 each provide a downloadable study guide on the home page and result page. Part-2 Units 1 and 2 also provide detailed-answer PDFs for all nine source papers.
+Part-1 Units 1, 2, and 3 and Part-2 Units 1 and 2 each provide a downloadable reference guide on the home page and result page. Part-2 Units 1 and 2 also provide detailed-answer PDFs for all nine source papers.
 
 Theory sources: `Syllabus/11thMaths_Part1.pdf`, printed pages 1–9 and 10–15, including ideas used in the solved examples. Ex-1.1 comes from printed pages 9–10, Ex-1.2 from pages 15–16, `Let's Remember` from page 16, `Mis-Ex-1` from pages 16–17, and `Activities` from Activities 1.1–1.10 on pages 17–19. Exercise answers appear on printed pages 126–127. MCQ distractors written for the app are not printed in the textbook.
 
