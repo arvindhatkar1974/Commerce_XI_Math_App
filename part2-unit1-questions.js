@@ -109,7 +109,92 @@ const theoryAPositions = [
   choice('tap14', 'Solved Example P4', 'For the ordered wages 170, 180, 190, 200, 210, 220, 280, 310, 320, 330, 380, 400, Q2 equals', '250', ['220', '245', '280']),
   choice('tap15', 'Solved Example P4', 'For the ordered wages 170, 180, 190, 200, 210, 220, 280, 310, 320, 330, 380, 400, Q3 equals', '327.5', ['320', '325', '330'])
 ];
-export const theoryPages1to7 = [...theoryAConcepts, ...theoryAPositions];
+const theoryAApplications = [
+  choice(
+    'taa1',
+    'Practice P1–7',
+    'The daily earnings (in ₹) of 12 workers are 420, 380, 510, 460, 390, 540, 480, 430, 570, 410, 490, 450.\nWhich method should be used to calculate the quartiles?',
+    'Raw-data observation-position method',
+    ['Grouped-data quartile formula', 'Less-than cumulative-frequency method', 'Graphical method only']
+  ),
+  {
+    ...choice(
+      'taa2',
+      'Practice P1–7',
+      'Why can the discrete-data method be used for the following distribution?\n⟦table:Number of books (X)¦1¦2¦3¦4¦5;No. of students (f)¦3¦7¦9¦6¦5⟧',
+      'The exact value corresponding to every observation is known',
+      ['The data are given in continuous class intervals', 'The values of the observations are unknown', 'The total frequency is less than 50']
+    ),
+    compactTable: true
+  },
+  {
+    ...entry(
+      'taa3',
+      'Practice P1–7',
+      'Calculate Q2 for the following discrete frequency distribution.\n⟦table:X¦5¦7¦9¦11¦13;f¦2¦4¦5¦6¦3;c.f.¦2¦6¦11¦17¦20⟧',
+      9
+    ),
+    compactTable: true
+  },
+  {
+    ...entry(
+      'taa4',
+      'Practice P1–7',
+      'Calculate Q3 for the following discrete frequency distribution.\n⟦table:X¦20¦25¦30¦35¦40¦45;f¦3¦4¦5¦8¦2¦2;c.f.¦3¦7¦12¦20¦22¦24⟧',
+      35
+    ),
+    compactTable: true
+  },
+  {
+    ...entry(
+      'taa5',
+      'Practice P1–7',
+      'The following is a less-than cumulative frequency distribution.\nFind the frequency of the 30–40 marks group.\n⟦table:Marks below¦20¦30¦40¦50¦60;No. of students¦8¦23¦47¦76¦100⟧',
+      24
+    ),
+    compactTable: true
+  },
+  {
+    ...choice(
+      'taa6',
+      'Practice P1–7',
+      'The following is a less-than cumulative frequency distribution.\nFind the frequency of the 70–80 kg group.\n⟦table:Weight below (kg)¦50¦60¦70¦80¦90;No. of persons¦5¦18¦42¦73¦90⟧',
+      '31',
+      ['17', '24', '3']
+    ),
+    compactTable: true
+  },
+  {
+    ...choice(
+      'taa7',
+      'Practice P1–7',
+      'For the following grouped distribution, N = 120 and N/4 = 30. Which is the Q1 class?\n⟦table:Class interval¦0–10¦10–20¦20–30¦30–40¦40–50¦50–60;f¦8¦16¦30¦36¦20¦10;c.f.¦8¦24¦54¦90¦110¦120⟧',
+      '20–30',
+      ['0–10', '10–20', '30–40']
+    ),
+    compactTable: true
+  },
+  {
+    ...entry(
+      'taa8',
+      'Practice P1–7',
+      'For the following grouped distribution, calculate Q1 using the grouped-data formula.\nFor the Q1 class: L = 20, h = 10, f = 40, c.f. = 20 and N = 160.\n⟦table:Class interval¦10–20¦20–30¦30–40¦40–50¦50–60;f¦20¦40¦50¦30¦20;c.f.¦20¦60¦110¦140¦160⟧',
+      25
+    ),
+    compactTable: true
+  },
+  {
+    ...choice(
+      'taa9',
+      'Practice P1–7',
+      'For the following grouped distribution, identify the Q3 class and calculate Q3.\n⟦table:Class interval¦0–20¦20–40¦40–60¦60–80¦80–100;f¦24¦48¦72¦72¦24;c.f.¦24¦72¦144¦216¦240⟧',
+      'Q3 class: 60–80; Q3 = 70',
+      ['Q3 class: 40–60; Q3 = 50', 'Q3 class: 60–80; Q3 = 75', 'Q3 class: 80–100; Q3 = 90']
+    ),
+    compactTable: true
+  }
+];
+export const theoryPages1to7 = [...theoryAConcepts, ...theoryAPositions, ...theoryAApplications];
 
 const theoryBConcepts = C('tb', [
   ['Theory P8', 'Deciles divide ordered observations into', '10 equal parts', ['4 equal parts', '2 equal parts', '100 equal parts']],
