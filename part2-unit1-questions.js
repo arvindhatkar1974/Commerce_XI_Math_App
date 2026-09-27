@@ -30,6 +30,8 @@ const defectiveProductsTable = '⟦table:No. of defective products¦30¦35¦40¦
 const groupedProfitTable = '⟦table:Profit (in ₹ lakh)¦0.5–4.5¦5.5–9.5¦10.5–14.5¦15.5–19.5¦20.5–24.5;No. of firms¦7¦18¦25¦30¦20⟧';
 const marksOgiveTable = '⟦table:Marks¦0–10¦10–20¦20–30¦30–40¦40–50¦50–60;Frequency¦4¦6¦20¦10¦7¦3⟧';
 const overtimeOgiveTable = '⟦table:Overtime per week (hours)¦10–14¦15–19¦20–24¦25–29¦30–34¦35–39;No. of employees¦11¦20¦35¦20¦8¦6⟧';
+const deliveryTimeTable = '⟦table:Delivery time (minutes)¦0–10¦10–20¦20–30¦30–40¦40–50;Number of orders¦12¦18¦30¦25¦15⟧';
+const studentMarksTable = '⟦table:Marks¦10–19¦20–29¦30–39¦40–49¦50–59;Number of students¦8¦12¦40¦25¦15⟧';
 
 const quartilePosition = (n, i) => i * (n + 1) / 4;
 const decilePosition = (n, i) => i * (n + 1) / 10;
@@ -252,7 +254,9 @@ const theoryBPositions = [
   entry('tbp12', 'Solved Example P10-11', `${groupedProfitTable}\nCalculate P21.`, '8.89', { compactTable: true }),
   choice('tbp13', 'Theory P14', 'If 75% of observations lie below a value, that value is', 'Q3 or P75', ['Q1 or P25', 'Q2 or P50', 'D3 or P30']),
   choice('tbp14', 'Theory P14', 'If 20% of observations lie below a value, that value is', 'P20 or D2', ['P80 or D8', 'Q1', 'Q2']),
-  choice('tbp15', 'Theory P15', 'When the desired partition position falls in a class, interpolation uses the frequency of', 'that partition class', ['the first class', 'the last class', 'the modal class only'])
+  choice('tbp15', 'Theory P15', 'When the desired partition position falls in a class, interpolation uses the frequency of', 'that partition class', ['the first class', 'the last class', 'the modal class only']),
+  entry('tbp16', 'Practice Example P15', `${deliveryTimeTable}\nFind the percentage of orders delivered in less than 25 minutes.`, '45%', { compactTable: true, requiresPercent: true }),
+  entry('tbp17', 'Practice Example P15', `${studentMarksTable}\nFind the percentage of students who obtained less than 35 marks.`, '42%', { compactTable: true, requiresPercent: true })
 ];
 export const theoryPages8to15 = [...theoryBConcepts, ...theoryBPositions];
 
