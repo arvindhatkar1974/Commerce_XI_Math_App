@@ -12,7 +12,7 @@ const choice = (id, source, prompt, correct, wrong, extra = {}) => {
   const formattedCorrect = formatPartitionSymbols(correct);
   return { id: `p2u1${id}`, source, type: 'choice', prompt: formatPartitionSymbols(prompt), options: [formattedCorrect, ...wrong.map(formatPartitionSymbols)], correct: formattedCorrect, ...extra };
 };
-const entry = (id, source, prompt, correct) => ({ id: `p2u1${id}`, source, type: 'entry', prompt: formatPartitionSymbols(prompt), correct: String(correct) });
+const entry = (id, source, prompt, correct, extra = {}) => ({ id: `p2u1${id}`, source, type: 'entry', prompt: formatPartitionSymbols(prompt), correct: String(correct), ...extra });
 const C = (prefix, rows) => rows.map((row, index) => choice(`${prefix}${index + 1}`, ...row));
 const E = (prefix, rows) => rows.map((row, index) => entry(`${prefix}${index + 1}`, ...row));
 const groupedQuartileFormula = 'The formula of quartiles for grouped data is\nQᵢ = L + ⟦frac:h¦f⟧ ( ⟦frac:i N¦4⟧ − c.f. ),    i = 1, 2, 3\n\n';
@@ -238,18 +238,18 @@ const theoryBConcepts = C('tb', [
   ['Theory P14', 'The limits of the middle 40% of observations are', 'P30 and P70', ['P20 and P80', 'P40 and P60', 'Q1 and Q3']]
 ]);
 const theoryBPositions = [
-  positionChoice('tbp1', 'Solved Example P9', 'D3', 10, 3, 10),
-  positionChoice('tbp2', 'Solved Example P9', 'P70', 10, 70, 100),
-  positionChoice('tbp3', 'Theory P10', 'D4', 95, 4, 10),
-  positionChoice('tbp4', 'Theory P10', 'P55', 95, 55, 100),
-  positionChoice('tbp5', 'Solved Example P11', 'D6', 15, 6, 10),
-  positionChoice('tbp6', 'Solved Example P11', 'P85', 15, 85, 100),
-  choice('tbp7', 'Solved Example P9', 'For the ordered data 169, 225, 289, 324, 325, 400, 625, 729, 784, 841, D3 equals', '299.5', ['289', '310.5', '324']),
-  choice('tbp8', 'Solved Example P9', 'For the ordered data 169, 225, 289, 324, 325, 400, 625, 729, 784, 841, P70 equals', '697.8', ['625', '700', '729']),
-  choice('tbp9', 'Solved Example P10', `${defectiveProductsTable}\nCalculate D4.`, '35', ['30', '40', '45'], { compactTable: true }),
-  choice('tbp10', 'Solved Example P10', `${defectiveProductsTable}\nCalculate P55.`, '40', ['35', '45', '55'], { compactTable: true }),
-  choice('tbp11', 'Solved Example P10-11', `${groupedProfitTable}\nCalculate D4.`, '13', ['10', '12', '15'], { compactTable: true }),
-  choice('tbp12', 'Solved Example P10-11', `${groupedProfitTable}\nCalculate P21.`, '8.89', ['5', '10', '13'], { compactTable: true }),
+  entry('tbp1', 'Solved Example P9', 'For n = 10, the position of D3 is .......ᵗʰ observation', '3.3'),
+  entry('tbp2', 'Solved Example P9', 'For n = 10, the position of P70 is .......ᵗʰ observation', '7.7'),
+  entry('tbp3', 'Theory P10', 'For n = 95, the position of D4 is .......ᵗʰ observation', '38.4'),
+  entry('tbp4', 'Theory P10', 'For n = 95, the position of P55 is .......ᵗʰ observation', '52.8'),
+  entry('tbp5', 'Solved Example P11', 'For n = 15, the position of D6 is .......ᵗʰ observation', '9.6'),
+  entry('tbp6', 'Solved Example P11', 'For n = 15, the position of P85 is .......ᵗʰ observation', '13.6'),
+  entry('tbp7', 'Solved Example P9', 'For the ordered data :\n169, 225, 289, 324, 325, 400, 625, 729, 784, 841.\nCalculate D3', '299.5'),
+  entry('tbp8', 'Solved Example P9', 'For the ordered data :\n169, 225, 289, 324, 325, 400, 625, 729, 784, 841.\nCalculate P70', '697.8'),
+  entry('tbp9', 'Solved Example P10', `${defectiveProductsTable}\nCalculate D4.`, '35', { compactTable: true }),
+  entry('tbp10', 'Solved Example P10', `${defectiveProductsTable}\nCalculate P55.`, '40', { compactTable: true }),
+  entry('tbp11', 'Solved Example P10-11', `${groupedProfitTable}\nCalculate D4.`, '13', { compactTable: true }),
+  entry('tbp12', 'Solved Example P10-11', `${groupedProfitTable}\nCalculate P21.`, '8.89', { compactTable: true }),
   choice('tbp13', 'Theory P14', 'If 75% of observations lie below a value, that value is', 'Q3 or P75', ['Q1 or P25', 'Q2 or P50', 'D3 or P30']),
   choice('tbp14', 'Theory P14', 'If 20% of observations lie below a value, that value is', 'P20 or D2', ['P80 or D8', 'Q1', 'Q2']),
   choice('tbp15', 'Theory P15', 'When the desired partition position falls in a class, interpolation uses the frequency of', 'that partition class', ['the first class', 'the last class', 'the modal class only'])
