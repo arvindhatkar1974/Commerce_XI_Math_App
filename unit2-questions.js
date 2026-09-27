@@ -15,6 +15,21 @@ const arrowSvg = (left, right, arrows) => {
   return `<svg class="arrow-diagram" viewBox="0 0 400 220" role="img" aria-label="Arrow diagram"><defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z"/></marker></defs><ellipse cx="82" cy="110" rx="55" ry="95"/><ellipse cx="318" cy="110" rx="55" ry="95"/>${lines}${leftText}${rightText}</svg>`;
 };
 
+const textbookFunctionGraph = `<svg class="function-graph" viewBox="0 0 520 300" role="img" aria-label="Textbook graph of y equals g of x">
+  <rect x="18" y="12" width="484" height="270" fill="#fff" stroke="#b8cec8"/>
+  <g stroke="#d8e7e3" stroke-width="1">
+    ${Array.from({ length: 19 }, (_, i) => `<line x1="${40 + i * 25}" y1="25" x2="${40 + i * 25}" y2="270"/>`).join('')}
+    ${Array.from({ length: 17 }, (_, i) => `<line x1="40" y1="${30 + i * 15}" x2="490" y2="${30 + i * 15}"/>`).join('')}
+  </g>
+  <g stroke="#17343d" stroke-width="1.8" fill="none">
+    <line x1="40" y1="150" x2="490" y2="150"/><line x1="240" y1="270" x2="240" y2="25"/>
+    <path d="M486 150 l-8 -5 m8 5 l-8 5 M240 25 l-5 8 m5 -8 l5 8"/>
+  </g>
+  <path d="M90 210 C110 178,123 150,140 150 C165 118,185 90,215 90 C232 91,242 112,265 150 C285 188,292 225,315 225 C350 225,390 205,415 195 C442 184,458 165,465 150" fill="none" stroke="#075e58" stroke-width="3"/>
+  <g fill="#075e58">${[[90,210],[140,150],[215,90],[315,225],[415,195],[465,150]].map(([x,y])=>`<circle cx="${x}" cy="${y}" r="3.5"/>`).join('')}</g>
+  <g font-family="Georgia,serif" font-size="14" fill="#17343d"><text x="476" y="143">X</text><text x="248" y="35">Y</text><text x="98" y="224">(−6, −4)</text><text x="184" y="80">(−1, 4)</text><text x="320" y="241">(3, −5)</text><text x="418" y="211">(7, −3)</text><text x="410" y="52" font-size="18">y = g(x)</text><text x="128" y="168">−4</text><text x="305" y="168">3</text></g>
+</svg>`;
+
 export const theoryPages20to30 = [
   choice('th01', 'Theory P20', 'A function f from set A to set B associates each element x in A with how many elements y in B?', 'Exactly one', ['At least two', 'No element', 'Any number, including none']),
   choice('th02', 'Theory P20', 'If f : A → B is a function, set A is called the', 'domain of f', ['range of f', 'co-domain only', 'image of f']),
@@ -32,8 +47,8 @@ export const theoryPages20to30 = [
   choice('th14', 'Theory P22', 'In graphical form, the domain is read from the extent of the graph on the', 'x-axis', ['y-axis', 'line y = x', 'origin only']),
   choice('th15', 'Theory P22', 'In graphical form, the range is read from the extent of the graph on the', 'y-axis', ['x-axis', 'line y = x', 'origin only']),
   entry('th16', 'Solved Example P22', 'For f(x) = 2x² − 3x + 4, find f(7).', 81),
-  choice('th17', 'Solved Example P22', 'From the textbook graph of y = g(x), g(−4) equals', '0', ['−4', '3', '−5']),
-  choice('th18', 'Solved Example P22', 'From the textbook graph of y = g(x), g(3) equals', '−5', ['0', '3', '5']),
+  choice('th17', 'Solved Example P22', 'Using the graph of y = g(x) shown below, g(−4) equals', '0', ['−4', '3', '−5'], textbookFunctionGraph),
+  choice('th18', 'Solved Example P22', 'Using the graph of y = g(x) shown below, g(3) equals', '−5', ['0', '3', '5'], textbookFunctionGraph),
   choice('th19', 'Solved Example P22-23', 'If f(x) = 3x² − x and f(m) = 4, then m equals', '4/3 or −1', ['1 or −4/3', '4 or −1', '1/3 or −4']),
   choice('th20', 'Theory P23', 'A constant function f : R → R has the form', 'f(x) = k', ['f(x) = x', 'f(x) = ax + b, a ≠ 0', 'f(x) = 1/x']),
   choice('th21', 'Theory P23', 'For the constant function f(x) = 3, its range is', '{3}', ['R', '[0, ∞)', 'R − {0}']),

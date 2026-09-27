@@ -49,6 +49,7 @@ const openIncomeTable = '⟦table:Income (₹)¦Less than 50¦50–70¦70–90¦
 const groupedVarianceTable = '⟦table:Class¦45–55¦55–65¦65–75¦75–85¦85–95¦95–105¦105–115¦115–125;Frequency¦7¦20¦27¦23¦13¦6¦3¦1⟧';
 const plantHeightTable = '⟦table:Height of plants (cm)¦20–25¦25–30¦30–35¦35–40¦40–45¦45–50;No. of plants¦145¦125¦90¦40¦45¦55⟧';
 const goalsTable = '⟦table:No. of goals¦0¦1¦2¦3¦4;No. of matches played by Team A¦19¦6¦5¦16¦14;No. of matches played by Team B¦16¦16¦5¦18¦15⟧';
+const combinedGroupExample = '⟦table:¦First group¦Combined group;Number of items¦100¦250;Mean¦45¦51;Variance¦49¦130⟧';
 
 export const theoryPages24to26 = C('ta', [
   ['Let’s Recall P24', 'A quantity whose value remains unchanged is called a', 'constant', ['variable', 'frequency', 'deviation']],
@@ -173,9 +174,9 @@ export const theoryPages31to33 = C('tc', [
   ['Solved Example P31', 'For groups of sizes 10 and 20 with means 24 and 45 and standard deviations 6 and 11, the combined variance is approximately', '190.67', ['13.8', '121', '36']],
   ['Solved Example P31', 'For groups of sizes 10 and 20 with means 24 and 45 and standard deviations 6 and 11,\nthe combined standard deviation is approximately', '13.8', ['190.67', '17', '8.5']],
   ['Solved Example P31-32', 'If the first group has 100 items and the combined group has 250, the second group contains', '150 items', ['100 items', '250 items', '350 items']],
-  ['Solved Example P31-32', 'If the group means are 45 and unknown and the combined mean is 51, the second mean is', '55', ['51', '45', '60']],
-  ['Solved Example P31-32', 'If the combined variance is 130, the second-group variance is', '144', ['12', '130', '49']],
-  ['Solved Example P31-32', 'The second-group standard deviation is', '12', ['144', '11', '14']],
+  ['Solved Example P31-32', `${combinedGroupExample}\nThe mean of the second group is`, '55', ['51', '45', '60'], { compactTable: true }],
+  ['Solved Example P31-32', `${combinedGroupExample}\nThe variance of the second group is`, '144', ['12', '130', '49'], { compactTable: true }],
+  ['Solved Example P31-32', `${combinedGroupExample}\nThe standard deviation of the second group is`, '12', ['144', '11', '14'], { compactTable: true }],
   ['Theory P32', 'Standard deviation depends on the', 'unit of measurement', ['order of observations only', 'name of the variable', 'sample label']],
   ['Theory P32', 'Coefficient of variation is independent of the', 'unit of measurement', ['mean', 'standard deviation', 'sample size']],
   ['Theory P32', 'Coefficient of variation is calculated as', '100 × σ/x̄', ['100 × x̄/σ', 'σ²/x̄', 'x̄ − σ']],

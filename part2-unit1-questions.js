@@ -8,14 +8,28 @@ const formatPartitionSymbols = value => String(value)
   .replace(/\bN\/i\b/g, '⟦frac:N¦i⟧')
   .replace(/\bith\b/g, 'i ᵗʰ')
   .replace(/\bNth\b/g, 'Nᵗʰ');
-const choice = (id, source, prompt, correct, wrong) => {
+const choice = (id, source, prompt, correct, wrong, extra = {}) => {
   const formattedCorrect = formatPartitionSymbols(correct);
-  return { id: `p2u1${id}`, source, type: 'choice', prompt: formatPartitionSymbols(prompt), options: [formattedCorrect, ...wrong.map(formatPartitionSymbols)], correct: formattedCorrect };
+  return { id: `p2u1${id}`, source, type: 'choice', prompt: formatPartitionSymbols(prompt), options: [formattedCorrect, ...wrong.map(formatPartitionSymbols)], correct: formattedCorrect, ...extra };
 };
 const entry = (id, source, prompt, correct) => ({ id: `p2u1${id}`, source, type: 'entry', prompt: formatPartitionSymbols(prompt), correct: String(correct) });
 const C = (prefix, rows) => rows.map((row, index) => choice(`${prefix}${index + 1}`, ...row));
 const E = (prefix, rows) => rows.map((row, index) => entry(`${prefix}${index + 1}`, ...row));
 const groupedQuartileFormula = 'The formula of quartiles for grouped data is\nQᵢ = L + ⟦frac:h¦f⟧ ( ⟦frac:i N¦4⟧ − c.f. ),    i = 1, 2, 3\n\n';
+
+const ogiveSvg = (points, xMin, xMax, yMax, xLabels, ariaLabel) => {
+  const left = 52, right = 500, top = 22, bottom = 252;
+  const px = x => left + ((x - xMin) / (xMax - xMin)) * (right - left);
+  const py = y => bottom - (y / yMax) * (bottom - top);
+  const path = points.map(([x, y], i) => `${i ? 'L' : 'M'} ${px(x).toFixed(1)} ${py(y).toFixed(1)}`).join(' ');
+  return `<svg class="ogive-graph" viewBox="0 0 540 290" role="img" aria-label="${ariaLabel}"><rect x="18" y="8" width="510" height="272" fill="#fff" stroke="#b8cec8"/><g stroke="#d8e7e3" stroke-width="1">${Array.from({length:11},(_,i)=>`<line x1="${left}" y1="${py(i*yMax/10)}" x2="${right}" y2="${py(i*yMax/10)}"/>`).join('')}</g><g stroke="#17343d" stroke-width="1.8"><line x1="${left}" y1="${bottom}" x2="${right+8}" y2="${bottom}"/><line x1="${left}" y1="${bottom}" x2="${left}" y2="${top-8}"/></g><path d="${path}" fill="none" stroke="#075e58" stroke-width="3"/>${points.map(([x,y])=>`<circle cx="${px(x)}" cy="${py(y)}" r="3.2" fill="#075e58"/>`).join('')}<g font-family="Georgia,serif" font-size="12" fill="#17343d">${xLabels.map(x=>`<text x="${px(x)}" y="${bottom+18}" text-anchor="middle">${x}</text>`).join('')}${[0,yMax/4,yMax/2,3*yMax/4,yMax].map(y=>`<text x="${left-8}" y="${py(y)+4}" text-anchor="end">${y}</text>`).join('')}<text x="${right-20}" y="${bottom+34}">X</text><text x="${left-18}" y="${top}">Y</text></g></svg>`;
+};
+const marksOgive = ogiveSvg([[0,0],[10,4],[20,10],[30,30],[40,40],[50,47],[60,50]], 0, 60, 50, [0,10,20,30,40,50,60], 'Less than ogive for the marks distribution');
+const overtimeOgive = ogiveSvg([[9.5,0],[14.5,11],[19.5,31],[24.5,66],[29.5,86],[34.5,94],[39.5,100]], 9.5, 39.5, 100, [9.5,14.5,19.5,24.5,29.5,34.5,39.5], 'Less than ogive for weekly overtime');
+const defectiveProductsTable = '⟦table:No. of defective products¦30¦35¦40¦45¦50¦55¦60;No. of firms¦12¦35¦10¦15¦8¦7¦8⟧';
+const groupedProfitTable = '⟦table:Profit (in ₹ lakh)¦0.5–4.5¦5.5–9.5¦10.5–14.5¦15.5–19.5¦20.5–24.5;No. of firms¦7¦18¦25¦30¦20⟧';
+const marksOgiveTable = '⟦table:Marks¦0–10¦10–20¦20–30¦30–40¦40–50¦50–60;Frequency¦4¦6¦20¦10¦7¦3⟧';
+const overtimeOgiveTable = '⟦table:Overtime per week (hours)¦10–14¦15–19¦20–24¦25–29¦30–34¦35–39;No. of employees¦11¦20¦35¦20¦8¦6⟧';
 
 const quartilePosition = (n, i) => i * (n + 1) / 4;
 const decilePosition = (n, i) => i * (n + 1) / 10;
@@ -232,10 +246,10 @@ const theoryBPositions = [
   positionChoice('tbp6', 'Solved Example P11', 'P85', 15, 85, 100),
   choice('tbp7', 'Solved Example P9', 'For the ordered data 169, 225, 289, 324, 325, 400, 625, 729, 784, 841, D3 equals', '299.5', ['289', '310.5', '324']),
   choice('tbp8', 'Solved Example P9', 'For the ordered data 169, 225, 289, 324, 325, 400, 625, 729, 784, 841, P70 equals', '697.8', ['625', '700', '729']),
-  choice('tbp9', 'Solved Example P10', 'From the textbook defective-products table, D4 equals', '35', ['30', '40', '45']),
-  choice('tbp10', 'Solved Example P10', 'From the textbook defective-products table, P55 equals', '40', ['35', '45', '55']),
-  choice('tbp11', 'Solved Example P10-11', 'From the grouped profit data, D4 equals', '13', ['10', '12', '15']),
-  choice('tbp12', 'Solved Example P10-11', 'From the grouped profit data, P21 equals', '8.89', ['5', '10', '13']),
+  choice('tbp9', 'Solved Example P10', `${defectiveProductsTable}\nCalculate D4.`, '35', ['30', '40', '45'], { compactTable: true }),
+  choice('tbp10', 'Solved Example P10', `${defectiveProductsTable}\nCalculate P55.`, '40', ['35', '45', '55'], { compactTable: true }),
+  choice('tbp11', 'Solved Example P10-11', `${groupedProfitTable}\nCalculate D4.`, '13', ['10', '12', '15'], { compactTable: true }),
+  choice('tbp12', 'Solved Example P10-11', `${groupedProfitTable}\nCalculate P21.`, '8.89', ['5', '10', '13'], { compactTable: true }),
   choice('tbp13', 'Theory P14', 'If 75% of observations lie below a value, that value is', 'Q3 or P75', ['Q1 or P25', 'Q2 or P50', 'D3 or P30']),
   choice('tbp14', 'Theory P14', 'If 20% of observations lie below a value, that value is', 'P20 or D2', ['P80 or D8', 'Q1', 'Q2']),
   choice('tbp15', 'Theory P15', 'When the desired partition position falls in a class, interpolation uses the frequency of', 'that partition class', ['the first class', 'the last class', 'the modal class only'])
@@ -254,14 +268,14 @@ export const theoryPages16to18 = C('tc', [
   ['Theory P17', 'To locate Pᵢ on an ogive, draw a horizontal line from', 'iN/100 on the Y-axis', ['iN/10 on the Y-axis', 'iN/4 on the Y-axis', '100N/i on the X-axis']],
   ['Theory P17', 'The intersection point of less than and more than ogives locates the', 'median', ['mode', 'mean', 'range']],
   ['Theory P17', 'Partition values obtained graphically are generally', 'approximate', ['always exact', 'always integers', 'undefined']],
-  ['Solved Example P17', 'From the textbook marks ogive, Q2 is approximately', '27.5', ['25', '30', '40']],
-  ['Solved Example P17', 'From the textbook marks ogive, D8 is approximately', '40', ['27.5', '30', '50']],
-  ['Solved Example P17', 'From the textbook marks ogive, P60 is approximately', '30', ['27.5', '40', '60']],
+  ['Solved Example P17', `${marksOgiveTable}\nFrom the ogive shown below, Q2 is approximately`, '27.5', ['25', '30', '40'], { compactTable: true, visual: marksOgive }],
+  ['Solved Example P17', `${marksOgiveTable}\nFrom the ogive shown below, D8 is approximately`, '40', ['27.5', '30', '50'], { compactTable: true, visual: marksOgive }],
+  ['Solved Example P17', `${marksOgiveTable}\nFrom the ogive shown below, P60 is approximately`, '30', ['27.5', '40', '60'], { compactTable: true, visual: marksOgive }],
   ['Solved Example P18', 'Before plotting discontinuous classes 10–14, 15–19, …, they are converted to', 'continuous classes 9.5–14.5, 14.5–19.5, …', ['class marks only', 'percentages', 'descending frequencies']],
-  ['Solved Example P18', 'From the overtime-work ogive, Q1 is approximately', '18', ['11', '23', '25']],
-  ['Solved Example P18', 'From the overtime-work ogive, the median is approximately', '23', ['18', '25', '29']],
-  ['Solved Example P18', 'From the overtime-work ogive, P70 is approximately', '25', ['18', '23', '30']],
-  ['Solved Example P18', 'From the overtime-work ogive, employees working less than 11 hours are approximately', '4', ['6', '11', '20']],
+  ['Solved Example P18', `${overtimeOgiveTable}\nFrom the ogive shown below, Q1 is approximately`, '18', ['11', '23', '25'], { compactTable: true, visual: overtimeOgive }],
+  ['Solved Example P18', `${overtimeOgiveTable}\nFrom the ogive shown below, the median is approximately`, '23', ['18', '25', '29'], { compactTable: true, visual: overtimeOgive }],
+  ['Solved Example P18', `${overtimeOgiveTable}\nFrom the ogive shown below, P70 is approximately`, '25', ['18', '23', '30'], { compactTable: true, visual: overtimeOgive }],
+  ['Solved Example P18', `${overtimeOgiveTable}\nFrom the ogive shown below, employees working less than 11 hours are approximately`, '4', ['6', '11', '20'], { compactTable: true, visual: overtimeOgive }],
   ['Theory P17', 'After meeting the ogive, a perpendicular is drawn to the', 'X-axis to read the partition value', ['Y-axis to read total frequency', 'origin only', 'class-frequency column']],
   ['Theory P16', 'A zero cumulative frequency is assigned before the first class when drawing a', 'less than ogive', ['more than ogive', 'histogram', 'pie chart']],
   ['Theory P16', 'A zero cumulative frequency is assigned after the last class when drawing a', 'more than ogive', ['less than ogive', 'frequency polygon', 'bar graph']],
