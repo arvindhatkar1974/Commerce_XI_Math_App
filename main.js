@@ -8,7 +8,7 @@ const app = document.querySelector('#app');
 const headerNav = document.querySelector('#headerNav');
 const pageName = document.body.dataset.page || 'home';
 const STORE = 'commerce-xi-maths-v1';
-const QUESTION_SECONDS = 300;
+const DEFAULT_QUESTION_SECONDS = 300;
 const UNIT_PAPER_NAMES = {
   1: ['Th(P:1-9)', 'Ex-1.1', 'Th(P:10-15)', 'Ex-1.2', "Let's Remember", 'Mis-Ex-1', 'Activities', 'Surprise Test'],
   2: ['Th(P:20-30)', 'Ex-2.1', "Let's Remember", 'Mis-Ex-2', 'Activities', 'Surprise Test'],
@@ -147,7 +147,7 @@ const paperFor = (name, unit = 1, part = 1) => {
 };
 const questionsFor = (name, record = null, unit = record?.unit || 1, part = record?.part || 1) => record?.questions || paperFor(name, unit, part)?.questions || exercise11;
 const marksFor = (name, record = null, unit = record?.unit || 1, part = record?.part || 1) => questionsFor(name, record, unit, part).length * 2;
-const minutesFor = (name, record = null, unit = record?.unit || 1, part = record?.part || 1) => questionsFor(name, record, unit, part).length * QUESTION_SECONDS / 60;
+const minutesFor = (name, record = null, unit = record?.unit || 1, part = record?.part || 1) => questionsFor(name, record, unit, part).length * (record?.questionSeconds || selectedQuestionMinutes * 60) / 60;
 const solutionPdfFor = (name, unit, part = 1) => part === 1 ? SOLUTION_PDFS[`${unit}:${name}`] : part === 2 && unit === 1 ? PART2_UNIT1_SOLUTION_PDFS[name] : part === 2 && unit === 2 ? PART2_UNIT2_SOLUTION_PDFS[name] : null;
 // Accept equivalent answer forms and preserve fair scoring for older attempts.
 const acceptedForms = {
@@ -287,6 +287,8 @@ const dateLabel = iso => new Date(iso).toLocaleString('en-IN');
 function readSaved() { try { return JSON.parse(localStorage.getItem(STORE)) || {}; } catch { return {}; } }
 let saved = readSaved();
 saved.history ||= [];
+let selectedQuestionMinutes = Number(saved.questionMinutes);
+if (!Number.isInteger(selectedQuestionMinutes) || selectedQuestionMinutes < 1 || selectedQuestionMinutes > 10) selectedQuestionMinutes = 5;
 const query = new URLSearchParams(window.location.search);
 const requestedPart = Number(query.get('part'));
 const initialPart = [1, 2].includes(requestedPart) ? requestedPart : 1;
@@ -301,6 +303,7 @@ let attempt = saved.attempt || null;
 if (attempt && !attempt.paper) attempt.paper = 'Ex-1.1';
 if (attempt && !attempt.unit) attempt.unit = 1;
 if (attempt && !attempt.part) attempt.part = 1;
+if (attempt && !attempt.questionSeconds) attempt.questionSeconds = DEFAULT_QUESTION_SECONDS;
 // Recover from unfinished attempts saved before a unit or paper structure changed.
 if (attempt) {
   const validPaper = paperFor(attempt.paper, attempt.unit, attempt.part);
@@ -328,7 +331,7 @@ if (attempt) {
   if (removedQuestions) {
     attempt.responses.length = attemptQuestions.length;
     attempt.optionOrders.length = attemptQuestions.length;
-    attempt.deadline -= removedQuestions * QUESTION_SECONDS * 1000;
+    attempt.deadline -= removedQuestions * attempt.questionSeconds * 1000;
     attempt.currentIndex = Math.min(attempt.currentIndex || 0, Math.max(0, attemptQuestions.length - 1));
     index = attempt.currentIndex;
   }
@@ -338,7 +341,7 @@ if (attempt) {
     attempt.optionOrders.push(attemptQuestions[i].type === 'choice' ? shuffledOptions(attemptQuestions[i]) : null);
   }
   if (addedQuestions || removedQuestions) {
-    attempt.deadline += addedQuestions * QUESTION_SECONDS * 1000;
+    attempt.deadline += addedQuestions * attempt.questionSeconds * 1000;
     persist();
   }
 }
@@ -391,7 +394,7 @@ function start() {
   if (!paperFor(selection.paper, selection.unit, selection.part)) return;
   if (attempt && !confirm('A test is in progress. Start a new test and discard that unfinished attempt?')) return;
   const questions = questionsFor(selection.paper, null, selection.unit, selection.part);
-  attempt = { id: crypto.randomUUID(), part: selection.part, unit: selection.unit, paper: selection.paper, questions: selection.paper === 'Surprise Test' ? questions : null, startedAt: new Date().toISOString(), deadline: Date.now() + questions.length * QUESTION_SECONDS * 1000, responses: questions.map(() => ({ selected: '', text: '', review: false, visits: 0 })), optionOrders: questions.map(q => q.type === 'choice' ? shuffledOptions(q) : null) };
+  attempt = { id: crypto.randomUUID(), part: selection.part, unit: selection.unit, paper: selection.paper, questions: selection.paper === 'Surprise Test' ? questions : null, questionSeconds: selectedQuestionMinutes * 60, startedAt: new Date().toISOString(), deadline: Date.now() + questions.length * selectedQuestionMinutes * 60 * 1000, responses: questions.map(() => ({ selected: '', text: '', review: false, visits: 0 })), optionOrders: questions.map(q => q.type === 'choice' ? shuffledOptions(q) : null) };
   index = 0; attempt.currentIndex = 0; attempt.responses[0].visits = 1;
   persist(); renderTest();
 }
@@ -437,11 +440,14 @@ function renderTestSetup() {
       ${guideCard(selection.part, selection.unit)}
     </div>
     <div class="paper-summary-layout"><section class="card paper-card"><h2>Paper</h2><div class="tile-grid paper-grid">${availablePaperNames.length ? availablePaperNames.map(name => `<button class="tile ${selection.paper === name ? 'selected' : ''}" data-paper="${escape(name)}">${escape(name)}</button>`).join('') : '<p class="small-note">Papers for this selection are being prepared.</p>'}</div></section>
-      ${selectedPaper ? `<div class="summary selected-test-summary"><strong>Part-${selection.part} · Unit-${selection.unit} · ${escape(selectedPaper.title)}</strong><br>${selectedQuestions.length} questions: ${selectedQuestions.filter(q => q.type === 'choice').length} MCQs and ${selectedQuestions.filter(q => q.type === 'entry').length} enter-answer questions · 5 minutes per question · ${minutesFor(selection.paper, null, selection.unit, selection.part)} minutes total${selection.paper === 'Surprise Test' ? `<br>5 date-seeded random questions from each of the ${Object.keys(papersFor(selection.part, selection.unit)).length} papers` : ''}<br>Correct: +2 · Wrong: −1 · Unanswered: 0 · Maximum score: ${marksFor(selection.paper, null, selection.unit, selection.part)}</div><button class="primary paper-start" data-action="start">Start ${escape(selectedPaper.title)}</button>` : `<div class="pending selected-test-summary">Part-${selection.part}, ${selection.unit === 10 ? 'All Units' : `Unit-${selection.unit}`} is planned.</div>`}
+      <div class="paper-side-panel"><section class="time-selector" aria-label="Select average time per question"><strong class="time-selector-title">Select Average Time / Question</strong><div class="time-selector-control"><button type="button" class="time-change decrease" data-time-change="-1" aria-label="Decrease average time" ${selectedQuestionMinutes === 1 ? 'disabled' : ''}>−</button><strong class="time-selector-value">${selectedQuestionMinutes} Min</strong><button type="button" class="time-change increase" data-time-change="1" aria-label="Increase average time" ${selectedQuestionMinutes === 10 ? 'disabled' : ''}>+</button></div><span class="time-selector-range">Choose from 1 to 10 minutes</span></section>
+      ${selectedPaper ? `<div class="summary selected-test-summary"><strong>Part-${selection.part} · Unit-${selection.unit} · ${escape(selectedPaper.title)}</strong><br>${selectedQuestions.length} Questions : ${selectedQuestions.filter(q => q.type === 'choice').length} MCQs + ${selectedQuestions.filter(q => q.type === 'entry').length} Enter-Answer-Questions,<br>Avg. Time : ${selectedQuestionMinutes} Min / Question, Total :${minutesFor(selection.paper, null, selection.unit, selection.part)} Min${selection.paper === 'Surprise Test' ? `<br>5 date-seeded random questions from each of the ${Object.keys(papersFor(selection.part, selection.unit)).length} papers` : ''}<br>Correct : +2, Wrong : −1, Unanswered : 0, Maximum Score : ${marksFor(selection.paper, null, selection.unit, selection.part)}</div>` : `<div class="pending selected-test-summary">Part-${selection.part}, ${selection.unit === 10 ? 'All Units' : `Unit-${selection.unit}`} is planned.</div>`}</div>
+      ${selectedPaper ? `<button class="primary paper-start" data-action="start">Start ${escape(selectedPaper.title)}</button>` : ''}
     </div>`;
   app.querySelectorAll('[data-part]').forEach(button => button.onclick = () => { selection.part = Number(button.dataset.part); selection.unit = 1; selection.paper = paperNamesFor(1, selection.part)[0] || ''; renderTestSetup(); });
   app.querySelectorAll('[data-unit]').forEach(button => button.onclick = () => { selection.unit = Number(button.dataset.unit); selection.paper = paperNamesFor(selection.unit, selection.part)[0] || ''; renderTestSetup(); });
   app.querySelectorAll('[data-paper]').forEach(button => button.onclick = () => { selection.paper = button.dataset.paper; renderTestSetup(); });
+  app.querySelectorAll('[data-time-change]').forEach(button => button.onclick = () => { selectedQuestionMinutes = Math.min(10, Math.max(1, selectedQuestionMinutes + Number(button.dataset.timeChange))); saved.questionMinutes = selectedQuestionMinutes; persist(); renderTestSetup(); });
   app.querySelector('[data-action="start"]')?.addEventListener('click', start);
   app.querySelector('[data-action="resume"]')?.addEventListener('click', renderTest);
 }
