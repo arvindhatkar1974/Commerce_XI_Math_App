@@ -3,7 +3,7 @@ import { activities2, exercise21, letsRemember2, miscellaneousExercise2, theoryP
 import { activities3, exercise31, exercise32, exercise33, letsRemember3, miscellaneousExercise3, theoryPages33to37, theoryPages38to40, theoryPages40to42 } from './unit3-questions.js';
 import { activities1 as part2Activities1, exercise11 as part2Exercise11, exercise12 as part2Exercise12, exercise13 as part2Exercise13, letsRemember1 as part2LetsRemember1, miscellaneousExercise1 as part2MiscellaneousExercise1, theoryPages1to7 as part2TheoryPages1to7, theoryPages8to15 as part2TheoryPages8to15, theoryPages16to18 as part2TheoryPages16to18 } from './part2-unit1-questions.js?v=20261001-86';
 import { activities2 as part2Activities2, exercise21 as part2Exercise21, exercise22 as part2Exercise22, exercise23 as part2Exercise23, letsRemember2 as part2LetsRemember2, miscellaneousExercise2 as part2MiscellaneousExercise2, theoryPages24to26 as part2TheoryPages24to26, theoryPages27to30 as part2TheoryPages27to30, theoryPages31to33 as part2TheoryPages31to33 } from './part2-unit2-questions.js?v=20260926-60';
-import { QUESTION_REFERENCES } from './question-references.js?v=20261002-3';
+import { QUESTION_REFERENCES } from './question-references.js?v=20261002-4';
 
 const app = document.querySelector('#app');
 const headerNav = document.querySelector('#headerNav');
@@ -151,7 +151,7 @@ const marksFor = (name, record = null, unit = record?.unit || 1, part = record?.
 const minutesFor = (name, record = null, unit = record?.unit || 1, part = record?.part || 1) => questionsFor(name, record, unit, part).length * (record?.questionSeconds || selectedQuestionMinutes * 60) / 60;
 const solutionPdfFor = (name, unit, part = 1) => {
   const path = part === 1 ? SOLUTION_PDFS[`${unit}:${name}`] : part === 2 && unit === 1 ? PART2_UNIT1_SOLUTION_PDFS[name] : part === 2 && unit === 2 ? PART2_UNIT2_SOLUTION_PDFS[name] : null;
-  return path ? `${path}?v=20261002-3` : null;
+  return path ? `${path}?v=20261002-4` : null;
 };
 const originalPaperCode = paper => {
   const theory = paper.match(/^Th\(P:(\d+)-(\d+)\)$/i);
@@ -574,4 +574,5 @@ function renderPage() {
 }
 setInterval(() => { if (!attempt || pageName !== 'test') return; if (Date.now() >= attempt.deadline) { submit(true); return; } const label = document.querySelector('#timeValue'); if (label) { label.textContent = formatTime(attempt.deadline - Date.now()); document.querySelector('#timer')?.classList.toggle('low', attempt.deadline - Date.now() < 10 * 60 * 1000); } }, 1000);
 renderPage();
+
 

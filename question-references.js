@@ -141,37 +141,37 @@ export const QUESTION_REFERENCES = {
     "sourceReference": "TH-Q28"
   },
   "1:1:Th(P:1-9):th29": {
-    "type": "Enter answer",
+    "type": "ENTER ANSWER",
     "sourcePage": "3",
     "sourceReference": "TH-Q29"
   },
   "1:1:Th(P:1-9):th30": {
-    "type": "Enter answer",
+    "type": "ENTER ANSWER",
     "sourcePage": "4",
     "sourceReference": "TH-Q30"
   },
   "1:1:Th(P:1-9):th31": {
-    "type": "Enter answer",
+    "type": "ENTER ANSWER",
     "sourcePage": "6",
     "sourceReference": "TH-Q31"
   },
   "1:1:Th(P:1-9):th32": {
-    "type": "Enter answer",
+    "type": "ENTER ANSWER",
     "sourcePage": "6",
     "sourceReference": "TH-Q32"
   },
   "1:1:Th(P:1-9):th33": {
-    "type": "Enter answer",
+    "type": "ENTER ANSWER",
     "sourcePage": "6",
     "sourceReference": "TH-Q33"
   },
   "1:1:Th(P:1-9):th34": {
-    "type": "Enter answer",
+    "type": "ENTER ANSWER",
     "sourcePage": "6",
     "sourceReference": "TH-Q34"
   },
   "1:1:Th(P:1-9):th35": {
-    "type": "Enter answer",
+    "type": "ENTER ANSWER",
     "sourcePage": "6",
     "sourceReference": "TH-Q35"
   },
@@ -256,67 +256,67 @@ export const QUESTION_REFERENCES = {
     "sourceReference": "EX-Q5(vii)"
   },
   "1:1:Ex-1.1:q6i": {
-    "type": "Enter answer",
+    "type": "ENTER ANSWER",
     "sourcePage": "10",
     "sourceReference": "EX-Q6(i)"
   },
   "1:1:Ex-1.1:q6ii": {
-    "type": "Enter answer",
+    "type": "ENTER ANSWER",
     "sourcePage": "10",
     "sourceReference": "EX-Q6(ii)"
   },
   "1:1:Ex-1.1:q6iii": {
-    "type": "Enter answer",
+    "type": "ENTER ANSWER",
     "sourcePage": "10",
     "sourceReference": "EX-Q6(iii)"
   },
   "1:1:Ex-1.1:q6iv": {
-    "type": "Enter answer",
+    "type": "ENTER ANSWER",
     "sourcePage": "10",
     "sourceReference": "EX-Q6(iv)"
   },
   "1:1:Ex-1.1:q7i": {
-    "type": "Enter answer",
+    "type": "ENTER ANSWER",
     "sourcePage": "10",
     "sourceReference": "EX-Q7(i)"
   },
   "1:1:Ex-1.1:q7ii": {
-    "type": "Enter answer",
+    "type": "ENTER ANSWER",
     "sourcePage": "10",
     "sourceReference": "EX-Q7(ii)"
   },
   "1:1:Ex-1.1:q8i": {
-    "type": "Enter answer",
+    "type": "ENTER ANSWER",
     "sourcePage": "10",
     "sourceReference": "EX-Q8(i)"
   },
   "1:1:Ex-1.1:q8ii": {
-    "type": "Enter answer",
+    "type": "ENTER ANSWER",
     "sourcePage": "10",
     "sourceReference": "EX-Q8(ii)"
   },
   "1:1:Ex-1.1:q8iii": {
-    "type": "Enter answer",
+    "type": "ENTER ANSWER",
     "sourcePage": "10",
     "sourceReference": "EX-Q8(iii)"
   },
   "1:1:Ex-1.1:q9": {
-    "type": "Enter answer",
+    "type": "ENTER ANSWER",
     "sourcePage": "10",
     "sourceReference": "EX-Q9"
   },
   "1:1:Ex-1.1:q10i": {
-    "type": "Enter answer",
+    "type": "ENTER ANSWER",
     "sourcePage": "10",
     "sourceReference": "EX-Q10(i)"
   },
   "1:1:Ex-1.1:q10ii": {
-    "type": "Enter answer",
+    "type": "ENTER ANSWER",
     "sourcePage": "10",
     "sourceReference": "EX-Q10(ii)"
   },
   "1:1:Ex-1.1:q10iii": {
-    "type": "Enter answer",
+    "type": "ENTER ANSWER",
     "sourcePage": "10",
     "sourceReference": "EX-Q10(iii)"
   },
@@ -486,37 +486,37 @@ export const QUESTION_REFERENCES = {
     "sourceReference": "TH-Q28"
   },
   "1:1:Th(P:10-15):th10p29": {
-    "type": "Enter answer",
+    "type": "ENTER ANSWER",
     "sourcePage": "11",
     "sourceReference": "TH-Q29"
   },
   "1:1:Th(P:10-15):th10p30": {
-    "type": "Enter answer",
+    "type": "ENTER ANSWER",
     "sourcePage": "13",
     "sourceReference": "TH-Q30"
   },
   "1:1:Th(P:10-15):th10p31": {
-    "type": "Enter answer",
+    "type": "ENTER ANSWER",
     "sourcePage": "15",
     "sourceReference": "TH-Q31"
   },
   "1:1:Th(P:10-15):th10p32": {
-    "type": "Enter answer",
+    "type": "ENTER ANSWER",
     "sourcePage": "10",
     "sourceReference": "TH-Q32"
   },
   "1:1:Th(P:10-15):th10p33": {
-    "type": "Enter answer",
+    "type": "ENTER ANSWER",
     "sourcePage": "10",
     "sourceReference": "TH-Q33"
   },
   "1:1:Th(P:10-15):th10p34": {
-    "type": "Enter answer",
+    "type": "ENTER ANSWER",
     "sourcePage": "15",
     "sourceReference": "TH-Q34"
   },
   "1:1:Th(P:10-15):th10p35": {
-    "type": "Enter answer",
+    "type": "ENTER ANSWER",
     "sourcePage": "15",
     "sourceReference": "TH-Q35"
   },
@@ -763,12 +763,12 @@ export const QUESTION_REFERENCES = {
     "sourceReference": "MEX-Q2(vi)"
   },
   "1:1:Mis-Ex-1:misc1q3": {
-    "type": "Enter answer",
+    "type": "ENTER ANSWER",
     "sourcePage": "17",
     "sourceReference": "MEX-Q3"
   },
   "1:1:Mis-Ex-1:misc1q4": {
-    "type": "Enter answer",
+    "type": "ENTER ANSWER",
     "sourcePage": "17",
     "sourceReference": "MEX-Q4"
   },
@@ -892,7 +892,7 @@ export const QUESTION_REFERENCES = {
     "sourceReference": "ACT-1.7(iii)"
   },
   "1:1:Activities:misc1a18": {
-    "type": "Enter answer",
+    "type": "ENTER ANSWER",
     "sourcePage": "18",
     "sourceReference": "ACT-1.8"
   },
@@ -1041,7 +1041,7 @@ export const QUESTION_REFERENCES = {
     "sourceReference": "TH-Q15"
   },
   "1:2:Th(P:20-30):u2th16": {
-    "type": "Enter answer",
+    "type": "ENTER ANSWER",
     "sourcePage": "22",
     "sourceReference": "TH-Q16"
   },
@@ -1206,12 +1206,12 @@ export const QUESTION_REFERENCES = {
     "sourceReference": "EX-Q2(d)"
   },
   "1:2:Ex-2.1:u2ex3a": {
-    "type": "Enter answer",
+    "type": "ENTER ANSWER",
     "sourcePage": "31",
     "sourceReference": "EX-Q3(a)"
   },
   "1:2:Ex-2.1:u2ex3b": {
-    "type": "Enter answer",
+    "type": "ENTER ANSWER",
     "sourcePage": "31",
     "sourceReference": "EX-Q3(b)"
   },
@@ -1251,37 +1251,37 @@ export const QUESTION_REFERENCES = {
     "sourceReference": "EX-Q5"
   },
   "1:2:Ex-2.1:u2ex6a": {
-    "type": "Enter answer",
+    "type": "ENTER ANSWER",
     "sourcePage": "31",
     "sourceReference": "EX-Q6(a)"
   },
   "1:2:Ex-2.1:u2ex6b": {
-    "type": "Enter answer",
+    "type": "ENTER ANSWER",
     "sourcePage": "31",
     "sourceReference": "EX-Q6(b)"
   },
   "1:2:Ex-2.1:u2ex6c": {
-    "type": "Enter answer",
+    "type": "ENTER ANSWER",
     "sourcePage": "31",
     "sourceReference": "EX-Q6(c)"
   },
   "1:2:Ex-2.1:u2ex7a": {
-    "type": "Enter answer",
+    "type": "ENTER ANSWER",
     "sourcePage": "31",
     "sourceReference": "EX-Q7(a)"
   },
   "1:2:Ex-2.1:u2ex7b": {
-    "type": "Enter answer",
+    "type": "ENTER ANSWER",
     "sourcePage": "31",
     "sourceReference": "EX-Q7(b)"
   },
   "1:2:Ex-2.1:u2ex7c": {
-    "type": "Enter answer",
+    "type": "ENTER ANSWER",
     "sourcePage": "31",
     "sourceReference": "EX-Q7(c)"
   },
   "1:2:Ex-2.1:u2ex7d": {
-    "type": "Enter answer",
+    "type": "ENTER ANSWER",
     "sourcePage": "31",
     "sourceReference": "EX-Q7(d)"
   },
@@ -1291,12 +1291,12 @@ export const QUESTION_REFERENCES = {
     "sourceReference": "EX-Q8(a)"
   },
   "1:2:Ex-2.1:u2ex8b": {
-    "type": "Enter answer",
+    "type": "ENTER ANSWER",
     "sourcePage": "31",
     "sourceReference": "EX-Q8(b)"
   },
   "1:2:Ex-2.1:u2ex8c": {
-    "type": "Enter answer",
+    "type": "ENTER ANSWER",
     "sourcePage": "31",
     "sourceReference": "EX-Q8(c)"
   },
@@ -1407,13 +1407,13 @@ export const QUESTION_REFERENCES = {
     "sourceReference": "MEX-Q2"
   },
   "1:2:Mis-Ex-2:u2m3a": {
-    "type": "Enter answer",
+    "type": "ENTER ANSWER",
     "sourcePage": "32",
     "sourceReference": "MEX-Q3",
     "sourceQualifier": "f(−1)"
   },
   "1:2:Mis-Ex-2:u2m3b": {
-    "type": "Enter answer",
+    "type": "ENTER ANSWER",
     "sourcePage": "32",
     "sourceReference": "MEX-Q3",
     "sourceQualifier": "f(−2)"
@@ -1425,7 +1425,7 @@ export const QUESTION_REFERENCES = {
     "sourceQualifier": "f(0)"
   },
   "1:2:Mis-Ex-2:u2m4": {
-    "type": "Enter answer",
+    "type": "ENTER ANSWER",
     "sourcePage": "32",
     "sourceReference": "MEX-Q4"
   },
@@ -1803,7 +1803,7 @@ export const QUESTION_REFERENCES = {
     "sourceReference": "EX-Q4(vii)"
   },
   "1:3:Ex-3.1:u3e5": {
-    "type": "Enter answer",
+    "type": "ENTER ANSWER",
     "sourcePage": "37",
     "sourceReference": "EX-Q5"
   },
@@ -1813,12 +1813,12 @@ export const QUESTION_REFERENCES = {
     "sourceReference": "EX-Q6(i)"
   },
   "1:3:Ex-3.1:u3e6ii": {
-    "type": "Enter answer",
+    "type": "ENTER ANSWER",
     "sourcePage": "37",
     "sourceReference": "EX-Q6(ii)"
   },
   "1:3:Ex-3.1:u3e7": {
-    "type": "Enter answer",
+    "type": "ENTER ANSWER",
     "sourcePage": "37",
     "sourceReference": "EX-Q7"
   },
@@ -1833,12 +1833,12 @@ export const QUESTION_REFERENCES = {
     "sourceReference": "EX-Q8(ii)"
   },
   "1:3:Ex-3.1:u3e9i": {
-    "type": "Enter answer",
+    "type": "ENTER ANSWER",
     "sourcePage": "37",
     "sourceReference": "EX-Q9(i)"
   },
   "1:3:Ex-3.1:u3e9ii": {
-    "type": "Enter answer",
+    "type": "ENTER ANSWER",
     "sourcePage": "37",
     "sourceReference": "EX-Q9(ii)"
   },
@@ -2328,17 +2328,17 @@ export const QUESTION_REFERENCES = {
     "sourceReference": "MEX-Q4(v)"
   },
   "1:3:Mis-Ex-3:u3m5i": {
-    "type": "Enter answer",
+    "type": "ENTER ANSWER",
     "sourcePage": "43",
     "sourceReference": "MEX-Q5(i)"
   },
   "1:3:Mis-Ex-3:u3m5ii": {
-    "type": "Enter answer",
+    "type": "ENTER ANSWER",
     "sourcePage": "43",
     "sourceReference": "MEX-Q5(ii)"
   },
   "1:3:Mis-Ex-3:u3m5iii": {
-    "type": "Enter answer",
+    "type": "ENTER ANSWER",
     "sourcePage": "43",
     "sourceReference": "MEX-Q5(iii)"
   },
@@ -2714,17 +2714,17 @@ export const QUESTION_REFERENCES = {
     "sourceReference": "TH-Q43"
   },
   "2:1:Th(P:1-7):p2u1taa3": {
-    "type": "Enter answer",
+    "type": "ENTER ANSWER",
     "sourcePage": "4",
     "sourceReference": "TH-Q44"
   },
   "2:1:Th(P:1-7):p2u1taa4": {
-    "type": "Enter answer",
+    "type": "ENTER ANSWER",
     "sourcePage": "4",
     "sourceReference": "TH-Q45"
   },
   "2:1:Th(P:1-7):p2u1taa5": {
-    "type": "Enter answer",
+    "type": "ENTER ANSWER",
     "sourcePage": "5",
     "sourceReference": "TH-Q46"
   },
@@ -2739,7 +2739,7 @@ export const QUESTION_REFERENCES = {
     "sourceReference": "TH-Q48"
   },
   "2:1:Th(P:1-7):p2u1taa8": {
-    "type": "Enter answer",
+    "type": "ENTER ANSWER",
     "sourcePage": "3",
     "sourceReference": "TH-Q49"
   },
@@ -2749,82 +2749,82 @@ export const QUESTION_REFERENCES = {
     "sourceReference": "TH-Q50"
   },
   "2:1:Ex-1.1:p2u1e111": {
-    "type": "Enter answer",
+    "type": "ENTER ANSWER",
     "sourcePage": "7",
     "sourceReference": "EX-Q1(i)"
   },
   "2:1:Ex-1.1:p2u1e112": {
-    "type": "Enter answer",
+    "type": "ENTER ANSWER",
     "sourcePage": "7",
     "sourceReference": "EX-Q1(ii)"
   },
   "2:1:Ex-1.1:p2u1e113": {
-    "type": "Enter answer",
+    "type": "ENTER ANSWER",
     "sourcePage": "7",
     "sourceReference": "EX-Q1(iii)"
   },
   "2:1:Ex-1.1:p2u1e114": {
-    "type": "Enter answer",
+    "type": "ENTER ANSWER",
     "sourcePage": "7",
     "sourceReference": "EX-Q2(i)"
   },
   "2:1:Ex-1.1:p2u1e115": {
-    "type": "Enter answer",
+    "type": "ENTER ANSWER",
     "sourcePage": "7",
     "sourceReference": "EX-Q2(ii)"
   },
   "2:1:Ex-1.1:p2u1e116": {
-    "type": "Enter answer",
+    "type": "ENTER ANSWER",
     "sourcePage": "7",
     "sourceReference": "EX-Q3"
   },
   "2:1:Ex-1.1:p2u1e117": {
-    "type": "Enter answer",
+    "type": "ENTER ANSWER",
     "sourcePage": "7",
     "sourceReference": "EX-Q4"
   },
   "2:1:Ex-1.1:p2u1e118": {
-    "type": "Enter answer",
+    "type": "ENTER ANSWER",
     "sourcePage": "7",
     "sourceReference": "EX-Q5(i)"
   },
   "2:1:Ex-1.1:p2u1e119": {
-    "type": "Enter answer",
+    "type": "ENTER ANSWER",
     "sourcePage": "7",
     "sourceReference": "EX-Q5(ii)"
   },
   "2:1:Ex-1.1:p2u1e1110": {
-    "type": "Enter answer",
+    "type": "ENTER ANSWER",
     "sourcePage": "7",
     "sourceReference": "EX-Q5(iii)"
   },
   "2:1:Ex-1.1:p2u1e1111": {
-    "type": "Enter answer",
+    "type": "ENTER ANSWER",
     "sourcePage": "7",
     "sourceReference": "EX-Q6"
   },
   "2:1:Ex-1.1:p2u1e1112": {
-    "type": "Enter answer",
+    "type": "ENTER ANSWER",
     "sourcePage": "7",
     "sourceReference": "EX-Q7(i)"
   },
   "2:1:Ex-1.1:p2u1e1113": {
-    "type": "Enter answer",
+    "type": "ENTER ANSWER",
     "sourcePage": "7",
     "sourceReference": "EX-Q7(ii)"
   },
   "2:1:Ex-1.1:p2u1e1114": {
-    "type": "Enter answer",
+    "type": "ENTER ANSWER",
     "sourcePage": "8",
     "sourceReference": "EX-Q8(i)"
   },
   "2:1:Ex-1.1:p2u1e1115": {
-    "type": "Enter answer",
+    "type": "ENTER ANSWER",
     "sourcePage": "8",
     "sourceReference": "EX-Q8(ii)"
   },
   "2:1:Ex-1.1:p2u1e1116": {
-    "type": "Enter answer",
+    "type": "ENTER ANSWER",
     "sourcePage": "8",
     "sourceReference": "EX-Q8(iii)"
   },
@@ -2834,7 +2834,7 @@ export const QUESTION_REFERENCES = {
     "sourceReference": "EX-Q9"
   },
   "2:1:Ex-1.1:p2u1e11q10": {
-    "type": "Enter answer",
+    "type": "ENTER ANSWER",
     "sourcePage": "8",
     "sourceReference": "EX-Q10"
   },
@@ -2964,62 +2964,62 @@ export const QUESTION_REFERENCES = {
     "sourceReference": "TH-Q25"
   },
   "2:1:Th(P:8-15):p2u1tbp1": {
-    "type": "Enter answer",
+    "type": "ENTER ANSWER",
     "sourcePage": "9",
     "sourceReference": "TH-Q26"
   },
   "2:1:Th(P:8-15):p2u1tbp2": {
-    "type": "Enter answer",
+    "type": "ENTER ANSWER",
     "sourcePage": "9",
     "sourceReference": "TH-Q27"
   },
   "2:1:Th(P:8-15):p2u1tbp3": {
-    "type": "Enter answer",
+    "type": "ENTER ANSWER",
     "sourcePage": "10",
     "sourceReference": "TH-Q28"
   },
   "2:1:Th(P:8-15):p2u1tbp4": {
-    "type": "Enter answer",
+    "type": "ENTER ANSWER",
     "sourcePage": "10",
     "sourceReference": "TH-Q29"
   },
   "2:1:Th(P:8-15):p2u1tbp5": {
-    "type": "Enter answer",
+    "type": "ENTER ANSWER",
     "sourcePage": "11",
     "sourceReference": "TH-Q30"
   },
   "2:1:Th(P:8-15):p2u1tbp6": {
-    "type": "Enter answer",
+    "type": "ENTER ANSWER",
     "sourcePage": "11",
     "sourceReference": "TH-Q31"
   },
   "2:1:Th(P:8-15):p2u1tbp7": {
-    "type": "Enter answer",
+    "type": "ENTER ANSWER",
     "sourcePage": "9",
     "sourceReference": "TH-Q32"
   },
   "2:1:Th(P:8-15):p2u1tbp8": {
-    "type": "Enter answer",
+    "type": "ENTER ANSWER",
     "sourcePage": "9",
     "sourceReference": "TH-Q33"
   },
   "2:1:Th(P:8-15):p2u1tbp9": {
-    "type": "Enter answer",
+    "type": "ENTER ANSWER",
     "sourcePage": "10",
     "sourceReference": "TH-Q34"
   },
   "2:1:Th(P:8-15):p2u1tbp10": {
-    "type": "Enter answer",
+    "type": "ENTER ANSWER",
     "sourcePage": "10",
     "sourceReference": "TH-Q35"
   },
   "2:1:Th(P:8-15):p2u1tbp11": {
-    "type": "Enter answer",
+    "type": "ENTER ANSWER",
     "sourcePage": "10",
     "sourceReference": "TH-Q36"
   },
   "2:1:Th(P:8-15):p2u1tbp12": {
-    "type": "Enter answer",
+    "type": "ENTER ANSWER",
     "sourcePage": "10",
     "sourceReference": "TH-Q37"
   },
@@ -3039,87 +3039,87 @@ export const QUESTION_REFERENCES = {
     "sourceReference": "TH-Q40"
   },
   "2:1:Th(P:8-15):p2u1tbp16": {
-    "type": "Enter answer",
+    "type": "ENTER ANSWER",
     "sourcePage": "15",
     "sourceReference": "TH-Q41"
   },
   "2:1:Th(P:8-15):p2u1tbp17": {
-    "type": "Enter answer",
+    "type": "ENTER ANSWER",
     "sourcePage": "15",
     "sourceReference": "TH-Q42"
   },
   "2:1:Ex-1.2:p2u1e121": {
-    "type": "Enter answer",
+    "type": "ENTER ANSWER",
     "sourcePage": "15",
     "sourceReference": "EX-Q1(i)"
   },
   "2:1:Ex-1.2:p2u1e122": {
-    "type": "Enter answer",
+    "type": "ENTER ANSWER",
     "sourcePage": "15",
     "sourceReference": "EX-Q1(ii)"
   },
   "2:1:Ex-1.2:p2u1e123": {
-    "type": "Enter answer",
+    "type": "ENTER ANSWER",
     "sourcePage": "15",
     "sourceReference": "EX-Q2(i)"
   },
   "2:1:Ex-1.2:p2u1e124": {
-    "type": "Enter answer",
+    "type": "ENTER ANSWER",
     "sourcePage": "15",
     "sourceReference": "EX-Q2(ii)"
   },
   "2:1:Ex-1.2:p2u1e125": {
-    "type": "Enter answer",
+    "type": "ENTER ANSWER",
     "sourcePage": "15",
     "sourceReference": "EX-Q3(i)"
   },
   "2:1:Ex-1.2:p2u1e126": {
-    "type": "Enter answer",
+    "type": "ENTER ANSWER",
     "sourcePage": "15",
     "sourceReference": "EX-Q3(ii)"
   },
   "2:1:Ex-1.2:p2u1e127": {
-    "type": "Enter answer",
+    "type": "ENTER ANSWER",
     "sourcePage": "15",
     "sourceReference": "EX-Q4(i)"
   },
   "2:1:Ex-1.2:p2u1e128": {
-    "type": "Enter answer",
+    "type": "ENTER ANSWER",
     "sourcePage": "15",
     "sourceReference": "EX-Q4(ii)"
   },
   "2:1:Ex-1.2:p2u1e129": {
-    "type": "Enter answer",
+    "type": "ENTER ANSWER",
     "sourcePage": "15",
     "sourceReference": "EX-Q4(iii)"
   },
   "2:1:Ex-1.2:p2u1e1210": {
-    "type": "Enter answer",
+    "type": "ENTER ANSWER",
     "sourcePage": "15",
     "sourceReference": "EX-Q5(i)"
   },
   "2:1:Ex-1.2:p2u1e1211": {
-    "type": "Enter answer",
+    "type": "ENTER ANSWER",
     "sourcePage": "15",
     "sourceReference": "EX-Q5(ii)"
   },
   "2:1:Ex-1.2:p2u1e1212": {
-    "type": "Enter answer",
+    "type": "ENTER ANSWER",
     "sourcePage": "15",
     "sourceReference": "EX-Q6(i)"
   },
   "2:1:Ex-1.2:p2u1e1213": {
-    "type": "Enter answer",
+    "type": "ENTER ANSWER",
     "sourcePage": "15",
     "sourceReference": "EX-Q6(ii)"
   },
   "2:1:Ex-1.2:p2u1e1214": {
-    "type": "Enter answer",
+    "type": "ENTER ANSWER",
     "sourcePage": "15",
     "sourceReference": "EX-Q7(i)"
   },
   "2:1:Ex-1.2:p2u1e1215": {
-    "type": "Enter answer",
+    "type": "ENTER ANSWER",
     "sourcePage": "15",
     "sourceReference": "EX-Q7(ii)"
   },
@@ -3134,7 +3134,7 @@ export const QUESTION_REFERENCES = {
     "sourceReference": "EX-Q9"
   },
   "2:1:Ex-1.2:p2u1e12tail1": {
-    "type": "Enter answer",
+    "type": "ENTER ANSWER",
     "sourcePage": "16",
     "sourceReference": "EX-Q10"
   },
@@ -3264,17 +3264,17 @@ export const QUESTION_REFERENCES = {
     "sourceReference": "TH-Q25"
   },
   "2:1:Ex-1.3:p2u1e131": {
-    "type": "Enter answer",
+    "type": "ENTER ANSWER",
     "sourcePage": "18",
     "sourceReference": "EX-Q1(i)"
   },
   "2:1:Ex-1.3:p2u1e132": {
-    "type": "Enter answer",
+    "type": "ENTER ANSWER",
     "sourcePage": "18",
     "sourceReference": "EX-Q1(ii)"
   },
   "2:1:Ex-1.3:p2u1e133": {
-    "type": "Enter answer",
+    "type": "ENTER ANSWER",
     "sourcePage": "18",
     "sourceReference": "EX-Q1(iii)"
   },
@@ -3284,7 +3284,7 @@ export const QUESTION_REFERENCES = {
     "sourceReference": "EX-Q2"
   },
   "2:1:Ex-1.3:p2u1e13tail1": {
-    "type": "Enter answer",
+    "type": "ENTER ANSWER",
     "sourcePage": "18",
     "sourceReference": "EX-Q3"
   },
@@ -3294,37 +3294,37 @@ export const QUESTION_REFERENCES = {
     "sourceReference": "EX-Q4(i)"
   },
   "2:1:Ex-1.3:p2u1e13tail21": {
-    "type": "Enter answer",
+    "type": "ENTER ANSWER",
     "sourcePage": "18",
     "sourceReference": "EX-Q4(ii)"
   },
   "2:1:Ex-1.3:p2u1e13tail22": {
-    "type": "Enter answer",
+    "type": "ENTER ANSWER",
     "sourcePage": "18",
     "sourceReference": "EX-Q5(i)"
   },
   "2:1:Ex-1.3:p2u1e13tail23": {
-    "type": "Enter answer",
+    "type": "ENTER ANSWER",
     "sourcePage": "18",
     "sourceReference": "EX-Q5(ii)"
   },
   "2:1:Ex-1.3:p2u1e13tail24": {
-    "type": "Enter answer",
+    "type": "ENTER ANSWER",
     "sourcePage": "18",
     "sourceReference": "EX-Q5(iii)"
   },
   "2:1:Ex-1.3:p2u1e13tail25": {
-    "type": "Enter answer",
+    "type": "ENTER ANSWER",
     "sourcePage": "18",
     "sourceReference": "EX-Q6(i)"
   },
   "2:1:Ex-1.3:p2u1e13tail26": {
-    "type": "Enter answer",
+    "type": "ENTER ANSWER",
     "sourcePage": "18",
     "sourceReference": "EX-Q6(ii)"
   },
   "2:1:Ex-1.3:p2u1e13tail27": {
-    "type": "Enter answer",
+    "type": "ENTER ANSWER",
     "sourcePage": "18",
     "sourceReference": "EX-Q6(iii)"
   },
@@ -3334,7 +3334,7 @@ export const QUESTION_REFERENCES = {
     "sourceReference": "EX-Q7"
   },
   "2:1:Ex-1.3:p2u1e13tail31": {
-    "type": "Enter answer",
+    "type": "ENTER ANSWER",
     "sourcePage": "18",
     "sourceReference": "EX-Q8"
   },
@@ -3344,12 +3344,12 @@ export const QUESTION_REFERENCES = {
     "sourceReference": "EX-Q9"
   },
   "2:1:Ex-1.3:p2u1e13tail41": {
-    "type": "Enter answer",
+    "type": "ENTER ANSWER",
     "sourcePage": "18",
     "sourceReference": "EX-Q10(i)"
   },
   "2:1:Ex-1.3:p2u1e13tail42": {
-    "type": "Enter answer",
+    "type": "ENTER ANSWER",
     "sourcePage": "18",
     "sourceReference": "EX-Q10(ii)"
   },
@@ -3414,32 +3414,32 @@ export const QUESTION_REFERENCES = {
     "sourceReference": "LR-12"
   },
   "2:1:Mis-Ex-1:p2u1mx1": {
-    "type": "Enter answer",
+    "type": "ENTER ANSWER",
     "sourcePage": "20",
     "sourceReference": "MEX-Q1(i)"
   },
   "2:1:Mis-Ex-1:p2u1mx2": {
-    "type": "Enter answer",
+    "type": "ENTER ANSWER",
     "sourcePage": "20",
     "sourceReference": "MEX-Q1(ii)"
   },
   "2:1:Mis-Ex-1:p2u1mx3": {
-    "type": "Enter answer",
+    "type": "ENTER ANSWER",
     "sourcePage": "20",
     "sourceReference": "MEX-Q1(iii)"
   },
   "2:1:Mis-Ex-1:p2u1mx4": {
-    "type": "Enter answer",
+    "type": "ENTER ANSWER",
     "sourcePage": "20",
     "sourceReference": "MEX-Q2(i)"
   },
   "2:1:Mis-Ex-1:p2u1mx5": {
-    "type": "Enter answer",
+    "type": "ENTER ANSWER",
     "sourcePage": "20",
     "sourceReference": "MEX-Q2(ii)"
   },
   "2:1:Mis-Ex-1:p2u1mx6": {
-    "type": "Enter answer",
+    "type": "ENTER ANSWER",
     "sourcePage": "20",
     "sourceReference": "MEX-Q2(iii)"
   },
@@ -3449,22 +3449,22 @@ export const QUESTION_REFERENCES = {
     "sourceReference": "MEX-Q3"
   },
   "2:1:Mis-Ex-1:p2u1mxtail1": {
-    "type": "Enter answer",
+    "type": "ENTER ANSWER",
     "sourcePage": "21",
     "sourceReference": "MEX-Q4"
   },
   "2:1:Mis-Ex-1:p2u1mxtail2": {
-    "type": "Enter answer",
+    "type": "ENTER ANSWER",
     "sourcePage": "21",
     "sourceReference": "MEX-Q5(i)"
   },
   "2:1:Mis-Ex-1:p2u1mxtail3": {
-    "type": "Enter answer",
+    "type": "ENTER ANSWER",
     "sourcePage": "21",
     "sourceReference": "MEX-Q5(ii)"
   },
   "2:1:Mis-Ex-1:p2u1mxtail4": {
-    "type": "Enter answer",
+    "type": "ENTER ANSWER",
     "sourcePage": "21",
     "sourceReference": "MEX-Q5(iii)"
   },
@@ -3474,42 +3474,42 @@ export const QUESTION_REFERENCES = {
     "sourceReference": "MEX-Q6"
   },
   "2:1:Mis-Ex-1:p2u1mxtail21": {
-    "type": "Enter answer",
+    "type": "ENTER ANSWER",
     "sourcePage": "21",
     "sourceReference": "MEX-Q7"
   },
   "2:1:Mis-Ex-1:p2u1mxtail22": {
-    "type": "Enter answer",
+    "type": "ENTER ANSWER",
     "sourcePage": "21",
     "sourceReference": "MEX-Q8(i)"
   },
   "2:1:Mis-Ex-1:p2u1mxtail23": {
-    "type": "Enter answer",
+    "type": "ENTER ANSWER",
     "sourcePage": "21",
     "sourceReference": "MEX-Q8(ii)"
   },
   "2:1:Mis-Ex-1:p2u1mxtail24": {
-    "type": "Enter answer",
+    "type": "ENTER ANSWER",
     "sourcePage": "21",
     "sourceReference": "MEX-Q8(iii)"
   },
   "2:1:Mis-Ex-1:p2u1mxtail25": {
-    "type": "Enter answer",
+    "type": "ENTER ANSWER",
     "sourcePage": "21",
     "sourceReference": "MEX-Q9"
   },
   "2:1:Mis-Ex-1:p2u1mxtail26": {
-    "type": "Enter answer",
+    "type": "ENTER ANSWER",
     "sourcePage": "21",
     "sourceReference": "MEX-Q10"
   },
   "2:1:Mis-Ex-1:p2u1mxtail27": {
-    "type": "Enter answer",
+    "type": "ENTER ANSWER",
     "sourcePage": "21",
     "sourceReference": "MEX-Q11"
   },
   "2:1:Mis-Ex-1:p2u1mxtail28": {
-    "type": "Enter answer",
+    "type": "ENTER ANSWER",
     "sourcePage": "21",
     "sourceReference": "MEX-Q12"
   },
@@ -3519,12 +3519,12 @@ export const QUESTION_REFERENCES = {
     "sourceReference": "MEX-Q13"
   },
   "2:1:Mis-Ex-1:p2u1mxtail31": {
-    "type": "Enter answer",
+    "type": "ENTER ANSWER",
     "sourcePage": "22",
     "sourceReference": "MEX-Q14"
   },
   "2:1:Mis-Ex-1:p2u1mxtail32": {
-    "type": "Enter answer",
+    "type": "ENTER ANSWER",
     "sourcePage": "22",
     "sourceReference": "MEX-Q15"
   },
@@ -3534,32 +3534,32 @@ export const QUESTION_REFERENCES = {
     "sourceReference": "MEX-Q16"
   },
   "2:1:Mis-Ex-1:p2u1mxtail41": {
-    "type": "Enter answer",
+    "type": "ENTER ANSWER",
     "sourcePage": "22",
     "sourceReference": "MEX-Q16(i)"
   },
   "2:1:Mis-Ex-1:p2u1mxtail42": {
-    "type": "Enter answer",
+    "type": "ENTER ANSWER",
     "sourcePage": "22",
     "sourceReference": "MEX-Q16(ii)"
   },
   "2:1:Mis-Ex-1:p2u1mxtail43": {
-    "type": "Enter answer",
+    "type": "ENTER ANSWER",
     "sourcePage": "22",
     "sourceReference": "MEX-Q17"
   },
   "2:1:Mis-Ex-1:p2u1mxtail44": {
-    "type": "Enter answer",
+    "type": "ENTER ANSWER",
     "sourcePage": "22",
     "sourceReference": "MEX-Q18(i)"
   },
   "2:1:Mis-Ex-1:p2u1mxtail45": {
-    "type": "Enter answer",
+    "type": "ENTER ANSWER",
     "sourcePage": "22",
     "sourceReference": "MEX-Q18(ii)"
   },
   "2:1:Mis-Ex-1:p2u1mxtail46": {
-    "type": "Enter answer",
+    "type": "ENTER ANSWER",
     "sourcePage": "22",
     "sourceReference": "MEX-Q18(iii)"
   },
@@ -3570,13 +3570,13 @@ export const QUESTION_REFERENCES = {
     "sourceQualifier": "All quartiles"
   },
   "2:1:Mis-Ex-1:p2u1mxtail51": {
-    "type": "Enter answer",
+    "type": "ENTER ANSWER",
     "sourcePage": "22",
     "sourceReference": "MEX-Q19",
     "sourceQualifier": "Persons from 57 kg to 72 kg"
   },
   "2:1:Mis-Ex-1:p2u1mxtail52": {
-    "type": "Enter answer",
+    "type": "ENTER ANSWER",
     "sourcePage": "22",
     "sourceReference": "MEX-Q20"
   },
@@ -3881,42 +3881,42 @@ export const QUESTION_REFERENCES = {
     "sourceReference": "TH-Q36"
   },
   "2:2:Ex-2.1:p2u2e211": {
-    "type": "Enter answer",
+    "type": "ENTER ANSWER",
     "sourcePage": "26",
     "sourceReference": "EX-Q1"
   },
   "2:2:Ex-2.1:p2u2e212": {
-    "type": "Enter answer",
+    "type": "ENTER ANSWER",
     "sourcePage": "26",
     "sourceReference": "EX-Q2"
   },
   "2:2:Ex-2.1:p2u2e213": {
-    "type": "Enter answer",
+    "type": "ENTER ANSWER",
     "sourcePage": "26",
     "sourceReference": "EX-Q3"
   },
   "2:2:Ex-2.1:p2u2e214": {
-    "type": "Enter answer",
+    "type": "ENTER ANSWER",
     "sourcePage": "26",
     "sourceReference": "EX-Q4"
   },
   "2:2:Ex-2.1:p2u2e215": {
-    "type": "Enter answer",
+    "type": "ENTER ANSWER",
     "sourcePage": "26",
     "sourceReference": "EX-Q5"
   },
   "2:2:Ex-2.1:p2u2e216": {
-    "type": "Enter answer",
+    "type": "ENTER ANSWER",
     "sourcePage": "26",
     "sourceReference": "EX-Q6"
   },
   "2:2:Ex-2.1:p2u2e217": {
-    "type": "Enter answer",
+    "type": "ENTER ANSWER",
     "sourcePage": "26",
     "sourceReference": "EX-Q7"
   },
   "2:2:Ex-2.1:p2u2e218": {
-    "type": "Enter answer",
+    "type": "ENTER ANSWER",
     "sourcePage": "26",
     "sourceReference": "EX-Q8"
   },
@@ -4121,7 +4121,7 @@ export const QUESTION_REFERENCES = {
     "sourceReference": "TH-Q40"
   },
   "2:2:Ex-2.2:p2u2e221": {
-    "type": "Enter answer",
+    "type": "ENTER ANSWER",
     "sourcePage": "30",
     "sourceReference": "EX-Q1(i)"
   },
@@ -4131,7 +4131,7 @@ export const QUESTION_REFERENCES = {
     "sourceReference": "EX-Q1(ii)"
   },
   "2:2:Ex-2.2:p2u2e223": {
-    "type": "Enter answer",
+    "type": "ENTER ANSWER",
     "sourcePage": "30",
     "sourceReference": "EX-Q2(i)"
   },
@@ -4141,7 +4141,7 @@ export const QUESTION_REFERENCES = {
     "sourceReference": "EX-Q2(ii)"
   },
   "2:2:Ex-2.2:p2u2e225": {
-    "type": "Enter answer",
+    "type": "ENTER ANSWER",
     "sourcePage": "31",
     "sourceReference": "EX-Q3(i)"
   },
@@ -4151,7 +4151,7 @@ export const QUESTION_REFERENCES = {
     "sourceReference": "EX-Q3(ii)"
   },
   "2:2:Ex-2.2:p2u2e227": {
-    "type": "Enter answer",
+    "type": "ENTER ANSWER",
     "sourcePage": "31",
     "sourceReference": "EX-Q4(i)"
   },
@@ -4161,7 +4161,7 @@ export const QUESTION_REFERENCES = {
     "sourceReference": "EX-Q4(ii)"
   },
   "2:2:Ex-2.2:p2u2e229": {
-    "type": "Enter answer",
+    "type": "ENTER ANSWER",
     "sourcePage": "31",
     "sourceReference": "EX-Q5(i)"
   },
@@ -4356,17 +4356,17 @@ export const QUESTION_REFERENCES = {
     "sourceReference": "EX-Q2"
   },
   "2:2:Ex-2.3:p2u2e234": {
-    "type": "Enter answer",
+    "type": "ENTER ANSWER",
     "sourcePage": "33",
     "sourceReference": "EX-Q3"
   },
   "2:2:Ex-2.3:p2u2e235": {
-    "type": "Enter answer",
+    "type": "ENTER ANSWER",
     "sourcePage": "33",
     "sourceReference": "EX-Q4"
   },
   "2:2:Ex-2.3:p2u2e236": {
-    "type": "Enter answer",
+    "type": "ENTER ANSWER",
     "sourcePage": "33",
     "sourceReference": "EX-Q5"
   },
@@ -4403,7 +4403,7 @@ export const QUESTION_REFERENCES = {
     "sourceReference": "EX-Q7(ii)"
   },
   "2:2:Ex-2.3:p2u2e2313": {
-    "type": "Enter answer",
+    "type": "ENTER ANSWER",
     "sourcePage": "33",
     "sourceReference": "EX-Q8"
   },
@@ -4488,42 +4488,42 @@ export const QUESTION_REFERENCES = {
     "sourceReference": "LR-12"
   },
   "2:2:Mis-Ex-2:p2u2mx1": {
-    "type": "Enter answer",
+    "type": "ENTER ANSWER",
     "sourcePage": "35",
     "sourceReference": "MEX-Q1"
   },
   "2:2:Mis-Ex-2:p2u2mx2": {
-    "type": "Enter answer",
+    "type": "ENTER ANSWER",
     "sourcePage": "35",
     "sourceReference": "MEX-Q2"
   },
   "2:2:Mis-Ex-2:p2u2mx3": {
-    "type": "Enter answer",
+    "type": "ENTER ANSWER",
     "sourcePage": "35",
     "sourceReference": "MEX-Q3"
   },
   "2:2:Mis-Ex-2:p2u2mx4": {
-    "type": "Enter answer",
+    "type": "ENTER ANSWER",
     "sourcePage": "35",
     "sourceReference": "MEX-Q4"
   },
   "2:2:Mis-Ex-2:p2u2mx5": {
-    "type": "Enter answer",
+    "type": "ENTER ANSWER",
     "sourcePage": "35",
     "sourceReference": "MEX-Q5"
   },
   "2:2:Mis-Ex-2:p2u2mx6": {
-    "type": "Enter answer",
+    "type": "ENTER ANSWER",
     "sourcePage": "35",
     "sourceReference": "MEX-Q6"
   },
   "2:2:Mis-Ex-2:p2u2mx7": {
-    "type": "Enter answer",
+    "type": "ENTER ANSWER",
     "sourcePage": "35",
     "sourceReference": "MEX-Q7"
   },
   "2:2:Mis-Ex-2:p2u2mx8": {
-    "type": "Enter answer",
+    "type": "ENTER ANSWER",
     "sourcePage": "35",
     "sourceReference": "MEX-Q8(i)"
   },
@@ -4533,7 +4533,7 @@ export const QUESTION_REFERENCES = {
     "sourceReference": "MEX-Q8(ii)"
   },
   "2:2:Mis-Ex-2:p2u2mx10": {
-    "type": "Enter answer",
+    "type": "ENTER ANSWER",
     "sourcePage": "35",
     "sourceReference": "MEX-Q9(i)"
   },
@@ -4543,32 +4543,32 @@ export const QUESTION_REFERENCES = {
     "sourceReference": "MEX-Q9(ii)"
   },
   "2:2:Mis-Ex-2:p2u2mx12": {
-    "type": "Enter answer",
+    "type": "ENTER ANSWER",
     "sourcePage": "35",
     "sourceReference": "MEX-Q10(i)"
   },
   "2:2:Mis-Ex-2:p2u2mx13": {
-    "type": "Enter answer",
+    "type": "ENTER ANSWER",
     "sourcePage": "35",
     "sourceReference": "MEX-Q10(ii)"
   },
   "2:2:Mis-Ex-2:p2u2mx14": {
-    "type": "Enter answer",
+    "type": "ENTER ANSWER",
     "sourcePage": "35",
     "sourceReference": "MEX-Q10(iii)"
   },
   "2:2:Mis-Ex-2:p2u2mx15": {
-    "type": "Enter answer",
+    "type": "ENTER ANSWER",
     "sourcePage": "35",
     "sourceReference": "MEX-Q11(i)"
   },
   "2:2:Mis-Ex-2:p2u2mx16": {
-    "type": "Enter answer",
+    "type": "ENTER ANSWER",
     "sourcePage": "35",
     "sourceReference": "MEX-Q11(ii)"
   },
   "2:2:Mis-Ex-2:p2u2mx17": {
-    "type": "Enter answer",
+    "type": "ENTER ANSWER",
     "sourcePage": "35",
     "sourceReference": "MEX-Q12(i)"
   },
@@ -4593,60 +4593,60 @@ export const QUESTION_REFERENCES = {
     "sourceReference": "MEX-Q15"
   },
   "2:2:Mis-Ex-2:p2u2mx25": {
-    "type": "Enter answer",
+    "type": "ENTER ANSWER",
     "sourcePage": "36",
     "sourceReference": "MEX-Q16"
   },
   "2:2:Activities:p2u2ac1": {
-    "type": "Enter answer",
+    "type": "ENTER ANSWER",
     "sourcePage": "36",
     "sourceReference": "ACT-2.1",
     "sourceQualifier": "Step 1"
   },
   "2:2:Activities:p2u2ac2": {
-    "type": "Enter answer",
+    "type": "ENTER ANSWER",
     "sourcePage": "36",
     "sourceReference": "ACT-2.1",
     "sourceQualifier": "Step 2"
   },
   "2:2:Activities:p2u2ac3": {
-    "type": "Enter answer",
+    "type": "ENTER ANSWER",
     "sourcePage": "36",
     "sourceReference": "ACT-2.1",
     "sourceQualifier": "Step 3"
   },
   "2:2:Activities:p2u2ac4": {
-    "type": "Enter answer",
+    "type": "ENTER ANSWER",
     "sourcePage": "36",
     "sourceReference": "ACT-2.2",
     "sourceQualifier": "Step 1"
   },
   "2:2:Activities:p2u2ac5": {
-    "type": "Enter answer",
+    "type": "ENTER ANSWER",
     "sourcePage": "36",
     "sourceReference": "ACT-2.2",
     "sourceQualifier": "Step 2"
   },
   "2:2:Activities:p2u2ac6": {
-    "type": "Enter answer",
+    "type": "ENTER ANSWER",
     "sourcePage": "36",
     "sourceReference": "ACT-2.2",
     "sourceQualifier": "Step 3"
   },
   "2:2:Activities:p2u2ac7": {
-    "type": "Enter answer",
+    "type": "ENTER ANSWER",
     "sourcePage": "36",
     "sourceReference": "ACT-2.2",
     "sourceQualifier": "Step 4"
   },
   "2:2:Activities:p2u2ac8": {
-    "type": "Enter answer",
+    "type": "ENTER ANSWER",
     "sourcePage": "36",
     "sourceReference": "ACT-2.2",
     "sourceQualifier": "Step 5"
   },
   "2:2:Activities:p2u2ac9": {
-    "type": "Enter answer",
+    "type": "ENTER ANSWER",
     "sourcePage": "36",
     "sourceReference": "ACT-2.3",
     "sourceQualifier": "Step 1"
@@ -4664,19 +4664,19 @@ export const QUESTION_REFERENCES = {
     "sourceQualifier": "Step 3"
   },
   "2:2:Activities:p2u2ac12": {
-    "type": "Enter answer",
+    "type": "ENTER ANSWER",
     "sourcePage": "36",
     "sourceReference": "ACT-2.3",
     "sourceQualifier": "Step 4"
   },
   "2:2:Activities:p2u2ac13": {
-    "type": "Enter answer",
+    "type": "ENTER ANSWER",
     "sourcePage": "36",
     "sourceReference": "ACT-2.3",
     "sourceQualifier": "Step 5"
   },
   "2:2:Activities:p2u2ac14": {
-    "type": "Enter answer",
+    "type": "ENTER ANSWER",
     "sourcePage": "36",
     "sourceReference": "ACT-2.3",
     "sourceQualifier": "Step 6"
@@ -4724,3 +4724,5 @@ export const QUESTION_REFERENCES = {
     "sourceQualifier": "Step 7"
   }
 };
+
+
