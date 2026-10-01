@@ -14,6 +14,7 @@ const files = new Map([
   ['/unit.html', ['unit.html', 'text/html; charset=utf-8']],
   ['/styles.css', ['styles.css', 'text/css; charset=utf-8']],
   ['/main.js', ['main.js', 'text/javascript; charset=utf-8']],
+  ['/question-references.js', ['question-references.js', 'text/javascript; charset=utf-8']],
   ['/questions.js', ['questions.js', 'text/javascript; charset=utf-8']],
   ['/unit2-questions.js', ['unit2-questions.js', 'text/javascript; charset=utf-8']],
   ['/unit3-questions.js', ['unit3-questions.js', 'text/javascript; charset=utf-8']],
