@@ -22,7 +22,7 @@ export const QUESTION_REFERENCES = {
   },
   "1:1:Th(P:1-9):th5": {
     "type": "MCQ",
-    "sourcePage": "1–9",
+    "sourcePage": "4",
     "sourceReference": "TH-Q5"
   },
   "1:1:Th(P:1-9):th6": {
@@ -347,7 +347,7 @@ export const QUESTION_REFERENCES = {
   },
   "1:1:Th(P:10-15):th10p1": {
     "type": "MCQ",
-    "sourcePage": "10–15",
+    "sourcePage": "10",
     "sourceReference": "TH-Q1"
   },
   "1:1:Th(P:10-15):th10p2": {
