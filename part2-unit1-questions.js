@@ -322,8 +322,8 @@ export const exercise12 = [
   ['Q4(i)', 'From the following data calculate the rent of 15th house.\n⟦table:House Rent (in ₹)¦11000¦12000¦13000¦14000¦15000¦16000¦17000¦18000;No. of houses¦25¦17¦13¦14¦15¦8¦6¦2⟧', 11000],
   ['Q4(ii)', 'From the following data calculate the rent of 65th house.\n⟦table:House Rent (in ₹)¦11000¦12000¦13000¦14000¦15000¦16000¦17000¦18000;No. of houses¦25¦17¦13¦14¦15¦8¦6¦2⟧', 14000],
   ['Q4(iii)', 'From the following data calculate the rent of 91st house.\n⟦table:House Rent (in ₹)¦11000¦12000¦13000¦14000¦15000¦16000¦17000¦18000;No. of houses¦25¦17¦13¦14¦15¦8¦6¦2⟧', 16000],
-  ['Q5(i)', 'The following frequency distribution shows the weight of students in a class.\n⟦table:Weight (in kg)¦40¦45¦50¦55¦60¦65;Number of Students¦15¦40¦29¦21¦10¦5⟧\nFind the percentage of students whose weight is more than 50 kg.', 30],
-  ['Q5(ii)', 'The following frequency distribution shows the weight of students in a class.\n⟦table:Weight (in kg)¦40¦45¦50¦55¦60¦65;Number of Students¦15¦40¦29¦21¦10¦5⟧\nIf the weight column provided is of mid values then,\nfind the percentage of students whose weight is more than 50 kg.', 42],
+  ['Q5(i)', 'The following frequency distribution shows the weight of students in a class.\n⟦table:Weight (in kg)¦40¦45¦50¦55¦60¦65;Number of Students¦15¦40¦29¦21¦10¦5⟧\nFind the percentage of students whose weight is more than 50 kg.', '30%', { requiresPercent: true }],
+  ['Q5(ii)', 'The following frequency distribution shows the weight of students in a class.\n⟦table:Weight (in kg)¦40¦45¦50¦55¦60¦65;Number of Students¦15¦40¦29¦21¦10¦5⟧\nIf the weight column provided is of mid values then,\nfind the percentage of students whose weight is more than 50 kg.', '42%', { requiresPercent: true }],
   ['Q6(i)', 'Calculate D4 from the following data:\n⟦table:Mid Value¦2.5¦7.5¦12.5¦17.5¦22.5¦Total;Frequency¦7¦18¦25¦30¦20¦100⟧', 13],
   ['Q6(ii)', 'Calculate P48 from the following data:\n⟦table:Mid Value¦2.5¦7.5¦12.5¦17.5¦22.5¦Total;Frequency¦7¦18¦25¦30¦20¦100⟧', 14.6],
   ['Q7(i)', 'Calculate D9 of the following distribution.\n⟦table:Length (in Inches)¦0–20¦20–40¦40–60¦60–80¦80–100¦100–120;No. of units¦1¦14¦35¦85¦90¦15⟧', 98],
@@ -332,7 +332,7 @@ export const exercise12 = [
   choice('e12q8', 'Q8', 'Weekly wages for group of 100 persons are given below :\n⟦table:Weekly wages (in Rs.)¦0–500¦500–1000¦1000–1500¦1500–2000¦2000–2500;No. of persons¦7¦a¦25¦30¦b⟧\nD3 for this group is Rs. 1100. Calculate the missing frequencies a, b.', '(18, 20)', ['(20, 18)', '(17, 21)', '(22, 16)']),
   choice('e12q9', 'Q9', 'The weekly profit (in rupees) of 100 shops are distributed as follows :\n⟦table:Profit per shop¦0–1000¦1000–2000¦2000–3000¦3000–4000¦4000–5000¦5000–6000¦6000–7000;No. of Shops¦10¦16¦26¦20¦20¦5¦3⟧\nFind the limits of the profit of middle 60% of the shops.', '(P20, P80) = (1625, 4400)', ['(P20, P80) = (1500, 4500)', '(P30, P70) = (1625, 4400)', '(P20, P80) = (1600, 4600)']),
   ...E('e12tail', [
-    ['Q10', 'In a particular factory, workers produce various types of output units.\nThe following distribution was obtained\n⟦table:Output units Produced¦70–74¦75–79¦80–84¦85–89¦90–94¦95–99¦100–104;No. of workers¦40¦45¦50¦60¦70¦80¦100⟧\nFind the percentage of workers who have produced less than 82 output units.', 24.72]
+    ['Q10', 'In a particular factory, workers produce various types of output units.\nThe following distribution was obtained\n⟦table:Output units Produced¦70–74¦75–79¦80–84¦85–89¦90–94¦95–99¦100–104;No. of workers¦40¦45¦50¦60¦70¦80¦100⟧\nFind the percentage of workers who have produced less than 82 output units.', '24.72%', { requiresPercent: true }]
   ])
 ];
 

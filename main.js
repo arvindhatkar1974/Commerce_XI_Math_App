@@ -1,7 +1,7 @@
 import { activities1, exercise11, exercise12, letsRemember1, miscellaneousExercise1, theoryPages1to9, theoryPages10to15 } from './questions.js';
 import { activities2, exercise21, letsRemember2, miscellaneousExercise2, theoryPages20to30 } from './unit2-questions.js';
 import { activities3, exercise31, exercise32, exercise33, letsRemember3, miscellaneousExercise3, theoryPages33to37, theoryPages38to40, theoryPages40to42 } from './unit3-questions.js';
-import { activities1 as part2Activities1, exercise11 as part2Exercise11, exercise12 as part2Exercise12, exercise13 as part2Exercise13, letsRemember1 as part2LetsRemember1, miscellaneousExercise1 as part2MiscellaneousExercise1, theoryPages1to7 as part2TheoryPages1to7, theoryPages8to15 as part2TheoryPages8to15, theoryPages16to18 as part2TheoryPages16to18 } from './part2-unit1-questions.js?v=20260925-85';
+import { activities1 as part2Activities1, exercise11 as part2Exercise11, exercise12 as part2Exercise12, exercise13 as part2Exercise13, letsRemember1 as part2LetsRemember1, miscellaneousExercise1 as part2MiscellaneousExercise1, theoryPages1to7 as part2TheoryPages1to7, theoryPages8to15 as part2TheoryPages8to15, theoryPages16to18 as part2TheoryPages16to18 } from './part2-unit1-questions.js?v=20261001-86';
 import { activities2 as part2Activities2, exercise21 as part2Exercise21, exercise22 as part2Exercise22, exercise23 as part2Exercise23, letsRemember2 as part2LetsRemember2, miscellaneousExercise2 as part2MiscellaneousExercise2, theoryPages24to26 as part2TheoryPages24to26, theoryPages27to30 as part2TheoryPages27to30, theoryPages31to33 as part2TheoryPages31to33 } from './part2-unit2-questions.js?v=20260926-60';
 
 const app = document.querySelector('#app');
@@ -159,7 +159,6 @@ const acceptedForms = {
   q12ii: ['{x ∈ R | 6 ≤ x ≤ 12}'],
   q12iii: ['{x ∈ R | 6 < x ≤ 12}'],
   q12iv: ['{x ∈ R | −23 ≤ x < 5}'],
-  p2u1e12tail1: ['24.72%', '24.72 %'],
 };
 const letters = ['A', 'B', 'C', 'D'];
 let mathUnitContext = 1;
@@ -350,9 +349,20 @@ function responseFor(question, response) {
   if (question.type === 'choice') return response.selected || '';
   return (response.text || '').trim();
 }
-function normalizeNumber(value) {
-  const cleaned = String(value).trim().replace(/,/g, '').replace(/\s+/g, '');
-  return /^[−-]?(?:\d+(?:\.\d+)?|\.\d+)$/.test(cleaned) ? String(Number(cleaned.replace('−', '-'))) : cleaned;
+function parseEnteredNumber(value) {
+  const match = String(value).trim().match(/^([−-])?\s*(\d+(?:\.\d+)?)\s*(%)?$/);
+  if (!match) return null;
+  const number = Number(`${match[1] ? '-' : ''}${match[2]}`);
+  return Number.isFinite(number) ? { number, hasPercent: Boolean(match[3]) } : null;
+}
+function entryAnswerIsCorrect(question, answer) {
+  const entered = parseEnteredNumber(answer);
+  const expected = parseEnteredNumber(question.correct);
+  if (entered && expected) {
+    const requiresPercent = question.requiresPercent === true || expected.hasPercent;
+    return entered.number === expected.number && entered.hasPercent === requiresPercent;
+  }
+  return answer === String(question.correct).trim();
 }
 function scoreAttempt(active) {
   let correct = 0, wrong = 0, unanswered = 0;
@@ -361,7 +371,7 @@ function scoreAttempt(active) {
     const isAnswered = answer !== '';
     const isCorrect = isAnswered && (question.type === 'choice'
       ? answer === question.correct || (acceptedForms[question.id] || []).includes(answer)
-      : normalizeNumber(answer) === normalizeNumber(question.correct) || (acceptedForms[question.id] || []).includes(answer));
+      : entryAnswerIsCorrect(question, answer) || (acceptedForms[question.id] || []).includes(answer));
     if (isCorrect) correct++;
     else if (isAnswered) wrong++;
     else unanswered++;
