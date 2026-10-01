@@ -14,6 +14,7 @@
 
 /* Use one mathematics typeface throughout question content so o, O and 0 remain distinct. */
 .prompt,.option,.answer-input,.review-item .small-note{font-family:"Cambria Math",Cambria,serif}
+.answer-guidance-row{display:flex;align-items:baseline;justify-content:space-between;gap:16px;width:100%;margin-bottom:7px;color:#62717a;font-size:13px;line-height:1.5;white-space:nowrap}.answer-guidance-row label{font-weight:600;flex:0 0 auto}.answer-guidance-row span{margin-left:auto;text-align:right}@media(max-width:520px){.answer-guidance-row{gap:8px;font-size:10px}}
 .option{font-size:17px}
 .arrow-diagram text{font-family:"Cambria Math",Cambria,serif}
 .math-function,.math-symbol{font-family:"Cambria Math",Cambria,serif;font-style:italic;font-weight:400}.math-function{margin-right:.18em}.ordinal-suffix{font-size:.7em;line-height:0;vertical-align:super}
