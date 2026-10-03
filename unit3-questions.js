@@ -140,7 +140,7 @@ export const theoryPages40to42 = C('tc', [
   ['Theory P41', 'For n ∈ N, w³ⁿ⁺² equals', 'w²', ['1', 'w', '−w²']],
   ['Theory P41', 'The conjugate of w is', 'w²', ['w', '1', '−w']],
   ['Theory P41', 'The conjugate of w² is', 'w', ['w²', '1', '−w²']],
-  ['Solved Example P41', 'Find ⟦frac:1¦w⟧ + ⟦frac:1¦w²⟧', '−1', ['1', '0', '−2']],
+  ['Solved Example P41', 'Find ⟦frac:1¦w⟧ + ⟦frac:1¦w²⟧', '−1', ['1', '0', 'None of the options provided']],
   ['Solved Example P41', 'Find (1 + w²)³', '−1', ['1', '0', '−8']],
   ['Solved Example P41', 'Find (1 − w + w²)³', '−8', ['8', '−1', '0']],
   ['Solved Example P41', 'Find (1 − w)(1 − w²)(1 − w⁴)(1 − w⁵)', '9', ['3', '−9', '0']],
