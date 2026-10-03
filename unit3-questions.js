@@ -140,12 +140,12 @@ export const theoryPages40to42 = C('tc', [
   ['Theory P41', 'For n ∈ N, w³ⁿ⁺² equals', 'w²', ['1', 'w', '−w²']],
   ['Theory P41', 'The conjugate of w is', 'w²', ['w', '1', '−w']],
   ['Theory P41', 'The conjugate of w² is', 'w', ['w²', '1', '−w²']],
-  ['Solved Example P41', 'Find ⟦frac:1¦w⟧ + ⟦frac:1¦w²⟧', '−1', ['1', '0', 'None of the options provided']],
-  ['Solved Example P41', 'Find (1 + w²)³', '−1', ['1', '0', '−8']],
-  ['Solved Example P41', 'Find (1 − w + w²)³', '−8', ['8', '−1', '0']],
-  ['Solved Example P41', 'Find (1 − w)(1 − w²)(1 − w⁴)(1 − w⁵)', '9', ['3', '−9', '0']],
-  ['Solved Example P41-42', 'If n is a multiple of 3, then 1 + wⁿ + w²ⁿ equals', '3', ['0', '1', '−1']],
-  ['Solved Example P41-42', 'If n is not a multiple of 3, then 1 + wⁿ + w²ⁿ equals', '0', ['3', '1', '−1']],
+  ['Solved Example P41', 'Find ⟦frac:1¦w⟧ + ⟦frac:1¦w²⟧', '−1', ['1', '0', 'Correct option not given']],
+  ['Solved Example P41', 'Find (1 + w²)³', '−1', ['1', '−8', 'Correct option not given']],
+  ['Solved Example P41', 'Find (1 − w + w²)³', '−8', ['8', '−1', 'Correct option not given']],
+  ['Solved Example P41', 'Find (1 − w)(1 − w²)(1 − w⁴)(1 − w⁵)', '9', ['3', '−9', 'Correct option not given']],
+  ['Solved Example P41-42', 'If n is a multiple of 3, then 1 + wⁿ + w²ⁿ equals', '3', ['0', '1', 'Correct option not given']],
+  ['Solved Example P41-42', 'If n is not a multiple of 3, then 1 + wⁿ + w²ⁿ equals', '0', ['3', '1', 'Correct option not given']],
   ['Theory P40', 'Among the cube roots of unity, the two non-real roots are', 'complex conjugates of each other', ['equal real numbers', 'additive inverses only', 'both equal to i']],
   ['Theory P41', 'Which notation represents the cube roots of unity?', '1, w, w²', ['0, w, w²', '1, w, w³', '−1, w, w²']]
 ]);
