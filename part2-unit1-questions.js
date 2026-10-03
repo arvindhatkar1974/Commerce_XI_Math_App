@@ -17,15 +17,28 @@ const C = (prefix, rows) => rows.map((row, index) => choice(`${prefix}${index + 
 const E = (prefix, rows) => rows.map((row, index) => entry(`${prefix}${index + 1}`, ...row));
 const groupedQuartileFormula = 'The formula of quartiles for grouped data is\nQᵢ = L + ⟦frac:h¦f⟧ ( ⟦frac:i N¦4⟧ − c.f. ),    i = 1, 2, 3\n\n';
 
-const ogiveSvg = (points, xMin, xMax, yMax, xLabels, ariaLabel) => {
-  const left = 52, right = 500, top = 22, bottom = 252;
+const ogiveSvg = (points, xMin, xMax, yMax, xLabels, ariaLabel, xAxisLabel, yAxisLabel) => {
+  const left = 82, right = 612, top = 28, bottom = 312;
   const px = x => left + ((x - xMin) / (xMax - xMin)) * (right - left);
   const py = y => bottom - (y / yMax) * (bottom - top);
+  const formatValue = value => Number.isInteger(value) ? String(value) : String(Number(value.toFixed(2)));
   const path = points.map(([x, y], i) => `${i ? 'L' : 'M'} ${px(x).toFixed(1)} ${py(y).toFixed(1)}`).join(' ');
-  return `<svg class="ogive-graph" viewBox="0 0 540 290" role="img" aria-label="${ariaLabel}"><rect x="18" y="8" width="510" height="272" fill="#fff" stroke="#b8cec8"/><g stroke="#d8e7e3" stroke-width="1">${Array.from({length:11},(_,i)=>`<line x1="${left}" y1="${py(i*yMax/10)}" x2="${right}" y2="${py(i*yMax/10)}"/>`).join('')}</g><g stroke="#17343d" stroke-width="1.8"><line x1="${left}" y1="${bottom}" x2="${right+8}" y2="${bottom}"/><line x1="${left}" y1="${bottom}" x2="${left}" y2="${top-8}"/></g><path d="${path}" fill="none" stroke="#075e58" stroke-width="3"/>${points.map(([x,y])=>`<circle cx="${px(x)}" cy="${py(y)}" r="3.2" fill="#075e58"/>`).join('')}<g font-family="Georgia,serif" font-size="12" fill="#17343d">${xLabels.map(x=>`<text x="${px(x)}" y="${bottom+18}" text-anchor="middle">${x}</text>`).join('')}${[0,yMax/4,yMax/2,3*yMax/4,yMax].map(y=>`<text x="${left-8}" y="${py(y)+4}" text-anchor="end">${y}</text>`).join('')}<text x="${right-20}" y="${bottom+34}">X</text><text x="${left-18}" y="${top}">Y</text></g></svg>`;
+  const xMinorStep = (xMax - xMin) / ((xLabels.length - 1) * 5);
+  const yMinorStep = yMax / 50;
+  const minorGrid = `${Array.from({ length: (xLabels.length - 1) * 5 + 1 }, (_, i) => `<line x1="${px(xMin + i * xMinorStep)}" y1="${top}" x2="${px(xMin + i * xMinorStep)}" y2="${bottom}"/>`).join('')}${Array.from({ length: 51 }, (_, i) => `<line x1="${left}" y1="${py(i * yMinorStep)}" x2="${right}" y2="${py(i * yMinorStep)}"/>`).join('')}`;
+  const majorGrid = `${xLabels.map(x => `<line x1="${px(x)}" y1="${top}" x2="${px(x)}" y2="${bottom}"/>`).join('')}${Array.from({ length: 11 }, (_, i) => `<line x1="${left}" y1="${py(i * yMax / 10)}" x2="${right}" y2="${py(i * yMax / 10)}"/>`).join('')}`;
+  const pointLabels = points.map(([x, y], index) => {
+    const nearTop = y >= yMax * 0.9;
+    const isLast = index === points.length - 1;
+    const labelX = nearTop || isLast ? px(x) - 7 : px(x) + 7;
+    const anchor = nearTop || isLast ? 'end' : 'start';
+    const labelY = nearTop ? py(y) + 15 : Math.max(top + 12, py(y) - 8);
+    return `<text x="${labelX}" y="${labelY}" text-anchor="${anchor}">(${formatValue(x)}, ${formatValue(y)})</text>`;
+  }).join('');
+  return `<svg class="ogive-graph" viewBox="0 0 660 365" role="img" aria-label="${ariaLabel}"><rect x="18" y="8" width="630" height="347" fill="#fffdf8" stroke="#b8cec8"/><g stroke="#dceff1" stroke-width="0.55">${minorGrid}</g><g stroke="#9fd0d6" stroke-width="1">${majorGrid}</g><g stroke="#17343d" stroke-width="2"><line x1="${left}" y1="${bottom}" x2="${right+10}" y2="${bottom}"/><line x1="${left}" y1="${bottom}" x2="${left}" y2="${top-10}"/></g><path d="M ${right+10} ${bottom} l -9 -5 l 0 10 z" fill="#17343d"/><path d="M ${left} ${top-10} l -5 9 l 10 0 z" fill="#17343d"/><path d="${path}" fill="none" stroke="#075e58" stroke-width="3"/>${points.map(([x,y])=>`<circle cx="${px(x)}" cy="${py(y)}" r="3.5" fill="#075e58"/>`).join('')}<g font-family="Georgia,serif" font-size="11" fill="#17343d">${pointLabels}</g><g font-family="Georgia,serif" font-size="12" fill="#17343d">${xLabels.map(x=>`<text x="${px(x)}" y="${bottom+18}" text-anchor="middle">${formatValue(x)}</text>`).join('')}${Array.from({length:11},(_,i)=>i*yMax/10).map(y=>`<text x="${left-9}" y="${py(y)+4}" text-anchor="end">${formatValue(y)}</text>`).join('')}<text x="${right}" y="${bottom+39}" text-anchor="end" font-size="13" font-weight="700">${xAxisLabel} (X)</text><text x="24" y="${(top+bottom)/2}" text-anchor="middle" font-size="13" font-weight="700" transform="rotate(-90 24 ${(top+bottom)/2})">${yAxisLabel} (Y)</text></g></svg>`;
 };
-const marksOgive = ogiveSvg([[0,0],[10,4],[20,10],[30,30],[40,40],[50,47],[60,50]], 0, 60, 50, [0,10,20,30,40,50,60], 'Less than ogive for the marks distribution');
-const overtimeOgive = ogiveSvg([[9.5,0],[14.5,11],[19.5,31],[24.5,66],[29.5,86],[34.5,94],[39.5,100]], 9.5, 39.5, 100, [9.5,14.5,19.5,24.5,29.5,34.5,39.5], 'Less than ogive for weekly overtime');
+const marksOgive = ogiveSvg([[0,0],[10,4],[20,10],[30,30],[40,40],[50,47],[60,50]], 0, 60, 50, [0,10,20,30,40,50,60], 'Less than ogive for the marks distribution on graph paper', 'Marks', 'Cumulative Frequency');
+const overtimeOgive = ogiveSvg([[9.5,0],[14.5,11],[19.5,31],[24.5,66],[29.5,86],[34.5,94],[39.5,100]], 9.5, 39.5, 100, [9.5,14.5,19.5,24.5,29.5,34.5,39.5], 'Less than ogive for weekly overtime on graph paper', 'Overtime per week (hours)', 'Cumulative Employees');
 const defectiveProductsTable = '⟦table:No. of defective products¦30¦35¦40¦45¦50¦55¦60;No. of firms¦12¦35¦10¦15¦8¦7¦8⟧';
 const groupedProfitTable = '⟦table:Profit (in ₹ lakh)¦0.5–4.5¦5.5–9.5¦10.5–14.5¦15.5–19.5¦20.5–24.5;No. of firms¦7¦18¦25¦30¦20⟧';
 const marksOgiveTable = '⟦table:Marks¦0–10¦10–20¦20–30¦30–40¦40–50¦50–60;Frequency¦4¦6¦20¦10¦7¦3⟧';
