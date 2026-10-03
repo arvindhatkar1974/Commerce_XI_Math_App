@@ -149,7 +149,7 @@ const paperFor = (name, unit = 1, part = 1) => {
 const questionsFor = (name, record = null, unit = record?.unit || 1, part = record?.part || 1) => record?.questions || paperFor(name, unit, part)?.questions || exercise11;
 const marksFor = (name, record = null, unit = record?.unit || 1, part = record?.part || 1) => questionsFor(name, record, unit, part).length * 2;
 const minutesFor = (name, record = null, unit = record?.unit || 1, part = record?.part || 1) => questionsFor(name, record, unit, part).length * (record?.questionSeconds || selectedQuestionMinutes * 60) / 60;
-const lowTimeWarningMinutes = totalMinutes => Math.min(10, Math.max(1, totalMinutes * 0.1));
+const lowTimeWarningMinutes = totalMinutes => Math.round(Math.min(10, Math.max(1, totalMinutes * 0.1)) * 10) / 10;
 const lowTimeWarningMs = record => lowTimeWarningMinutes(minutesFor(record.paper, record, record.unit, record.part)) * 60 * 1000;
 const solutionPdfFor = (name, unit, part = 1) => {
   const path = part === 1 ? SOLUTION_PDFS[`${unit}:${name}`] : part === 2 && unit === 1 ? PART2_UNIT1_SOLUTION_PDFS[name] : part === 2 && unit === 2 ? PART2_UNIT2_SOLUTION_PDFS[name] : null;
