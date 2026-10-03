@@ -65,38 +65,38 @@ const PART2_UNIT2_PAPERS = {
   'Activities': { title: 'Activities 2.1–2.4', questions: part2Activities2 },
 };
 const SOLUTION_PDFS = {
-  '1:Th(P:1-9)': 'solutions/Th-P1-9.pdf', '1:Ex-1.1': 'solutions/Ex-1.1.pdf',
-  '1:Th(P:10-15)': 'solutions/Th-P10-15.pdf', '1:Ex-1.2': 'solutions/Ex-1.2.pdf',
-  "1:Let's Remember": 'solutions/Lets-Remember.pdf', '1:Mis-Ex-1': 'solutions/Mis-Ex-1.pdf',
-  '1:Activities': 'solutions/Activities.pdf',
-  '2:Th(P:20-30)': 'solutions/Th-P20-30.pdf', '2:Ex-2.1': 'solutions/Ex-2.1.pdf',
-  "2:Let's Remember": 'solutions/Lets-Remember-2.pdf', '2:Mis-Ex-2': 'solutions/Mis-Ex-2.pdf',
-  '2:Activities': 'solutions/Activities-2.pdf',
-  '3:Th(P:33-37)': 'solutions/Th-P33-37.pdf', '3:Ex-3.1': 'solutions/Ex-3.1.pdf',
-  '3:Th(P:38-40)': 'solutions/Th-P38-40.pdf', '3:Ex-3.2': 'solutions/Ex-3.2.pdf',
-  '3:Th(P:40-42)': 'solutions/Th-P40-42.pdf', '3:Ex-3.3': 'solutions/Ex-3.3.pdf',
-  "3:Let's Remember": 'solutions/Lets-Remember-3.pdf', '3:Mis-Ex-3': 'solutions/Mis-Ex-3.pdf',
-  '3:Activities': 'solutions/Activities-3.pdf',
+  '1:Th(P:1-9)': 'solutions/Commerce_XI_Maths_Part1_Unit1_Th_P1-9_Detailed_Solutions.pdf', '1:Ex-1.1': 'solutions/Commerce_XI_Maths_Part1_Unit1_Ex-1.1_Detailed_Solutions.pdf',
+  '1:Th(P:10-15)': 'solutions/Commerce_XI_Maths_Part1_Unit1_Th_P10-15_Detailed_Solutions.pdf', '1:Ex-1.2': 'solutions/Commerce_XI_Maths_Part1_Unit1_Ex-1.2_Detailed_Solutions.pdf',
+  "1:Let's Remember": 'solutions/Commerce_XI_Maths_Part1_Unit1_Lets_Remember_Detailed_Solutions.pdf', '1:Mis-Ex-1': 'solutions/Commerce_XI_Maths_Part1_Unit1_Mis-Ex-1_Detailed_Solutions.pdf',
+  '1:Activities': 'solutions/Commerce_XI_Maths_Part1_Unit1_Activities_Detailed_Solutions.pdf',
+  '2:Th(P:20-30)': 'solutions/Commerce_XI_Maths_Part1_Unit2_Th_P20-30_Detailed_Solutions.pdf', '2:Ex-2.1': 'solutions/Commerce_XI_Maths_Part1_Unit2_Ex-2.1_Detailed_Solutions.pdf',
+  "2:Let's Remember": 'solutions/Commerce_XI_Maths_Part1_Unit2_Lets_Remember_Detailed_Solutions.pdf', '2:Mis-Ex-2': 'solutions/Commerce_XI_Maths_Part1_Unit2_Mis-Ex-2_Detailed_Solutions.pdf',
+  '2:Activities': 'solutions/Commerce_XI_Maths_Part1_Unit2_Activities_Detailed_Solutions.pdf',
+  '3:Th(P:33-37)': 'solutions/Commerce_XI_Maths_Part1_Unit3_Th_P33-37_Detailed_Solutions.pdf', '3:Ex-3.1': 'solutions/Commerce_XI_Maths_Part1_Unit3_Ex-3.1_Detailed_Solutions.pdf',
+  '3:Th(P:38-40)': 'solutions/Commerce_XI_Maths_Part1_Unit3_Th_P38-40_Detailed_Solutions.pdf', '3:Ex-3.2': 'solutions/Commerce_XI_Maths_Part1_Unit3_Ex-3.2_Detailed_Solutions.pdf',
+  '3:Th(P:40-42)': 'solutions/Commerce_XI_Maths_Part1_Unit3_Th_P40-42_Detailed_Solutions.pdf', '3:Ex-3.3': 'solutions/Commerce_XI_Maths_Part1_Unit3_Ex-3.3_Detailed_Solutions.pdf',
+  "3:Let's Remember": 'solutions/Commerce_XI_Maths_Part1_Unit3_Lets_Remember_Detailed_Solutions.pdf', '3:Mis-Ex-3': 'solutions/Commerce_XI_Maths_Part1_Unit3_Mis-Ex-3_Detailed_Solutions.pdf',
+  '3:Activities': 'solutions/Commerce_XI_Maths_Part1_Unit3_Activities_Detailed_Solutions.pdf',
 };
 const PART2_UNIT1_SOLUTION_PDFS = {
-  'Th(P:1-7)': 'solutions/part2-unit1-Th-P1-7.pdf', 'Ex-1.1': 'solutions/part2-unit1-Ex-1.1.pdf',
-  'Th(P:8-15)': 'solutions/part2-unit1-Th-P8-15.pdf', 'Ex-1.2': 'solutions/part2-unit1-Ex-1.2.pdf',
-  'Th(P:16-18)': 'solutions/part2-unit1-Th-P16-18.pdf', 'Ex-1.3': 'solutions/part2-unit1-Ex-1.3.pdf',
-  "Let's Remember": 'solutions/part2-unit1-Lets-Remember.pdf', 'Mis-Ex-1': 'solutions/part2-unit1-Mis-Ex-1.pdf',
-  'Activities': 'solutions/part2-unit1-Activities.pdf',
+  'Th(P:1-7)': 'solutions/Commerce_XI_Maths_Part2_Unit1_Th_P1-7_Detailed_Solutions.pdf', 'Ex-1.1': 'solutions/Commerce_XI_Maths_Part2_Unit1_Ex-1.1_Detailed_Solutions.pdf',
+  'Th(P:8-15)': 'solutions/Commerce_XI_Maths_Part2_Unit1_Th_P8-15_Detailed_Solutions.pdf', 'Ex-1.2': 'solutions/Commerce_XI_Maths_Part2_Unit1_Ex-1.2_Detailed_Solutions.pdf',
+  'Th(P:16-18)': 'solutions/Commerce_XI_Maths_Part2_Unit1_Th_P16-18_Detailed_Solutions.pdf', 'Ex-1.3': 'solutions/Commerce_XI_Maths_Part2_Unit1_Ex-1.3_Detailed_Solutions.pdf',
+  "Let's Remember": 'solutions/Commerce_XI_Maths_Part2_Unit1_Lets_Remember_Detailed_Solutions.pdf', 'Mis-Ex-1': 'solutions/Commerce_XI_Maths_Part2_Unit1_Mis-Ex-1_Detailed_Solutions.pdf',
+  'Activities': 'solutions/Commerce_XI_Maths_Part2_Unit1_Activities_Detailed_Solutions.pdf',
 };
 const PART2_UNIT2_SOLUTION_PDFS = {
-  'Th(P:24-26)': 'solutions/part2-unit2-Th-P24-26.pdf', 'Ex-2.1': 'solutions/part2-unit2-Ex-2.1.pdf',
-  'Th(P:27-30)': 'solutions/part2-unit2-Th-P27-30.pdf', 'Ex-2.2': 'solutions/part2-unit2-Ex-2.2.pdf',
-  'Th(P:31-33)': 'solutions/part2-unit2-Th-P31-33.pdf', 'Ex-2.3': 'solutions/part2-unit2-Ex-2.3.pdf',
-  "Let's Remember": 'solutions/part2-unit2-Lets-Remember.pdf', 'Mis-Ex-2': 'solutions/part2-unit2-Mis-Ex-2.pdf',
-  'Activities': 'solutions/part2-unit2-Activities.pdf',
+  'Th(P:24-26)': 'solutions/Commerce_XI_Maths_Part2_Unit2_Th_P24-26_Detailed_Solutions.pdf', 'Ex-2.1': 'solutions/Commerce_XI_Maths_Part2_Unit2_Ex-2.1_Detailed_Solutions.pdf',
+  'Th(P:27-30)': 'solutions/Commerce_XI_Maths_Part2_Unit2_Th_P27-30_Detailed_Solutions.pdf', 'Ex-2.2': 'solutions/Commerce_XI_Maths_Part2_Unit2_Ex-2.2_Detailed_Solutions.pdf',
+  'Th(P:31-33)': 'solutions/Commerce_XI_Maths_Part2_Unit2_Th_P31-33_Detailed_Solutions.pdf', 'Ex-2.3': 'solutions/Commerce_XI_Maths_Part2_Unit2_Ex-2.3_Detailed_Solutions.pdf',
+  "Let's Remember": 'solutions/Commerce_XI_Maths_Part2_Unit2_Lets_Remember_Detailed_Solutions.pdf', 'Mis-Ex-2': 'solutions/Commerce_XI_Maths_Part2_Unit2_Mis-Ex-2_Detailed_Solutions.pdf',
+  'Activities': 'solutions/Commerce_XI_Maths_Part2_Unit2_Activities_Detailed_Solutions.pdf',
 };
-const UNIT1_GUIDE_PDF = 'guides/unit-1-reference.pdf';
-const UNIT2_GUIDE_PDF = 'guides/unit-2-reference.pdf';
-const UNIT3_GUIDE_PDF = 'guides/unit-3-reference.pdf';
-const PART2_UNIT1_GUIDE_PDF = 'guides/part2-unit1-reference.pdf';
-const PART2_UNIT2_GUIDE_PDF = 'guides/part2-unit2-reference.pdf';
+const UNIT1_GUIDE_PDF = 'guides/Commerce_XI_Maths_Part1_Unit1_Sets_and_Relations_Reference_Guide.pdf';
+const UNIT2_GUIDE_PDF = 'guides/Commerce_XI_Maths_Part1_Unit2_Functions_Reference_Guide.pdf';
+const UNIT3_GUIDE_PDF = 'guides/Commerce_XI_Maths_Part1_Unit3_Complex_Numbers_Reference_Guide.pdf';
+const PART2_UNIT1_GUIDE_PDF = 'guides/Commerce_XI_Maths_Part2_Unit1_Partition_Values_Reference_Guide.pdf';
+const PART2_UNIT2_GUIDE_PDF = 'guides/Commerce_XI_Maths_Part2_Unit2_Measures_of_Dispersion_Reference_Guide.pdf';
 const UNIT_OVERVIEWS = {
   '1:1': { name: 'Sets and Relations', description: 'Study sets, relations, ordered pairs and Cartesian products.', topics: ['Sets and set notation', 'Operations on sets', 'Relations and ordered pairs', 'Cartesian products'], guide: UNIT1_GUIDE_PDF, download: 'Part1Unit1-Reference-Guide.pdf' },
   '1:2': { name: 'Functions', description: 'Study functions, their types, graphs, composition and inverse functions.', topics: ['Function notation', 'Domain and range', 'Types of functions', 'Composition and inverse functions'], guide: UNIT2_GUIDE_PDF, download: 'Part1Unit2-Reference-Guide.pdf' },
@@ -574,5 +574,3 @@ function renderPage() {
 }
 setInterval(() => { if (!attempt || pageName !== 'test') return; if (Date.now() >= attempt.deadline) { submit(true); return; } const label = document.querySelector('#timeValue'); if (label) { label.textContent = formatTime(attempt.deadline - Date.now()); document.querySelector('#timer')?.classList.toggle('low', attempt.deadline - Date.now() < 10 * 60 * 1000); } }, 1000);
 renderPage();
-
-
