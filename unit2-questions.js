@@ -1,5 +1,5 @@
 const choice = (id, source, prompt, correct, wrong, visual = '') => ({ id: `u2${id}`, source, type: 'choice', prompt, options: [correct, ...wrong], correct, visual });
-const entry = (id, source, prompt, correct) => ({ id: `u2${id}`, source, type: 'entry', prompt, correct: String(correct) });
+const entry = (id, source, prompt, correct, visual = '') => ({ id: `u2${id}`, source, type: 'entry', prompt, correct: String(correct), visual });
 const piecewiseEntry = (id, source, branches, target, correct) => {
   const definitions = branches.map(([expression, condition]) => `${expression} for ${condition}`);
   const definition = definitions.length === 2 ? definitions.join(' and ') : `${definitions.slice(0, -1).join(', ')}, and ${definitions.at(-1)}`;
@@ -47,8 +47,8 @@ export const theoryPages20to30 = [
   choice('th14', 'Theory P22', 'In graphical form, the domain is read from the extent of the graph on the', 'x-axis', ['y-axis', 'line y = x', 'origin only']),
   choice('th15', 'Theory P22', 'In graphical form, the range is read from the extent of the graph on the', 'y-axis', ['x-axis', 'line y = x', 'origin only']),
   entry('th16', 'Solved Example P22', 'For f(x) = 2x² − 3x + 4, find f(7).', 81),
-  choice('th17', 'Solved Example P22', 'Using the graph of y = g(x) shown below, g(−4) equals', '0', ['−4', '3', '−5'], textbookFunctionGraph),
-  choice('th18', 'Solved Example P22', 'Using the graph of y = g(x) shown below, g(3) equals', '−5', ['0', '3', '5'], textbookFunctionGraph),
+  entry('th17', 'Solved Example P22', 'Using the graph of y = g(x) shown below, find g(−4).', 0, textbookFunctionGraph),
+  entry('th18', 'Solved Example P22', 'Using the graph of y = g(x) shown below, find g(3).', -5, textbookFunctionGraph),
   choice('th19', 'Solved Example P22-23', 'If f(x) = 3x² − x and f(m) = 4, then m equals', '4/3 or −1', ['1 or −4/3', '4 or −1', '1/3 or −4']),
   choice('th20', 'Theory P23', 'A constant function f : R → R has the form', 'f(x) = k', ['f(x) = x', 'f(x) = ax + b, a ≠ 0', 'f(x) = 1/x']),
   choice('th21', 'Theory P23', 'For the constant function f(x) = 3, its range is', '{3}', ['R', '[0, ∞)', 'R − {0}']),

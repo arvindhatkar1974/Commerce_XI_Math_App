@@ -251,7 +251,7 @@ export const QUESTION_REFERENCES = {
     "sourceReference": "EX-Q5(vi)"
   },
   "1:1:Ex-1.1:q5vii": {
-    "type": "MCQ",
+    "type": "ENTER ANSWER",
     "sourcePage": "10",
     "sourceReference": "EX-Q5(vii)"
   },
@@ -951,7 +951,7 @@ export const QUESTION_REFERENCES = {
     "sourceQualifier": "Union"
   },
   "1:1:Activities:misc1a110n": {
-    "type": "MCQ",
+    "type": "ENTER ANSWER",
     "sourcePage": "17",
     "sourceReference": "ACT-1.10(i)"
   },
@@ -1046,12 +1046,12 @@ export const QUESTION_REFERENCES = {
     "sourceReference": "TH-Q16"
   },
   "1:2:Th(P:20-30):u2th17": {
-    "type": "MCQ",
+    "type": "ENTER ANSWER",
     "sourcePage": "22",
     "sourceReference": "TH-Q17"
   },
   "1:2:Th(P:20-30):u2th18": {
-    "type": "MCQ",
+    "type": "ENTER ANSWER",
     "sourcePage": "22",
     "sourceReference": "TH-Q18"
   },
@@ -1908,7 +1908,7 @@ export const QUESTION_REFERENCES = {
     "sourceReference": "TH-Q13"
   },
   "1:3:Th(P:38-40):u3tb14": {
-    "type": "MCQ",
+    "type": "ENTER ANSWER",
     "sourcePage": "39",
     "sourceReference": "TH-Q14"
   },
@@ -1923,7 +1923,7 @@ export const QUESTION_REFERENCES = {
     "sourceReference": "TH-Q16"
   },
   "1:3:Th(P:38-40):u3tb17": {
-    "type": "MCQ",
+    "type": "ENTER ANSWER",
     "sourcePage": "40",
     "sourceReference": "TH-Q17"
   },
@@ -2143,7 +2143,7 @@ export const QUESTION_REFERENCES = {
     "sourceReference": "EX-Q1(i)"
   },
   "1:3:Ex-3.3:u3e332": {
-    "type": "MCQ",
+    "type": "ENTER ANSWER",
     "sourcePage": "42",
     "sourceReference": "EX-Q1(ii)"
   },
@@ -2188,7 +2188,7 @@ export const QUESTION_REFERENCES = {
     "sourceReference": "EX-Q4"
   },
   "1:3:Ex-3.3:u3e3311": {
-    "type": "MCQ",
+    "type": "ENTER ANSWER",
     "sourcePage": "42",
     "sourceReference": "EX-Q5(i)"
   },
@@ -2427,13 +2427,13 @@ export const QUESTION_REFERENCES = {
     "sourceQualifier": "Step 9"
   },
   "1:3:Activities:u3act10": {
-    "type": "MCQ",
+    "type": "ENTER ANSWER",
     "sourcePage": "43",
     "sourceReference": "ACT-3.1",
     "sourceQualifier": "Step 10"
   },
   "1:3:Activities:u3act11": {
-    "type": "MCQ",
+    "type": "ENTER ANSWER",
     "sourcePage": "43",
     "sourceReference": "ACT-3.1",
     "sourceQualifier": "Step 11"
@@ -2445,7 +2445,7 @@ export const QUESTION_REFERENCES = {
     "sourceQualifier": "Step 12"
   },
   "1:3:Activities:u3act13": {
-    "type": "MCQ",
+    "type": "ENTER ANSWER",
     "sourcePage": "43",
     "sourceReference": "ACT-3.1",
     "sourceQualifier": "Step 13"
@@ -4724,5 +4724,3 @@ export const QUESTION_REFERENCES = {
     "sourceQualifier": "Step 7"
   }
 };
-
-

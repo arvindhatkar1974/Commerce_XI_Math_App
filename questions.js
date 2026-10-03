@@ -25,7 +25,7 @@ export const exercise11 = [
   choice('q5iv', 'Q5(iv)', `${q5Sets}\n${q5Universe}\nEvaluate (A ∩ B)′.`, '{1, 2, 5, 6, 7, 8, 9, 10}', ['{3, 4}', '{1, 2, 5, 6}', '{5, 6, 7, 8, 9, 10}']),
   choice('q5v', 'Q5(v)', `${q5Sets}\n${q5Universe}\nEvaluate (A ∩ B) ∪ (A ∩ B′).`, '{1, 2, 3, 4}', ['{3, 4}', '{1, 2}', '{1, 2, 3, 4, 5, 6}']),
   choice('q5vi', 'Q5(vi)', `${q5Sets}\n${q5Universe}\nEvaluate (A ∩ B) ∪ (A′ ∩ B).`, '{3, 4, 5, 6}', ['{3, 4}', '{5, 6}', '{1, 2, 3, 4, 5, 6}']),
-  choice('q5vii', 'Q5(vii)', `${q5Sets}\nFind n(A ∪ B).`, '6', ['8', '4', '2']),
+  entry('q5vii', 'Q5(vii)', `${q5Sets}\nFind n(A ∪ B).`, 6),
   entry('q6i', 'Q6(i)', `${q6Data}\nFind n(A ∪ B).`, 45),
   entry('q6ii', 'Q6(ii)', `${q6Data}\nFind n(A ∩ B).`, 10),
   entry('q6iii', 'Q6(iii)', `${q6Data}\nFind n(A′ ∩ B).`, 10),
@@ -232,7 +232,7 @@ export const activities1 = [
   misc1Choice('a110ab', 'A1.10 A − B', 'U = {1, 2, 3, 4, 5, 6, 7, 8}\nA = {1, 2, 3, 4, 5} and B = {4, 5, 6, 7, 8}.\nFind A − B and n(A − B).', 'A − B = {1, 2, 3}, n(A − B) = 3', ['A − B = {4, 5}, n(A − B) = 2', 'A − B = {6, 7, 8}, n(A − B) = 3', 'A − B = {1, 2, 3, 4, 5}, n(A − B) = 5']),
   misc1Choice('a110ba', 'A1.10 B − A', 'U = {1, 2, 3, 4, 5, 6, 7, 8}\nA = {1, 2, 3, 4, 5} and B = {4, 5, 6, 7, 8}.\nFind B − A and n(B − A).', 'B − A = {6, 7, 8}, n(B − A) = 3', ['B − A = {1, 2, 3}, n(B − A) = 3', 'B − A = {4, 5}, n(B − A) = 2', 'B − A = {4, 5, 6, 7, 8}, n(B − A) = 5']),
   misc1Choice('a110u', 'A1.10 Union', 'U = {1, 2, 3, 4, 5, 6, 7, 8}\nA = {1, 2, 3, 4, 5} and B = {4, 5, 6, 7, 8}.\nFind A ∪ B and n(A ∪ B).', 'A ∪ B = {1, 2, 3, 4, 5, 6, 7, 8}, n(A ∪ B) = 8', ['A ∪ B = {4, 5}, n(A ∪ B) = 2', 'A ∪ B = {1, 2, 3, 6, 7, 8}, n(A ∪ B) = 6', 'A ∪ B = {1, 2, 3, 4, 5}, n(A ∪ B) = 5']),
-  misc1Choice('a110n', 'A1.10(i)', 'If n(A − B) = 3, n(A ∩ B) = 2, and n(B − A) = 3, find n(A − B) + n(A ∩ B) + n(B − A).', '8', ['5', '6', '9']),
+  misc1Entry('a110n', 'A1.10(i)', 'If n(A − B) = 3, n(A ∩ B) = 2, and n(B − A) = 3, find n(A − B) + n(A ∩ B) + n(B − A).', 8),
   misc1Choice('a110ii', 'A1.10(ii)', 'U = {1, 2, 3, 4, 5, 6, 7, 8}\nA = {1, 2, 3, 4, 5} and B = {4, 5, 6, 7, 8}.\nComplete A ∩ B′ = A − B.', 'A ∩ B′ = {1, 2, 3}', ['A ∩ B′ = {4, 5}', 'A ∩ B′ = {6, 7, 8}', 'A ∩ B′ = {1, 2, 3, 4, 5}']),
   misc1Choice('a110iii', 'A1.10(iii)', 'U = {1, 2, 3, 4, 5, 6, 7, 8}\nA = {1, 2, 3, 4, 5} and B = {4, 5, 6, 7, 8}.\nComplete A′ ∩ B = B − A.', 'A′ ∩ B = {6, 7, 8}', ['A′ ∩ B = {1, 2, 3}', 'A′ ∩ B = {4, 5}', 'A′ ∩ B = {4, 5, 6, 7, 8}']),
 ];

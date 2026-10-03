@@ -1,6 +1,10 @@
 const choice = (id, source, prompt, correct, wrong) => ({ id: `u3${id}`, source, type: 'choice', prompt, options: [correct, ...wrong], correct });
 const entry = (id, source, prompt, correct) => ({ id: `u3${id}`, source, type: 'entry', prompt, correct: String(correct) });
 const C = (prefix, rows) => rows.map((row, index) => choice(`${prefix}${index + 1}`, ...row));
+const asEntry = question => {
+  const { options, ...rest } = question;
+  return { ...rest, type: 'entry', correct: String(question.correct) };
+};
 
 export const theoryPages33to37 = C('ta', [
   ['Theory P33', 'The symbol i is introduced so that', 'i = √{−1} and i² = −1', ['i = −1', 'i² = 1', 'i = √{1}']],
@@ -104,6 +108,8 @@ export const theoryPages38to40 = C('tb', [
   ['Theory P39', 'For a quadratic equation, the coefficient a must satisfy', 'a ≠ 0', ['a = 0', 'a > 0 only', 'a = 1 only']],
   ['Theory P39', 'If D = b² − 4ac, then √{D} for D < 0 is expressed using', 'i = √{−1}', ['w', 'π', 'e']]
 ]);
+theoryPages38to40[13] = asEntry(theoryPages38to40[13]);
+theoryPages38to40[16] = asEntry(theoryPages38to40[16]);
 
 export const exercise32 = C('e32', [
   ['Q1(i)', 'Find the square root of complex number, −8 − 6i', '±(1 − 3i)', ['±(1 + 3i)', '±(3 − i)', '±(2 − 2i)']],
@@ -164,6 +170,8 @@ export const exercise33 = C('e33', [
   ['Q5(i)', 'If w is a complex cube root of unity, find (w² + w − 1)³', '−8', ['8', '−1', '0']],
   ['Q5(ii)', 'If w is a complex cube root of unity, find (a + b) + (aw + bw²) + (aw² + bw)', '0', ['a + b', '3(a + b)', '−(a + b)']]
 ]);
+exercise33[1] = asEntry(exercise33[1]);
+exercise33[10] = asEntry(exercise33[10]);
 
 export const letsRemember3 = C('lr', [
   ["Let’s Remember (i)", 'A number of the form a + ib, where a, b ∈ R and i = √{−1}, is called', 'a complex number', ['an irrational number', 'an imaginary number only', 'a natural number']],
@@ -238,3 +246,6 @@ const activity32 = [
   ['Activity 3.2 · Step 8', 'If w³ = 1, find ⟦frac:a + bw + cw²¦c + aw + bw²⟧ in terms of w²', 'w²', ['w', '1', '−w²']]
 ];
 export const activities3 = C('act', [...activity31, ...activity32]);
+activities3[9] = asEntry(activities3[9]);
+activities3[10] = asEntry(activities3[10]);
+activities3[12] = asEntry(activities3[12]);
