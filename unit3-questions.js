@@ -151,14 +151,14 @@ export const theoryPages40to42 = C('tc', [
 ]);
 
 export const exercise33 = C('e33', [
-  ['Q1(i)', 'If w is a complex cube root of unity, show that (2 − w)(2 − w²) equals', '7', ['3', '5', '9']],
+  ['Q1(i)', 'If w is a complex cube root of unity, show that (2 − w)(2 − w²) equals', '7', ['3', '5', 'Correct option not given']],
   ['Q1(ii)', 'If w is a complex cube root of unity, find (2 + w + w²)³ − (1 − 3w + w²)³', '65', ['64', '63', '−65']],
-  ['Q1(iii)', 'If w is a complex cube root of unity, find ⟦frac:a + bw + cw²¦c + aw + bw²⟧', 'w²', ['w', '1', '−w²']],
+  ['Q1(iii)', 'If w is a complex cube root of unity, find ⟦frac:a + bw + cw²¦c + aw + bw²⟧', 'w²', ['w', '−w²', 'Correct option not given']],
   ['Q2(i)', 'If w is a complex cube root of unity, find w + ⟦frac:1¦w⟧', '−1', ['1', '0', 'w²']],
-  ['Q2(ii)', 'If w is a complex cube root of unity, find w² + w³ + w⁴', '0', ['1', '−1', '3']],
-  ['Q2(iii)', 'If w is a complex cube root of unity, find (1 + w²)³', '−1', ['1', '0', '−8']],
-  ['Q2(iv)', 'If w is a complex cube root of unity, find (1 − w − w²)³ + (1 − w + w²)³', '0', ['8', '−8', '16']],
-  ['Q2(v)', 'If w is a complex cube root of unity, find (1 + w)(1 + w²)(1 + w⁴)(1 + w⁸)', '1', ['0', '−1', '4']],
+  ['Q2(ii)', 'If w is a complex cube root of unity, find w² + w³ + w⁴', '0', ['1', '−1', '−w²']],
+  ['Q2(iii)', 'If w is a complex cube root of unity, find (1 + w²)³', '−1', ['1', '0', '−w']],
+  ['Q2(iv)', 'If w is a complex cube root of unity, find (1 − w − w²)³ + (1 − w + w²)³', '0', ['8', '−8', 'w²']],
+  ['Q2(v)', 'If w is a complex cube root of unity, find (1 + w)(1 + w²)(1 + w⁴)(1 + w⁸)', '1', ['0', '−1', 'Correct option not given']],
   ['Q3', 'If α and β are the complex cube roots of unity, find α² + β² + αβ', '0', ['1', '−1', '3']],
   ['Q4', 'If x = a + b, y = αa + βb and z = aβ + bα, then xyz equals', 'a³ + b³', ['a³ − b³', '(a + b)³', 'ab(a + b)']],
   ['Q5(i)', 'If w is a complex cube root of unity, find (w² + w − 1)³', '−8', ['8', '−1', '0']],
