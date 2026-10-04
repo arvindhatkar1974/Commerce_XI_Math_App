@@ -3870,16 +3870,6 @@ export const QUESTION_REFERENCES = {
     "sourcePage": "26",
     "sourceReference": "TH-Q34"
   },
-  "2:2:Th(P:24-26):p2u2ta35": {
-    "type": "MCQ",
-    "sourcePage": "26",
-    "sourceReference": "TH-Q35"
-  },
-  "2:2:Th(P:24-26):p2u2ta36": {
-    "type": "MCQ",
-    "sourcePage": "26",
-    "sourceReference": "TH-Q36"
-  },
   "2:2:Ex-2.1:p2u2e211": {
     "type": "ENTER ANSWER",
     "sourcePage": "26",

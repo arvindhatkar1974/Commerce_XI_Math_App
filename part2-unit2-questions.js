@@ -66,8 +66,6 @@ export const theoryPages24to26 = C('ta', [
   ['Theory P25', 'Range is defined as', 'largest value − smallest value', ['largest value + smallest value', 'mean − median', 'Q3 − Q1 divided by 2']],
   ['Theory P25', 'If L is the largest value and S the smallest, range equals', 'L − S', ['L + S', 'S − L', 'LS']],
   ['Theory P25', 'Range is the', 'simplest measure of dispersion', ['most detailed frequency table', 'measure of central tendency', 'same as variance']],
-  ['Solved Example P25', 'For weights 70, 62, 38, 55, 43, 73, 36, 58, 65, 47, the smallest value is', '36', ['38', '43', '47']],
-  ['Solved Example P25', 'For weights 70, 62, 38, 55, 43, 73, 36, 58, 65, 47, the largest value is', '73', ['70', '65', '58']],
   ['Solved Example P25', 'For weights 70, 62, 38, 55, 43, 73, 36, 58, 65, 47, the range is', '37', ['35', '36', '39']],
   ['Solved Example P25', `${rangeTable}\nFor the grouped salary data, the lower limit used for the range is`, '30', ['50', '70', '150']],
   ['Solved Example P25', `${rangeTable}\nFor the grouped salary data, the upper limit used for the range is`, '150', ['130', '110', '90']],
