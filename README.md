@@ -6,6 +6,8 @@ Part-2 → Unit-1 (Partition Values) has nine source papers: `Th(P:1-7)` (41 que
 
 Part-2 → Unit-2 (Measures of Dispersion) has nine source papers: `Th(P:24-26)` (36 questions), `Ex-2.1` (8 questions), `Th(P:27-30)` (40 questions), `Ex-2.2` (13 questions), `Th(P:31-33)` (32 questions), `Ex-2.3` (16 questions), `Let's Remember` (12 questions), `Mis-Ex-2` (22 questions), and `Activities` (21 questions). Its `Surprise Test` selects five date-seeded questions from each source paper, for 45 questions.
 
+Part-2 → Unit-3 (Skewness) has five source papers: `Th(P:37-43)` (50 questions), `Ex-3.1` (10 questions), `Let's Remember` (13 questions), `Mis-Ex-3` (12 questions), and `Activities` (12 questions). Its `Surprise Test` selects five date-seeded questions from each source paper, for 25 questions. Exercise 3.1 Question 3 uses the mathematically verified answer `0`; the printed textbook key gives `1`, which is inconsistent with the question data and Bowley formula.
+
 Part-1 → Unit-2 has five source papers: `Th(P:20-30)` (41 questions), `Ex-2.1` (31 questions), `Let's Remember` (7 questions), `Mis-Ex-2` (17 questions), and `Activities` (8 questions). Its `Surprise Test` selects five date-seeded random questions from each source paper, for 25 questions. Exercise 2.1 reproduces the three textbook arrow diagrams in the test.
 
 Part-1 → Unit-3 has nine source papers: `Th(P:33-37)` (38 questions), `Ex-3.1` (30 questions), `Th(P:38-40)` (20 questions), `Ex-3.2` (17 questions), `Th(P:40-42)` (22 questions), `Ex-3.3` (12 questions), `Let's Remember` (9 questions), `Mis-Ex-3` (26 questions), and `Activities` (21 questions). Its `Surprise Test` selects five date-seeded random questions from each source paper, for 45 questions.
@@ -14,7 +16,7 @@ Double-click `START_COMMERCE_XI_MATHS_APP.bat` to run the app on Windows. Keep t
 
 Each paper allows 5 minutes per question. Correct answers earn +2, wrong answers −1, and unanswered questions 0. The attempt auto-submits when time expires. Answers, the unfinished attempt, and results are saved in this browser's local storage. Use the same browser and address to resume them; clearing browser site data removes them. Existing unfinished attempts and results remain readable.
 
-Part-1 Units 1, 2, and 3 and Part-2 Units 1 and 2 each provide a downloadable reference guide on the home page and result page. Part-2 Units 1 and 2 also provide detailed-answer PDFs for all nine source papers.
+Part-1 Units 1, 2, and 3 and Part-2 Units 1, 2, and 3 each provide a reference guide on the home page and result page. Part-2 Unit 3 also provides detailed-answer PDFs for all five source papers.
 
 Theory sources: `Syllabus/11thMaths_Part1.pdf`, printed pages 1–9 and 10–15, including ideas used in the solved examples. Ex-1.1 comes from printed pages 9–10, Ex-1.2 from pages 15–16, `Let's Remember` from page 16, `Mis-Ex-1` from pages 16–17, and `Activities` from Activities 1.1–1.10 on pages 17–19. Exercise answers appear on printed pages 126–127. MCQ distractors written for the app are not printed in the textbook.
 

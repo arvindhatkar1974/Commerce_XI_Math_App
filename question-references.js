@@ -4712,5 +4712,542 @@ export const QUESTION_REFERENCES = {
     "sourcePage": "36",
     "sourceReference": "ACT-2.4",
     "sourceQualifier": "Step 7"
+  },
+"2:3:Th(P:37-43):p2u3t1": {
+    "type": "MCQ",
+    "sourcePage": "37",
+    "sourceReference": "TH-Q1"
+  },
+  "2:3:Th(P:37-43):p2u3t2": {
+    "type": "MCQ",
+    "sourcePage": "37",
+    "sourceReference": "TH-Q2"
+  },
+  "2:3:Th(P:37-43):p2u3t3": {
+    "type": "MCQ",
+    "sourcePage": "37",
+    "sourceReference": "TH-Q3"
+  },
+  "2:3:Th(P:37-43):p2u3t4": {
+    "type": "MCQ",
+    "sourcePage": "37",
+    "sourceReference": "TH-Q4"
+  },
+  "2:3:Th(P:37-43):p2u3t5": {
+    "type": "MCQ",
+    "sourcePage": "37",
+    "sourceReference": "TH-Q5"
+  },
+  "2:3:Th(P:37-43):p2u3t6": {
+    "type": "MCQ",
+    "sourcePage": "37",
+    "sourceReference": "TH-Q6"
+  },
+  "2:3:Th(P:37-43):p2u3t7": {
+    "type": "MCQ",
+    "sourcePage": "37",
+    "sourceReference": "TH-Q7"
+  },
+  "2:3:Th(P:37-43):p2u3t8": {
+    "type": "MCQ",
+    "sourcePage": "37",
+    "sourceReference": "TH-Q8"
+  },
+  "2:3:Th(P:37-43):p2u3t9": {
+    "type": "MCQ",
+    "sourcePage": "37",
+    "sourceReference": "TH-Q9"
+  },
+  "2:3:Th(P:37-43):p2u3t10": {
+    "type": "MCQ",
+    "sourcePage": "37",
+    "sourceReference": "TH-Q10"
+  },
+  "2:3:Th(P:37-43):p2u3t11": {
+    "type": "MCQ",
+    "sourcePage": "38",
+    "sourceReference": "TH-Q11"
+  },
+  "2:3:Th(P:37-43):p2u3t12": {
+    "type": "MCQ",
+    "sourcePage": "38",
+    "sourceReference": "TH-Q12"
+  },
+  "2:3:Th(P:37-43):p2u3t13": {
+    "type": "MCQ",
+    "sourcePage": "38",
+    "sourceReference": "TH-Q13"
+  },
+  "2:3:Th(P:37-43):p2u3t14": {
+    "type": "MCQ",
+    "sourcePage": "38",
+    "sourceReference": "TH-Q14"
+  },
+  "2:3:Th(P:37-43):p2u3t15": {
+    "type": "MCQ",
+    "sourcePage": "38",
+    "sourceReference": "TH-Q15"
+  },
+  "2:3:Th(P:37-43):p2u3t16": {
+    "type": "MCQ",
+    "sourcePage": "38",
+    "sourceReference": "TH-Q16"
+  },
+  "2:3:Th(P:37-43):p2u3t17": {
+    "type": "MCQ",
+    "sourcePage": "38",
+    "sourceReference": "TH-Q17"
+  },
+  "2:3:Th(P:37-43):p2u3t18": {
+    "type": "MCQ",
+    "sourcePage": "38",
+    "sourceReference": "TH-Q18"
+  },
+  "2:3:Th(P:37-43):p2u3t19": {
+    "type": "MCQ",
+    "sourcePage": "38",
+    "sourceReference": "TH-Q19"
+  },
+  "2:3:Th(P:37-43):p2u3t20": {
+    "type": "MCQ",
+    "sourcePage": "38",
+    "sourceReference": "TH-Q20"
+  },
+  "2:3:Th(P:37-43):p2u3t21": {
+    "type": "MCQ",
+    "sourcePage": "38",
+    "sourceReference": "TH-Q21"
+  },
+  "2:3:Th(P:37-43):p2u3t22": {
+    "type": "MCQ",
+    "sourcePage": "38",
+    "sourceReference": "TH-Q22"
+  },
+  "2:3:Th(P:37-43):p2u3t23": {
+    "type": "MCQ",
+    "sourcePage": "39",
+    "sourceReference": "TH-Q23"
+  },
+  "2:3:Th(P:37-43):p2u3t24": {
+    "type": "MCQ",
+    "sourcePage": "39",
+    "sourceReference": "TH-Q24"
+  },
+  "2:3:Th(P:37-43):p2u3t25": {
+    "type": "MCQ",
+    "sourcePage": "39",
+    "sourceReference": "TH-Q25"
+  },
+  "2:3:Th(P:37-43):p2u3t26": {
+    "type": "MCQ",
+    "sourcePage": "39",
+    "sourceReference": "TH-Q26"
+  },
+  "2:3:Th(P:37-43):p2u3t27": {
+    "type": "MCQ",
+    "sourcePage": "39",
+    "sourceReference": "TH-Q27"
+  },
+  "2:3:Th(P:37-43):p2u3t28": {
+    "type": "MCQ",
+    "sourcePage": "39",
+    "sourceReference": "TH-Q28"
+  },
+  "2:3:Th(P:37-43):p2u3t29": {
+    "type": "MCQ",
+    "sourcePage": "39",
+    "sourceReference": "TH-Q29"
+  },
+  "2:3:Th(P:37-43):p2u3t30": {
+    "type": "MCQ",
+    "sourcePage": "39",
+    "sourceReference": "TH-Q30"
+  },
+  "2:3:Th(P:37-43):p2u3t31": {
+    "type": "MCQ",
+    "sourcePage": "39",
+    "sourceReference": "TH-Q31"
+  },
+  "2:3:Th(P:37-43):p2u3t32": {
+    "type": "MCQ",
+    "sourcePage": "40",
+    "sourceReference": "TH-Q32"
+  },
+  "2:3:Th(P:37-43):p2u3t33": {
+    "type": "MCQ",
+    "sourcePage": "40",
+    "sourceReference": "TH-Q33"
+  },
+  "2:3:Th(P:37-43):p2u3t34": {
+    "type": "MCQ",
+    "sourcePage": "40",
+    "sourceReference": "TH-Q34"
+  },
+  "2:3:Th(P:37-43):p2u3t35": {
+    "type": "MCQ",
+    "sourcePage": "40",
+    "sourceReference": "TH-Q35"
+  },
+  "2:3:Th(P:37-43):p2u3t36": {
+    "type": "MCQ",
+    "sourcePage": "40",
+    "sourceReference": "TH-Q36"
+  },
+  "2:3:Th(P:37-43):p2u3t37": {
+    "type": "MCQ",
+    "sourcePage": "40",
+    "sourceReference": "TH-Q37"
+  },
+  "2:3:Th(P:37-43):p2u3t38": {
+    "type": "MCQ",
+    "sourcePage": "40",
+    "sourceReference": "TH-Q38"
+  },
+  "2:3:Th(P:37-43):p2u3t39": {
+    "type": "MCQ",
+    "sourcePage": "40",
+    "sourceReference": "TH-Q39"
+  },
+  "2:3:Th(P:37-43):p2u3t40": {
+    "type": "MCQ",
+    "sourcePage": "40",
+    "sourceReference": "TH-Q40"
+  },
+  "2:3:Th(P:37-43):p2u3t41": {
+    "type": "MCQ",
+    "sourcePage": "40",
+    "sourceReference": "TH-Q41"
+  },
+  "2:3:Th(P:37-43):p2u3t42": {
+    "type": "MCQ",
+    "sourcePage": "41",
+    "sourceReference": "TH-Q42"
+  },
+  "2:3:Th(P:37-43):p2u3t43": {
+    "type": "MCQ",
+    "sourcePage": "41",
+    "sourceReference": "TH-Q43"
+  },
+  "2:3:Th(P:37-43):p2u3t44": {
+    "type": "MCQ",
+    "sourcePage": "41",
+    "sourceReference": "TH-Q44"
+  },
+  "2:3:Th(P:37-43):p2u3t45": {
+    "type": "MCQ",
+    "sourcePage": "42",
+    "sourceReference": "TH-Q45"
+  },
+  "2:3:Th(P:37-43):p2u3t46": {
+    "type": "MCQ",
+    "sourcePage": "42",
+    "sourceReference": "TH-Q46"
+  },
+  "2:3:Th(P:37-43):p2u3t47": {
+    "type": "MCQ",
+    "sourcePage": "42",
+    "sourceReference": "TH-Q47"
+  },
+  "2:3:Th(P:37-43):p2u3t48": {
+    "type": "MCQ",
+    "sourcePage": "42",
+    "sourceReference": "TH-Q48"
+  },
+  "2:3:Th(P:37-43):p2u3t49": {
+    "type": "MCQ",
+    "sourcePage": "42",
+    "sourceReference": "TH-Q49"
+  },
+  "2:3:Th(P:37-43):p2u3t50": {
+    "type": "MCQ",
+    "sourcePage": "43",
+    "sourceReference": "TH-Q50"
+  },
+  "2:3:Th(P:37-43):p2u3g51": {
+    "type": "MCQ",
+    "sourcePage": "37",
+    "sourceReference": "TH-Q51"
+  },
+  "2:3:Th(P:37-43):p2u3g52": {
+    "type": "MCQ",
+    "sourcePage": "38",
+    "sourceReference": "TH-Q52"
+  },
+  "2:3:Th(P:37-43):p2u3g53": {
+    "type": "MCQ",
+    "sourcePage": "38",
+    "sourceReference": "TH-Q53"
+  },
+  "2:3:Th(P:37-43):p2u3g54": {
+    "type": "MCQ",
+    "sourcePage": "40",
+    "sourceReference": "TH-Q54"
+  },
+  "2:3:Th(P:37-43):p2u3g55": {
+    "type": "MCQ",
+    "sourcePage": "40",
+    "sourceReference": "TH-Q55"
+  },
+  "2:3:Ex-3.1:p2u3eb1": {
+    "type": "ENTER ANSWER",
+    "sourcePage": "43",
+    "sourceReference": "EX-Q1"
+  },
+  "2:3:Ex-3.1:p2u3eb2": {
+    "type": "ENTER ANSWER",
+    "sourcePage": "43",
+    "sourceReference": "EX-Q2"
+  },
+  "2:3:Ex-3.1:p2u3eb3": {
+    "type": "ENTER ANSWER",
+    "sourcePage": "43",
+    "sourceReference": "EX-Q2"
+  },
+  "2:3:Ex-3.1:p2u3eb4": {
+    "type": "ENTER ANSWER",
+    "sourcePage": "43",
+    "sourceReference": "EX-Q3"
+  },
+  "2:3:Ex-3.1:p2u3eb5": {
+    "type": "ENTER ANSWER",
+    "sourcePage": "43",
+    "sourceReference": "EX-Q4"
+  },
+  "2:3:Ex-3.1:p2u3eb6": {
+    "type": "ENTER ANSWER",
+    "sourcePage": "43",
+    "sourceReference": "EX-Q5"
+  },
+  "2:3:Ex-3.1:p2u3e7": {
+    "type": "MCQ",
+    "sourcePage": "43",
+    "sourceReference": "EX-Q5"
+  },
+  "2:3:Ex-3.1:p2u3e1": {
+    "type": "ENTER ANSWER",
+    "sourcePage": "43",
+    "sourceReference": "EX-Q6"
+  },
+  "2:3:Ex-3.1:p2u3e2": {
+    "type": "ENTER ANSWER",
+    "sourcePage": "43",
+    "sourceReference": "EX-Q7"
+  },
+  "2:3:Ex-3.1:p2u3e3": {
+    "type": "ENTER ANSWER",
+    "sourcePage": "43",
+    "sourceReference": "EX-Q8"
+  },
+  "2:3:Let's Remember:p2u3lr1": {
+    "type": "MCQ",
+    "sourcePage": "43",
+    "sourceReference": "LR-1"
+  },
+  "2:3:Let's Remember:p2u3lr2": {
+    "type": "MCQ",
+    "sourcePage": "43",
+    "sourceReference": "LR-2"
+  },
+  "2:3:Let's Remember:p2u3lr3": {
+    "type": "MCQ",
+    "sourcePage": "43",
+    "sourceReference": "LR-3"
+  },
+  "2:3:Let's Remember:p2u3lr4": {
+    "type": "MCQ",
+    "sourcePage": "44",
+    "sourceReference": "LR-4"
+  },
+  "2:3:Let's Remember:p2u3lr5": {
+    "type": "MCQ",
+    "sourcePage": "44",
+    "sourceReference": "LR-5"
+  },
+  "2:3:Let's Remember:p2u3lr6": {
+    "type": "MCQ",
+    "sourcePage": "44",
+    "sourceReference": "LR-6"
+  },
+  "2:3:Let's Remember:p2u3lr7": {
+    "type": "MCQ",
+    "sourcePage": "44",
+    "sourceReference": "LR-7"
+  },
+  "2:3:Let's Remember:p2u3lr8": {
+    "type": "MCQ",
+    "sourcePage": "44",
+    "sourceReference": "LR-8"
+  },
+  "2:3:Let's Remember:p2u3lr9": {
+    "type": "MCQ",
+    "sourcePage": "44",
+    "sourceReference": "LR-9"
+  },
+  "2:3:Let's Remember:p2u3lr10": {
+    "type": "MCQ",
+    "sourcePage": "44",
+    "sourceReference": "LR-10"
+  },
+  "2:3:Let's Remember:p2u3lr11": {
+    "type": "MCQ",
+    "sourcePage": "44",
+    "sourceReference": "LR-11"
+  },
+  "2:3:Let's Remember:p2u3lr12": {
+    "type": "MCQ",
+    "sourcePage": "44",
+    "sourceReference": "LR-12"
+  },
+  "2:3:Let's Remember:p2u3lr13": {
+    "type": "MCQ",
+    "sourcePage": "44",
+    "sourceReference": "LR-13"
+  },
+  "2:3:Let's Remember:p2u3lr14": {
+    "type": "MCQ",
+    "sourcePage": "44",
+    "sourceReference": "LR-14"
+  },
+  "2:3:Mis-Ex-3:p2u3mx1": {
+    "type": "ENTER ANSWER",
+    "sourcePage": "44",
+    "sourceReference": "MEX-Q1"
+  },
+  "2:3:Mis-Ex-3:p2u3mx2": {
+    "type": "ENTER ANSWER",
+    "sourcePage": "44",
+    "sourceReference": "MEX-Q2"
+  },
+  "2:3:Mis-Ex-3:p2u3mx3": {
+    "type": "ENTER ANSWER",
+    "sourcePage": "44",
+    "sourceReference": "MEX-Q3"
+  },
+  "2:3:Mis-Ex-3:p2u3mx4": {
+    "type": "ENTER ANSWER",
+    "sourcePage": "44",
+    "sourceReference": "MEX-Q4"
+  },
+  "2:3:Mis-Ex-3:p2u3mx5": {
+    "type": "ENTER ANSWER",
+    "sourcePage": "44",
+    "sourceReference": "MEX-Q5"
+  },
+  "2:3:Mis-Ex-3:p2u3mx6": {
+    "type": "ENTER ANSWER",
+    "sourcePage": "44",
+    "sourceReference": "MEX-Q5"
+  },
+  "2:3:Mis-Ex-3:p2u3mx7": {
+    "type": "ENTER ANSWER",
+    "sourcePage": "44",
+    "sourceReference": "MEX-Q6"
+  },
+  "2:3:Mis-Ex-3:p2u3mx8": {
+    "type": "ENTER ANSWER",
+    "sourcePage": "44",
+    "sourceReference": "MEX-Q6"
+  },
+  "2:3:Mis-Ex-3:p2u3mx9": {
+    "type": "ENTER ANSWER",
+    "sourcePage": "44",
+    "sourceReference": "MEX-Q7"
+  },
+  "2:3:Mis-Ex-3:p2u3mx10": {
+    "type": "ENTER ANSWER",
+    "sourcePage": "44",
+    "sourceReference": "MEX-Q8"
+  },
+  "2:3:Mis-Ex-3:p2u3mx11": {
+    "type": "ENTER ANSWER",
+    "sourcePage": "44",
+    "sourceReference": "MEX-Q9"
+  },
+  "2:3:Mis-Ex-3:p2u3mx12": {
+    "type": "ENTER ANSWER",
+    "sourcePage": "44",
+    "sourceReference": "MEX-Q10"
+  },
+  "2:3:Activities:p2u3a1": {
+    "type": "ENTER ANSWER",
+    "sourcePage": "44",
+    "sourceReference": "A3.1"
+  },
+  "2:3:Activities:p2u3a2": {
+    "type": "ENTER ANSWER",
+    "sourcePage": "44",
+    "sourceReference": "A3.1"
+  },
+  "2:3:Activities:p2u3a3": {
+    "type": "ENTER ANSWER",
+    "sourcePage": "44",
+    "sourceReference": "A3.1"
+  },
+  "2:3:Activities:p2u3a4": {
+    "type": "ENTER ANSWER",
+    "sourcePage": "44",
+    "sourceReference": "A3.1"
+  },
+  "2:3:Activities:p2u3ab1": {
+    "type": "MCQ",
+    "sourcePage": "44",
+    "sourceReference": "A3.1"
+  },
+  "2:3:Activities:p2u3ab2": {
+    "type": "MCQ",
+    "sourcePage": "44",
+    "sourceReference": "A3.1"
+  },
+  "2:3:Activities:p2u3ab3": {
+    "type": "MCQ",
+    "sourcePage": "44",
+    "sourceReference": "A3.2"
+  },
+  "2:3:Activities:p2u3ab4": {
+    "type": "MCQ",
+    "sourcePage": "44",
+    "sourceReference": "A3.2"
+  },
+  "2:3:Activities:p2u3ab5": {
+    "type": "MCQ",
+    "sourcePage": "44",
+    "sourceReference": "A3.2"
+  },
+  "2:3:Activities:p2u3ab6": {
+    "type": "MCQ",
+    "sourcePage": "44",
+    "sourceReference": "A3.2"
+  },
+  "2:3:Activities:p2u3ab7": {
+    "type": "MCQ",
+    "sourcePage": "44",
+    "sourceReference": "A3.2"
+  },
+  "2:3:Activities:p2u3ab8": {
+    "type": "MCQ",
+    "sourcePage": "44",
+    "sourceReference": "A3.2"
   }
 };
+
+// Part 2, Unit 4 references. Generated here to keep the questions uniform and auditable.
+const addP2U4References = (paper, prefix, count, type, pageFor, referenceFor) => {
+  for (let index = 1; index <= count; index += 1) {
+    QUESTION_REFERENCES[`2:4:${paper}:p2u4${prefix}${index}`] = {
+      type: typeof type === 'function' ? type(index) : type,
+      sourcePage: String(pageFor(index)),
+      sourceReference: referenceFor(index),
+    };
+  }
+};
+addP2U4References('Th(P:45-49)', 'ta', 45, 'MCQ', index => index <= 12 ? 45 : index <= 22 ? 46 : index <= 30 ? 47 : index <= 39 ? 48 : 49, index => `TH-Q${index}`);
+const ex41Refs = ['Q1(i)','Q1(ii)','Q1(iii)','Q1(iv)','Q2','Q2','Q3','Q3','Q3','Q4','Q4','Q4','Q5','Q5(i)','Q5(ii)'];
+addP2U4References('Ex-4.1', 'e', 15, index => index === 4 ? 'ENTER ANSWER' : 'MCQ', () => 49, index => `EX-${ex41Refs[index - 1]}`);
+addP2U4References('Th(P:49-52)', 'tb', 40, 'MCQ', index => index <= 6 ? 49 : index <= 11 ? 50 : index <= 29 ? 51 : 52, index => `TH-Q${index}`);
+const ex42Refs = ['Q1','Q2','Q3','Q4','Q5(a)','Q5(b)'];
+addP2U4References('Ex-4.2', 'x', 6, index => index === 5 ? 'MCQ' : 'ENTER ANSWER', index => index === 1 ? 52 : 53, index => `EX-${ex42Refs[index - 1]}`);
+addP2U4References("Let's Remember", 'lr', 8, 'MCQ', () => 53, index => `LR-${index}`);
+const mex4Refs = ['Q1','Q1(i)','Q1(i)','Q1(ii)','Q2','Q2(i)','Q2(i)','Q2(ii)','Q3(i)','Q3(ii)','Q3(ii)','Q3(iii)','Q3(iv)','Q4','Q4(i)','Q4(ii)','Q5','Q5','Q5','Q6','Q7','Q8','Q9','Q10'];
+addP2U4References('Mis-Ex-4', 'm', 24, index => index >= 20 ? 'ENTER ANSWER' : 'MCQ', index => index <= 4 ? 53 : index <= 21 ? 54 : index === 22 ? '54–55' : 55, index => `MEX-${mex4Refs[index - 1]}`);
+addP2U4References('Activities', 'a', 18, index => index === 5 || index === 8 ? 'ENTER ANSWER' : 'MCQ', index => index <= 8 ? 52 : 55, index => index <= 8 ? 'A4.1' : index <= 12 ? 'A4.2' : 'A4.3');
+

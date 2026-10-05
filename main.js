@@ -3,7 +3,9 @@ import { activities2, exercise21, letsRemember2, miscellaneousExercise2, theoryP
 import { activities3, exercise31, exercise32, exercise33, letsRemember3, miscellaneousExercise3, theoryPages33to37, theoryPages38to40, theoryPages40to42 } from './unit3-questions.js?v=20261004-2';
 import { activities1 as part2Activities1, exercise11 as part2Exercise11, exercise12 as part2Exercise12, exercise13 as part2Exercise13, letsRemember1 as part2LetsRemember1, miscellaneousExercise1 as part2MiscellaneousExercise1, theoryPages1to7 as part2TheoryPages1to7, theoryPages8to15 as part2TheoryPages8to15, theoryPages16to18 as part2TheoryPages16to18 } from './part2-unit1-questions.js?v=20261004-87';
 import { activities2 as part2Activities2, exercise21 as part2Exercise21, exercise22 as part2Exercise22, exercise23 as part2Exercise23, letsRemember2 as part2LetsRemember2, miscellaneousExercise2 as part2MiscellaneousExercise2, theoryPages24to26 as part2TheoryPages24to26, theoryPages27to30 as part2TheoryPages27to30, theoryPages31to33 as part2TheoryPages31to33 } from './part2-unit2-questions.js?v=20261004-61';
-import { QUESTION_REFERENCES } from './question-references.js?v=20261004-2';
+import { activities3 as part2Activities3, exercise31 as part2Exercise31, letsRemember3 as part2LetsRemember3, miscellaneousExercise3 as part2MiscellaneousExercise3, theoryPages37to43 as part2TheoryPages37to43 } from './part2-unit3-questions.js?v=20261004-13';
+import { activities4 as part2Activities4, exercise41 as part2Exercise41, exercise42 as part2Exercise42, letsRemember4 as part2LetsRemember4, miscellaneousExercise4 as part2MiscellaneousExercise4, theoryPages45to49 as part2TheoryPages45to49, theoryPages49to52 as part2TheoryPages49to52 } from './part2-unit4-questions.js?v=20261005-35';
+import { QUESTION_REFERENCES } from './question-references.js?v=20261005-31';
 
 const app = document.querySelector('#app');
 const headerNav = document.querySelector('#headerNav');
@@ -64,6 +66,24 @@ const PART2_UNIT2_PAPERS = {
   'Mis-Ex-2': { title: 'Miscellaneous Exercise 2', questions: part2MiscellaneousExercise2 },
   'Activities': { title: 'Activities 2.1–2.4', questions: part2Activities2 },
 };
+const PART2_UNIT3_PAPER_NAMES = ['Th(P:37-43)', 'Ex-3.1', "Let's Remember", 'Mis-Ex-3', 'Activities', 'Surprise Test'];
+const PART2_UNIT3_PAPERS = {
+  'Th(P:37-43)': { title: 'Theory (Pages 37–43)', questions: part2TheoryPages37to43 },
+  'Ex-3.1': { title: 'Exercise 3.1', questions: part2Exercise31 },
+  "Let's Remember": { title: "Let's Remember", questions: part2LetsRemember3 },
+  'Mis-Ex-3': { title: 'Miscellaneous Exercise 3', questions: part2MiscellaneousExercise3 },
+  'Activities': { title: 'Activities 3.1–3.2', questions: part2Activities3 },
+};
+const PART2_UNIT4_PAPER_NAMES = ['Th(P:45-49)', 'Ex-4.1', 'Th(P:49-52)', 'Ex-4.2', "Let's Remember", 'Mis-Ex-4', 'Activities', 'Surprise Test'];
+const PART2_UNIT4_PAPERS = {
+  'Th(P:45-49)': { title: 'Theory (Pages 45–49)', questions: part2TheoryPages45to49 },
+  'Ex-4.1': { title: 'Exercise 4.1', questions: part2Exercise41 },
+  'Th(P:49-52)': { title: 'Theory (Pages 49–52)', questions: part2TheoryPages49to52 },
+  'Ex-4.2': { title: 'Exercise 4.2', questions: part2Exercise42 },
+  "Let's Remember": { title: "Let's Remember", questions: part2LetsRemember4 },
+  'Mis-Ex-4': { title: 'Miscellaneous Exercise 4', questions: part2MiscellaneousExercise4 },
+  'Activities': { title: 'Activities 4.1–4.3', questions: part2Activities4 },
+};
 const SOLUTION_PDFS = {
   '1:Th(P:1-9)': 'solutions/Commerce_XI_Maths_Part1_Unit1_Th_P1-9_Detailed_Solutions.pdf', '1:Ex-1.1': 'solutions/Commerce_XI_Maths_Part1_Unit1_Ex-1.1_Detailed_Solutions.pdf',
   '1:Th(P:10-15)': 'solutions/Commerce_XI_Maths_Part1_Unit1_Th_P10-15_Detailed_Solutions.pdf', '1:Ex-1.2': 'solutions/Commerce_XI_Maths_Part1_Unit1_Ex-1.2_Detailed_Solutions.pdf',
@@ -92,17 +112,37 @@ const PART2_UNIT2_SOLUTION_PDFS = {
   "Let's Remember": 'solutions/Commerce_XI_Maths_Part2_Unit2_Lets_Remember_Detailed_Solutions.pdf', 'Mis-Ex-2': 'solutions/Commerce_XI_Maths_Part2_Unit2_Mis-Ex-2_Detailed_Solutions.pdf',
   'Activities': 'solutions/Commerce_XI_Maths_Part2_Unit2_Activities_Detailed_Solutions.pdf',
 };
+const PART2_UNIT3_SOLUTION_PDFS = {
+  'Th(P:37-43)': 'solutions/Commerce_XI_Maths_Part2_Unit3_Th_P37-43_Detailed_Solutions.pdf',
+  'Ex-3.1': 'solutions/Commerce_XI_Maths_Part2_Unit3_Ex-3.1_Detailed_Solutions.pdf',
+  "Let's Remember": 'solutions/Commerce_XI_Maths_Part2_Unit3_Lets_Remember_Detailed_Solutions.pdf',
+  'Mis-Ex-3': 'solutions/Commerce_XI_Maths_Part2_Unit3_Mis-Ex-3_Detailed_Solutions.pdf',
+  'Activities': 'solutions/Commerce_XI_Maths_Part2_Unit3_Activities_Detailed_Solutions.pdf',
+};
+const PART2_UNIT4_SOLUTION_PDFS = {
+  'Th(P:45-49)': 'solutions/Commerce_XI_Maths_Part2_Unit4_Th_P45-49_Detailed_Solutions.pdf',
+  'Ex-4.1': 'solutions/Commerce_XI_Maths_Part2_Unit4_Ex-4.1_Detailed_Solutions.pdf',
+  'Th(P:49-52)': 'solutions/Commerce_XI_Maths_Part2_Unit4_Th_P49-52_Detailed_Solutions.pdf',
+  'Ex-4.2': 'solutions/Commerce_XI_Maths_Part2_Unit4_Ex-4.2_Detailed_Solutions.pdf',
+  "Let's Remember": 'solutions/Commerce_XI_Maths_Part2_Unit4_Lets_Remember_Detailed_Solutions.pdf',
+  'Mis-Ex-4': 'solutions/Commerce_XI_Maths_Part2_Unit4_Mis-Ex-4_Detailed_Solutions.pdf',
+  'Activities': 'solutions/Commerce_XI_Maths_Part2_Unit4_Activities_Detailed_Solutions.pdf',
+};
 const UNIT1_GUIDE_PDF = 'guides/Commerce_XI_Maths_Part1_Unit1_Sets_and_Relations_Reference_Guide.pdf';
 const UNIT2_GUIDE_PDF = 'guides/Commerce_XI_Maths_Part1_Unit2_Functions_Reference_Guide.pdf';
 const UNIT3_GUIDE_PDF = 'guides/Commerce_XI_Maths_Part1_Unit3_Complex_Numbers_Reference_Guide.pdf';
 const PART2_UNIT1_GUIDE_PDF = 'guides/Commerce_XI_Maths_Part2_Unit1_Partition_Values_Reference_Guide.pdf';
 const PART2_UNIT2_GUIDE_PDF = 'guides/Commerce_XI_Maths_Part2_Unit2_Measures_of_Dispersion_Reference_Guide.pdf';
+const PART2_UNIT3_GUIDE_PDF = 'guides/Commerce_XI_Maths_Part2_Unit3_Skewness_Reference_Guide.pdf';
+const PART2_UNIT4_GUIDE_PDF = 'guides/Commerce_XI_Maths_Part2_Unit4_Bivariate_Frequency_Distribution_and_Chi_Square_Statistic_Reference_Guide.pdf';
 const UNIT_OVERVIEWS = {
   '1:1': { name: 'Sets and Relations', description: 'Study sets, relations, ordered pairs and Cartesian products.', topics: ['Sets and set notation', 'Operations on sets', 'Relations and ordered pairs', 'Cartesian products'], guide: UNIT1_GUIDE_PDF, download: 'Part1Unit1-Reference-Guide.pdf' },
   '1:2': { name: 'Functions', description: 'Study functions, their types, graphs, composition and inverse functions.', topics: ['Function notation', 'Domain and range', 'Types of functions', 'Composition and inverse functions'], guide: UNIT2_GUIDE_PDF, download: 'Part1Unit2-Reference-Guide.pdf' },
   '1:3': { name: 'Complex Numbers', description: 'Study imaginary numbers, complex-number operations, roots and equations.', topics: ['Powers of i', 'Complex-number operations', 'Conjugates and roots', 'Quadratic equations'], guide: UNIT3_GUIDE_PDF, download: 'Part1Unit3-Reference-Guide.pdf' },
   '2:1': { name: 'Partition Values', description: 'Study quartiles, deciles, percentiles and their graphical interpretation.', topics: ['Quartiles', 'Deciles and percentiles', 'Grouped-data formulae', 'Ogives'], guide: PART2_UNIT1_GUIDE_PDF, download: 'Part2Unit1-Reference-Guide.pdf' },
   '2:2': { name: 'Measures of Dispersion', description: 'Study range, quartile deviation, variance, standard deviation and coefficient of variation.', topics: ['Range and quartile deviation', 'Variance and standard deviation', 'Combined groups', 'Coefficient of variation'], guide: PART2_UNIT2_GUIDE_PDF, download: 'Part2Unit2-Reference-Guide.pdf' },
+  '2:3': { name: 'Skewness', description: 'Study symmetric and asymmetric distributions and Pearsonian and Bowley coefficients of skewness.', topics: ['Symmetric and asymmetric distributions', 'Positive and negative skewness', 'Pearsonian coefficient', 'Bowley coefficient'], guide: PART2_UNIT3_GUIDE_PDF, download: 'Part2Unit3-Reference-Guide.pdf' },
+  '2:4': { name: 'Bivariate Frequency Distribution and Chi Square Statistic', description: 'Study two-way frequency tables, marginal and conditional distributions, contingency tables and the chi-square statistic.', topics: ['Bivariate frequency tables', 'Marginal and conditional distributions', 'Categorical variables and contingency tables', 'Chi-square statistic'], guide: PART2_UNIT4_GUIDE_PDF, download: 'Part2Unit4-Reference-Guide.pdf' },
 };
 const localDateKey = date => {
   const pad = value => String(value).padStart(2, '0');
@@ -123,7 +163,7 @@ const seededRandom = seed => {
     return ((value ^ value >>> 14) >>> 0) / 4294967296;
   };
 };
-const papersFor = (part, unit) => part === 2 && unit === 1 ? PART2_UNIT1_PAPERS : part === 2 && unit === 2 ? PART2_UNIT2_PAPERS : part === 1 ? UNIT_PAPERS[unit] || {} : {};
+const papersFor = (part, unit) => part === 2 && unit === 1 ? PART2_UNIT1_PAPERS : part === 2 && unit === 2 ? PART2_UNIT2_PAPERS : part === 2 && unit === 3 ? PART2_UNIT3_PAPERS : part === 2 && unit === 4 ? PART2_UNIT4_PAPERS : part === 1 ? UNIT_PAPERS[unit] || {} : {};
 function surpriseQuestions(part, unit, dateKey = localDateKey(new Date())) {
   return Object.entries(papersFor(part, unit)).flatMap(([paperName, paper]) => {
     const random = seededRandom(hashSeed(`${dateKey}:${paperName}`));
@@ -141,7 +181,7 @@ function surpriseQuestions(part, unit, dateKey = localDateKey(new Date())) {
     }));
   });
 }
-const paperNamesFor = (unit, part = 1) => part === 2 && unit === 1 ? PART2_UNIT1_PAPER_NAMES : part === 2 && unit === 2 ? PART2_UNIT2_PAPER_NAMES : part === 1 ? UNIT_PAPER_NAMES[unit] || [] : [];
+const paperNamesFor = (unit, part = 1) => part === 2 && unit === 1 ? PART2_UNIT1_PAPER_NAMES : part === 2 && unit === 2 ? PART2_UNIT2_PAPER_NAMES : part === 2 && unit === 3 ? PART2_UNIT3_PAPER_NAMES : part === 2 && unit === 4 ? PART2_UNIT4_PAPER_NAMES : part === 1 ? UNIT_PAPER_NAMES[unit] || [] : [];
 const paperFor = (name, unit = 1, part = 1) => {
   const normalized = name === 'Ex1.1' ? 'Ex-1.1' : name;
   return normalized === 'Surprise Test' ? { title: 'Surprise Test', questions: surpriseQuestions(part, unit) } : papersFor(part, unit)[normalized];
@@ -152,7 +192,7 @@ const minutesFor = (name, record = null, unit = record?.unit || 1, part = record
 const lowTimeWarningMinutes = totalMinutes => Math.round(Math.min(10, Math.max(1, totalMinutes * 0.1)) * 10) / 10;
 const lowTimeWarningMs = record => lowTimeWarningMinutes(minutesFor(record.paper, record, record.unit, record.part)) * 60 * 1000;
 const solutionPdfFor = (name, unit, part = 1) => {
-  const path = part === 1 ? SOLUTION_PDFS[`${unit}:${name}`] : part === 2 && unit === 1 ? PART2_UNIT1_SOLUTION_PDFS[name] : part === 2 && unit === 2 ? PART2_UNIT2_SOLUTION_PDFS[name] : null;
+  const path = part === 1 ? SOLUTION_PDFS[`${unit}:${name}`] : part === 2 && unit === 1 ? PART2_UNIT1_SOLUTION_PDFS[name] : part === 2 && unit === 2 ? PART2_UNIT2_SOLUTION_PDFS[name] : part === 2 && unit === 3 ? PART2_UNIT3_SOLUTION_PDFS[name] : part === 2 && unit === 4 ? PART2_UNIT4_SOLUTION_PDFS[name] : null;
   return path ? `${path}?v=20261002-4` : null;
 };
 const originalPaperCode = paper => {
@@ -216,6 +256,7 @@ function renderMathMlRadicand(expression) {
 }
 function renderMath(value) {
   const fractions = [];
+  const coefficientFractions = [];
   const radicals = [];
   const summations = [];
   const rendered = renderNotation(value)
@@ -225,6 +266,10 @@ function renderMath(value) {
       const term = power === '2' ? `<msup>${indexedVariable}<mn>2</mn></msup>` : indexedVariable;
       summations.push(`<math class="math-summation" display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><mstyle displaystyle="true"><mrow><munderover><mo largeop="true" movablelimits="false">∑</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></munderover>${term}</mrow></mstyle></math>`);
       return `\uE008${summations.length - 1}\uE009`;
+    })
+    .replace(/⟦coefFrac:([^¦]+)¦([^¦]+)¦([^⟧]+)⟧/g, (_, coefficient, numerator, denominator) => {
+      coefficientFractions.push([coefficient, numerator, denominator]);
+      return `\uE00A${coefficientFractions.length - 1}\uE00B`;
     })
     .replace(/⟦frac:([^¦]+)¦([^⟧]+)⟧/g, (_, numerator, denominator) => {
       fractions.push([numerator, denominator]);
@@ -268,6 +313,10 @@ function renderMath(value) {
     .replace(/\uE002(\d+)\uE003/g, (_, index) => {
       const [numerator, denominator] = fractions[Number(index)];
       return `<span class="math-frac math-frac-expression"><span>${renderMath(numerator)}</span><span>${renderMath(denominator)}</span></span>`;
+    })
+    .replace(/\uE00A(\d+)\uE00B/g, (_, index) => {
+      const [coefficient, numerator, denominator] = coefficientFractions[Number(index)];
+      return `<span class="math-coef-frac"><span class="math-coef">${renderMath(coefficient)}</span><span class="math-large-paren">(</span><span class="math-frac math-frac-expression"><span>${renderMath(numerator)}</span><span>${renderMath(denominator)}</span></span><span class="math-large-paren">)</span></span>`;
     });
 }
 function renderPrompt(question) {
@@ -294,7 +343,29 @@ function renderPrompt(question) {
   });
   let html = renderMath(promptWithTableTokens).replace(/\uE004(\d+)\uE005/g, (_, index) => {
     const rows = tables[Number(index)];
-    return `<div class="question-table-wrap${question.compactTable ? ' compact' : ''}"><table class="question-data-table"><tbody>${rows.map(row => `<tr>${row.map((cell, cellIndex) => `<${cellIndex === 0 ? 'th' : 'td'}>${renderMath(cell)}</${cellIndex === 0 ? 'th' : 'td'}>`).join('')}</tr>`).join('')}</tbody></table></div>`;
+    const isTallyTable = rows.some(row => row.some(cell => /\|\|\|\|\/|^\|+$/.test(cell.trim())));
+    const renderTally = count => {
+      const xs = [7, 13, 19, 25];
+      const verticals = xs.slice(0, Math.min(count, 4)).map(x => `<line x1="${x}" y1="5" x2="${x}" y2="31"/>`).join('');
+      const diagonal = count >= 5 ? '<line x1="2" y1="2" x2="30" y2="34"/>' : '';
+      const sixth = count >= 6 ? '<line x1="44" y1="5" x2="44" y2="31"/>' : '';
+      const width = count >= 6 ? 50 : count >= 5 ? 33 : Math.max(14, 7 + count * 6);
+      return `<svg class="tally-svg" viewBox="0 0 ${width} 36" width="${width}" height="36" aria-label="${count} tally marks"><g>${verticals}${diagonal}${sixth}</g></svg>`;
+    };
+    const renderTableCell = cell => {
+      const value = cell.trim();
+      if (isTallyTable && value === '||||/ |') return renderTally(6);
+      if (isTallyTable && value === '||||') return renderTally(4);
+      if (isTallyTable && /^\|{1,3}$/.test(value)) return renderTally(value.length);
+      return renderMath(cell).replace(/↵/g, '<br>');
+    };
+    return `<div class="question-table-wrap${question.compactTable ? ' compact' : ''}${question.compactDataTables ? ' compact-data-table' : ''}"><table class="question-data-table${isTallyTable ? ' income-tally-table' : ''}"><tbody>${rows.map((row, rowIndex) => `<tr>${row.map((cell, cellIndex) => {
+      if (rowIndex === 0 && cellIndex === 0 && /^Y\s*\\\s*X$/i.test(cell.trim())) {
+        return '<th class="diagonal-xy" aria-label="Y by X"><span class="x-label">X</span><span class="y-label">Y</span></th>';
+      }
+      const tag = cellIndex === 0 ? 'th' : 'td';
+      return `<${tag}>${renderTableCell(cell)}</${tag}>`;
+    }).join('')}</tr>`).join('')}</tbody></table></div>`;
   });
   html = html.replace(/\uE006(\d+)\uE007/g, (_, index) => `<span class="question-single-line">${renderMath(singleLines[Number(index)])}</span>`);
   if (question.id === 'q2iii') {
@@ -314,7 +385,7 @@ const query = new URLSearchParams(window.location.search);
 const requestedPart = Number(query.get('part'));
 const initialPart = [1, 2].includes(requestedPart) ? requestedPart : 1;
 const requestedUnit = Number(query.get('unit'));
-const availableUnits = initialPart === 1 ? [1, 2, 3] : [1, 2];
+const availableUnits = initialPart === 1 ? [1, 2, 3] : [1, 2, 3, 4];
 const initialUnit = availableUnits.includes(requestedUnit) ? requestedUnit : 1;
 const requestedPaper = query.get('paper');
 const initialPapers = paperNamesFor(initialUnit, initialPart);
@@ -376,6 +447,9 @@ function parseEnteredNumber(value) {
   if (!match) return null;
   const number = Number(`${match[1] ? '-' : ''}${match[2]}`);
   return Number.isFinite(number) ? { number, hasPercent: Boolean(match[3]) } : null;
+}
+function renderOption(option, question) {
+  return String(option).includes('⟦table:') ? renderPrompt({ prompt: option, compactDataTables: question?.compactDataTables }) : renderMath(option);
 }
 function entryAnswerIsCorrect(question, answer) {
   const entered = parseEnteredNumber(answer);
@@ -507,7 +581,7 @@ function renderTest() {
   const reviews = attempt.responses.filter(item => item.review).length;
   app.innerHTML = `<div class="intro test-page-heading"><div class="source">Part-${attempt.part || 1} · Unit-${attempt.unit || 1} · ${escape(paper.title)}</div><h1>Question ${index + 1} of ${questions.length}</h1><button class="danger" id="submitTop">Submit test</button></div>
     <div class="test-layout"><section class="card question-card"><div class="question-header"><div class="source question-reference">${renderMath(questionReferenceLabel(question, attempt.part || 1, attempt.unit || 1, attempt.paper))}</div><div class="test-actions"><button class="secondary" id="previous" ${index === 0 ? 'disabled' : ''}>Previous</button><button class="primary" id="next" ${index === questions.length - 1 ? 'disabled' : ''}>Next</button><button class="secondary" id="review">${response.review ? 'Remove review mark' : 'Mark for review'}</button><button class="secondary" id="clear">Clear answer</button></div><span class="pill">+2 correct · −1 wrong</span></div>
-      <div class="prompt">${renderPrompt(question)}</div>${question.type === 'choice' ? `<div class="options">${attempt.optionOrders[index].map((option, i) => `<button class="option ${response.selected === option ? 'selected' : ''}" data-option="${i}"><span class="option-letter">${letters[i]}.</span>${renderMath(option)}</button>`).join('')}</div>` : `<div class="answer-guidance-row"><label for="answer">Enter the Answer :</label><span>[ Use the Percent (%) sign, Minus (−) sign, if required ]</span></div><input id="answer" class="answer-input" inputmode="${question.requiresPercent ? 'text' : 'numeric'}" autocomplete="off" value="${escape(response.text)}" placeholder="Your answer">`}
+      <div class="prompt">${renderPrompt(question)}</div>${question.type === 'choice' ? `<div class="options">${attempt.optionOrders[index].map((option, i) => `<button class="option ${response.selected === option ? 'selected' : ''}" data-option="${i}"><span class="option-letter">${letters[i]}.</span>${renderOption(option, question)}</button>`).join('')}</div>` : `<div class="answer-guidance-row"><label for="answer">Enter the Answer :</label><span>[ Use the Percent (%) sign, Minus (−) sign, if required ]</span></div><input id="answer" class="answer-input" inputmode="${question.requiresPercent ? 'text' : 'numeric'}" autocomplete="off" value="${escape(response.text)}" placeholder="Your answer">`}
       </section>
       <aside><div class="timer${attempt.deadline - Date.now() <= lowTimeWarningMs(attempt) ? ' low' : ''}" id="timer"><span>Time remaining</span><strong id="timeValue">${formatTime(attempt.deadline - Date.now())}</strong><span>${minutesFor(attempt.paper, attempt, attempt.unit, attempt.part)}-minute overall limit</span></div><section class="card"><h2>All Question Navigator</h2><div class="nav-grid">${questions.map((item, i) => { const state = attempt.responses[i]; const status = state.review ? 'review' : i === index ? 'current' : responseFor(item, state) ? 'answered' : state.visits ? 'visited' : ''; return `<button class="nav-item ${status}" data-index="${i}" title="${escape(questionReferenceLabel(item, attempt.part || 1, attempt.unit || 1, attempt.paper))}"><span>${i + 1}</span></button>`; }).join('')}</div><div class="stats"><span>Answered</span><strong>${answered}</strong><span>Marked for review</span><strong>${reviews}</strong><span>Not answered</span><strong>${questions.length - answered}</strong></div><p class="small-note">You can visit any question. Your work is saved automatically in this browser.</p></section></aside></div>`;
   app.querySelectorAll('[data-option]').forEach(button => button.onclick = () => { response.selected = attempt.optionOrders[index][Number(button.dataset.option)]; persist(); renderTest(); });
@@ -576,3 +650,26 @@ function renderPage() {
 }
 setInterval(() => { if (!attempt || pageName !== 'test') return; if (Date.now() >= attempt.deadline) { submit(true); return; } const label = document.querySelector('#timeValue'); if (label) { const remainingMs = attempt.deadline - Date.now(); label.textContent = formatTime(remainingMs); document.querySelector('#timer')?.classList.toggle('low', remainingMs <= lowTimeWarningMs(attempt)); } }, 1000);
 renderPage();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
